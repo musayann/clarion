@@ -7,7 +7,8 @@
  *   pnpm audio --only t-water  regenerate one id (both accents)
  *   pnpm audio --report        also write audio-review.html for a listen-through
  *
- * Auth: GOOGLE_APPLICATION_CREDENTIALS, or `gcloud auth application-default login`.
+ * Auth: GOOGLE_TTS_API_KEY, GOOGLE_APPLICATION_CREDENTIALS, or
+ * `gcloud auth application-default login`. Set them in .env (see .env.sample).
  */
 import { existsSync, mkdirSync, readdirSync, rmSync, writeFileSync } from "node:fs";
 import path from "node:path";
@@ -47,7 +48,8 @@ async function main() {
   const clips = allClips();
   const manifest: Manifest = readManifest();
   const next: Manifest = {};
-  const client = new TextToSpeechClient();
+  const apiKey = process.env.GOOGLE_TTS_API_KEY;
+  const client = new TextToSpeechClient(apiKey ? { apiKey } : {});
 
   const todo = clips.filter((c) => {
     const key = clipKey(c.accent, c.id);

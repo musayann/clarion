@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowUpRight, Volume2 } from "lucide-react";
+import { ArrowUpRight, CircleCheck, CircleX } from "lucide-react";
 import { cn } from "cn";
 
 import { Listen } from "@/components/listen";
@@ -12,12 +12,12 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { americanHabits, quickAnswers } from "@/content/data/comparisons";
+import { americanHabits, meaningChanges, quickAnswers } from "@/content/data/comparisons";
 import { pairGroups } from "@/content/data/pairs";
 import { sentenceGroups } from "@/content/data/sentences";
 import type { Word } from "@/content/data/types";
 import { wordGroups } from "@/content/data/words";
-import { ruleHref } from "@/content/nav";
+import { ruleHref, rules } from "@/content/nav";
 import { clipSrc } from "@/lib/audio";
 import { groupAnchor } from "@/lib/word-index";
 
@@ -57,8 +57,24 @@ function TableFrame({ id, children, caption }: { id?: string; children: React.Re
 
 const headClass = "h-10 px-4 text-xs font-semibold uppercase tracking-wide text-muted-foreground";
 const cellClass = "px-4 py-2.5";
+const sayCellClass = "bg-good-soft/30";
+const avoidCellClass = "bg-avoid-soft/30 text-muted-foreground";
 
-/** Word | Say it like this | (You will hear Americans say) — with Standard English and American clips. */
+/** Column header marking what to say (✓, green) or what not to copy (✗, red). */
+function VerdictHead({ verdict, label, detail }: { verdict: "say" | "avoid"; label: string; detail?: string }) {
+  const Icon = verdict === "say" ? CircleCheck : CircleX;
+  return (
+    <TableHead className={cn(headClass, verdict === "say" ? "bg-good-soft/60 text-good" : "bg-avoid-soft/60 text-avoid")}>
+      <span className="inline-flex items-center gap-1.5">
+        <Icon className="size-3.5" aria-hidden />
+        {label}
+        {detail && <span className="font-normal normal-case tracking-normal">({detail})</span>}
+      </span>
+    </TableHead>
+  );
+}
+
+/** Word | Say this | (Recognise, don't copy) — with Standard English and American clips. */
 export function WordTable({ group: groupId, dictionary = true }: { group: string; dictionary?: boolean }) {
   const group = find(wordGroups, groupId, "word group");
   const withUS = group.withAmerican;
@@ -70,10 +86,14 @@ export function WordTable({ group: groupId, dictionary = true }: { group: string
         <TableHeader>
           <TableRow className="hover:bg-transparent">
             <TableHead className={headClass}>Word</TableHead>
-            <TableHead className={headClass}>
-              Say it like this <span className="normal-case tracking-normal">(Standard English)</span>
-            </TableHead>
-            {withUS && <TableHead className={headClass}>You will hear Americans say</TableHead>}
+            {withUS ? (
+              <VerdictHead verdict="say" label="Say this" detail="Standard English" />
+            ) : (
+              <TableHead className={headClass}>
+                Say this <span className="font-normal normal-case tracking-normal">(Standard English)</span>
+              </TableHead>
+            )}
+            {withUS && <VerdictHead verdict="avoid" label="Recognise, don't copy" detail="American" />}
             {hasNotes && <TableHead className={headClass}>Note</TableHead>}
           </TableRow>
         </TableHeader>
@@ -86,14 +106,14 @@ export function WordTable({ group: groupId, dictionary = true }: { group: string
                   {dictionary && <DictionaryLink word={w.word} />}
                 </div>
               </TableCell>
-              <TableCell className={cellClass}>
+              <TableCell className={cn(cellClass, withUS && sayCellClass)}>
                 <span className="inline-flex items-center gap-1">
                   {w.british && <Respell text={w.british} className="text-base" />}
                   <Listen src={clipSrc("gb", w.id)} label={w.word} />
                 </span>
               </TableCell>
               {withUS && (
-                <TableCell className={cn(cellClass, "text-muted-foreground")}>
+                <TableCell className={cn(cellClass, avoidCellClass)}>
                   <span className="inline-flex items-center gap-1">
                     {w.american && <Respell text={w.american} />}
                     <Listen src={clipSrc("us", w.id)} label={w.word} accent="us" />
@@ -255,28 +275,94 @@ export function QuickAnswersTable() {
   );
 }
 
+/** Word | Say it like this | If you say | Listeners may hear | Rule */
+export function MeaningChangeTable() {
+  return (
+    <TableFrame id="meaning-changes">
+      <Table>
+        <TableHeader>
+          <TableRow className="hover:bg-transparent">
+            <TableHead className={headClass}>Word</TableHead>
+            <VerdictHead verdict="say" label="Say it like this" />
+            <VerdictHead verdict="avoid" label="If you say" />
+            <TableHead className={headClass}>Listeners may hear</TableHead>
+            <TableHead className={headClass}>Rule</TableHead>
+          </TableRow>
+        </TableHeader>
+        <TableBody>
+          {meaningChanges.map((m) => {
+            const rule = rules.find((r) => r.slug === m.rule)!;
+            return (
+              <TableRow key={m.say.id}>
+                <TableCell className={cn(cellClass, "text-base font-medium")}>{m.say.word}</TableCell>
+                <TableCell className={cn(cellClass, sayCellClass)}>
+                  <span className="inline-flex items-center gap-1">
+                    <Respell text={m.say.british!} className="text-base" />
+                    <Listen src={clipSrc("gb", m.say.id)} label={m.say.word} />
+                  </span>
+                </TableCell>
+                <TableCell className={cn(cellClass, avoidCellClass)}>
+                  <span className="inline-flex items-center gap-1">
+                    <Respell text={m.mistake.american!} />
+                    <Listen src={clipSrc("us", m.mistake.id)} label={m.mistake.word} accent="us" mistake />
+                  </span>
+                </TableCell>
+                <TableCell className={cellClass}>
+                  {m.heard ? (
+                    <span className="inline-flex items-center gap-1">
+                      {m.heard.word}
+                      <Listen src={clipSrc("gb", m.heard.id)} label={m.heard.word} />
+                    </span>
+                  ) : (
+                    <span className="text-sm text-muted-foreground italic">a word they don&apos;t recognise</span>
+                  )}
+                </TableCell>
+                <TableCell className={cellClass}>
+                  <Link
+                    href={ruleHref(rule.slug)}
+                    title={`Rule ${rule.number}: ${rule.title}`}
+                    className="text-sm text-primary underline-offset-4 hover:underline"
+                  >
+                    Rule {rule.number}
+                  </Link>
+                </TableCell>
+              </TableRow>
+            );
+          })}
+        </TableBody>
+      </Table>
+    </TableFrame>
+  );
+}
+
+/** Habit | Example | Sounds like (American clip) | Say instead (Standard English clip) */
 export function AmericanHabitsTable() {
   return (
     <TableFrame id="american-habits">
       <Table>
         <TableHeader>
           <TableRow className="hover:bg-transparent">
-            <TableHead className={headClass}>What Americans do</TableHead>
+            <TableHead className={headClass}>Habit</TableHead>
             <TableHead className={headClass}>Example</TableHead>
-            <TableHead className={headClass}>
-              What you hear <Volume2 className="inline size-3" aria-hidden />
-            </TableHead>
+            <VerdictHead verdict="avoid" label="Sounds like" detail="American" />
+            <VerdictHead verdict="say" label="Say instead" detail="Standard English" />
           </TableRow>
         </TableHeader>
         <TableBody>
           {americanHabits.map((h) => (
-            <TableRow key={h.heard.id} className="align-top">
+            <TableRow key={h.words.id} className="align-top">
               <TableCell className={cn(cellClass, "min-w-40 whitespace-normal font-medium")}>{h.habit}</TableCell>
               <TableCell className={cn(cellClass, "min-w-40 whitespace-normal")}>{h.example}</TableCell>
-              <TableCell className={cn(cellClass, "text-muted-foreground")}>
+              <TableCell className={cn(cellClass, avoidCellClass)}>
                 <span className="inline-flex items-center gap-1">
-                  <Respell text={h.heard.american!} className="whitespace-normal" />
-                  <Listen src={clipSrc("us", h.heard.id)} label={h.example} accent="us" />
+                  <Respell text={h.words.american!} className="whitespace-normal" />
+                  <Listen src={clipSrc("us", h.words.id)} label={h.example} accent="us" />
+                </span>
+              </TableCell>
+              <TableCell className={cn(cellClass, sayCellClass)}>
+                <span className="inline-flex items-center gap-1">
+                  <Respell text={h.words.british!} className="whitespace-normal" />
+                  <Listen src={clipSrc("gb", h.words.id)} label={h.example} />
                 </span>
               </TableCell>
             </TableRow>

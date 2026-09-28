@@ -195,43 +195,47 @@ When Americans speak, listen for stress: 'I kən **go**' means can, and 'I **kan
 
 The short i in ship sits between Kinyarwanda i and e; the short u in full sits between Kinyarwanda u and o. Always hold the ii in sheet, beach and piece: each one has a rude short-vowel partner.
 
-## Everyday words that differ
+## Everyday words where one sound changes the meaning
 
-These everyday words sound different in the two styles; say the Standard English version so your speech stays consistent.
+In these words, one wrong sound makes listeners hear a different word or a different number. Say the version in the 'Say it like this' column; the Rule column shows where each sound is explained.
 
-| Word | Say it like this | You will hear Americans say |
-| --- | --- | --- |
-| address (noun) | ə-**dres** | **a**-dres |
-| advertisement | əd-**vəə**-tis-mənt | ad-vər-**taiz**-mənt |
-| after | **aaf**-tə | **af**-tər |
-| banana | bə-**naa**-nə | bə-**na**-nə |
-| data | **dei**-tə | **dei**-də |
-| herb | həəb | ərb (no h) |
-| mobile | **məu**-bail | **mou**-bəl |
-| privacy | **pri**-və-si | **prai**-və-si |
-| schedule | **she**-dyuul | **ske**-juul |
-| tomato | tə-**maa**-təu | tə-**mei**-dou |
-| vitamin | **vi**-tə-min | **vai**-də-min |
-| Z (the letter) | zed | zii |
+| Word | Say it like this | If you say | Listeners may hear | Rule |
+| --- | --- | --- | --- | --- |
+| little | **li**-təl | **li**-dəl or **li**-rəl | a word they don't recognise | 1 |
+| litre | **lii**-tə | **lii**-də | leader | 1 |
+| writing | **rai**-ting | **rai**-ding | riding | 1 |
+| putting | **pu**-ting | **pu**-ding | pudding | 1 |
+| metal | **me**-təl | **me**-dəl | medal | 1 |
+| thirty | **thəə**-ti | **thər**-di | a word they don't recognise | 1 |
+| thirteen | thəə-**tiin** | **thəə**-tin | thirty | 2 |
+| fourteen | foo-**tiin** | **foo**-tin | forty | 2 |
+| right | rait | lait | light | 3 |
+| correct | kə-**rekt** | kə-**lekt** | collect | 3 |
+| work | wəək | wook | walk | 4 |
+| hot | hot | haat | heart | 5 |
+| not | not | nat | nut | 5 |
+| can't | kaant | kan | can | 6 |
+| sheep | shiip | ship | ship | 6 |
+| leave | liiv | liv | live | 6 |
 
-Both columns are correct English; say the Standard English column. Other words ending in -ile follow mobile: fragile (**fra**-jail), hostile (**hos**-tail).
+Words such as tomato, schedule or the letter Z are said differently in American and Standard English, but listeners understand either version, so this guide leaves them out.
 
-## What to recognise when Americans speak
+## Habits to avoid, and what to say instead
 
-You will hear American English in films, music, online videos and on the phone. Learn to understand these habits, but don't copy them.
+You will hear these habits in American films, music and online videos. They are normal for native speakers, but if you copy them you become harder to understand, so say the Standard English version in the last column.
 
-| What Americans do | Example | What you hear |
-| --- | --- | --- |
-| Tap the t between vowels | water, better, data | **waa**-dər, **be**-dər, **dei**-də |
-| Drop the t after n | twenty, internet, interview | **twe**-ni, **i**-nər-net, **i**-nər-vyuu |
-| Stop the t before n | button, important, certain | **ba**'n, im-**por**'nt, **sər**'n |
-| Shrink can to kən | I can go, I can't go | I kən **go**, I **kant** go |
-| Use aa for o | hot, job, got | haat, jaab, gaat |
-| Say r after vowels | car, work, first | kaar, wərk, fərst |
-| Join words together | going to, want to, got to, let me, kind of, don't know | gonna, wanna, gotta, lemme, kinda, dunno |
-| Say zee for Z | Z | zii |
+| Habit | Example | Sounds like | Say instead |
+| --- | --- | --- | --- |
+| Tapping the t between vowels | water, better, little | **waa**-dər, **be**-dər, **li**-dəl | **woo**-tə, **be**-tə, **li**-təl |
+| Tapping the t in -ty numbers | thirty, forty, eighty | **thər**-di, **for**-di, **ei**-di | **thəə**-ti, **foo**-ti, **ei**-ti |
+| Dropping the t after n | twenty, internet, interview | **twe**-ni, **i**-nər-net, **i**-nər-vyuu | **twen**-ti, **in**-tə-net, **in**-tə-vyuu |
+| Stopping the t in the throat before n | button, important, certain | **ba**'n, im-**por**'nt, **sər**'n | **ba**-tən, im-**poo**-tənt, **səə**-tən |
+| Dropping the t in can't | I can't go | I **kan'** go | I **kaant** go, or I **ka**-not go |
+| Saying aa for o | hot, job, got | haat, jaab, gaat | hot, job, got |
+| Saying r after vowels | car, work, first | kaar, wərk, fərst | kaa, wəək, fəəst |
+| Joining words together | going to, want to, let me, kind of, don't know | gonna, wanna, lemme, kinda, dunno | Say every word: going to, want to, let me, kind of, don't know |
 
-In the table, ' means the air stops in your throat for a moment, as in the middle of 'uh-oh'. Because of the tapped t, latter and ladder, or metal and medal, sound identical in American speech, so rely on the context.
+In the table, ' means the air stops in your throat for a moment, as in the middle of 'uh-oh'. The full t is what keeps pairs like latter and ladder, or metal and medal, apart when you speak.
 
 ## Writing: use one spelling system
 

@@ -8,8 +8,8 @@ import { rules } from "@/content/nav";
 
 const reference = [
   { href: "/guide/which-style", title: "Which style to use", text: "Quick answers for every sound, and how to check.", icon: Ear },
-  { href: "/everyday-words", title: "Everyday words that differ", text: "address, schedule, tomato, Z and more.", icon: Mic },
-  { href: "/recognise-american", title: "Recognise American English", text: "Habits to understand, not copy.", icon: BookOpen },
+  { href: "/everyday-words", title: "Words that change meaning", text: "writing or riding, right or light, sheep or ship.", icon: Mic },
+  { href: "/recognise-american", title: "Habits to avoid", text: "What you will hear, and what to say instead.", icon: BookOpen },
   { href: "/writing", title: "Writing: one spelling system", text: "Spelling, dates, false friends and idioms.", icon: PenLine },
   { href: "/daily-practice", title: "Daily practice", text: "15 minutes a day covers every rule.", icon: Timer },
   { href: "/words", title: "Word finder", text: "Look up any word in the guide, with audio.", icon: Search },
@@ -27,8 +27,8 @@ export default function Home() {
           <span className="block text-muted-foreground">be understood everywhere</span>
         </h1>
         <p className="mt-6 text-lg leading-8 text-pretty text-muted-foreground">
-          A reference for Rwandans who speak English, are learning it, or want to sound clearer. Six rules, everyday words
-          that differ, and audio for every example, all in{" "}
+          A reference for Rwandans who speak English, are learning it, or want to sound clearer. Six rules, the everyday
+          words where one sound changes the meaning, and audio for every example, all in{" "}
           <Link href="/guide/sound-names#what-standard-english-means" className="font-medium text-foreground underline underline-offset-4">
             Standard English
           </Link>

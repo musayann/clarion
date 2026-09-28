@@ -17,8 +17,8 @@ export type IndexEntry = {
 
 const sectionPages: Record<Exclude<Section, (typeof rules)[number]["slug"]>, { title: string; href: string }> = {
   "which-style": { title: "Which style to use", href: "/guide/which-style" },
-  "everyday-words": { title: "Everyday words that differ", href: "/everyday-words" },
-  "recognise-american": { title: "Recognise American English", href: "/recognise-american" },
+  "everyday-words": { title: "Words that change meaning", href: "/everyday-words" },
+  "recognise-american": { title: "Habits to avoid", href: "/recognise-american" },
 };
 
 /** Element id of a word or pair table, distinct from the heading ids rehype-slug generates. */

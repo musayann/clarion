@@ -80,33 +80,4 @@ export const wordGroups: WordGroup[] = [
       { id: "o-long", word: "long", ipaGB: "lɒŋ" },
     ],
   },
-  {
-    id: "everyday-words",
-    section: "everyday-words",
-    title: "Everyday words that differ",
-    withAmerican: true,
-    words: [
-      { id: "ew-address", word: "address (noun)", sayGB: "address", sayUS: "address", british: "ə-**dres**", american: "**a**-dres", ipaGB: "əˈdres", ipaUS: "ˈædrɛs" },
-      { id: "ew-advertisement", word: "advertisement", british: "əd-**vəə**-tis-mənt", american: "ad-vər-**taiz**-mənt", ipaGB: "ədˈvɜːtɪsmənt", ipaUS: "ˌædvɚˈtaɪzmənt" },
-      { id: "ew-after", word: "after", british: "**aaf**-tə", american: "**af**-tər", ipaGB: "ˈɑːftə", ipaUS: "ˈæftɚ" },
-      { id: "ew-banana", word: "banana", british: "bə-**naa**-nə", american: "bə-**na**-nə", ipaGB: "bəˈnɑːnə", ipaUS: "bəˈnænə" },
-      { id: "ew-data", word: "data", british: "**dei**-tə", american: "**dei**-də", ipaGB: "ˈdeɪtə", ipaUS: "ˈdeɪɾə" },
-      { id: "ew-herb", word: "herb", british: "həəb", american: "ərb (no h)", ipaGB: "hɜːb", ipaUS: "ɝb" },
-      { id: "ew-mobile", word: "mobile", british: "**məu**-bail", american: "**mou**-bəl", ipaGB: "ˈməʊbaɪl", ipaUS: "ˈmoʊbəl" },
-      { id: "ew-privacy", word: "privacy", british: "**pri**-və-si", american: "**prai**-və-si", ipaGB: "ˈprɪvəsi", ipaUS: "ˈpraɪvəsi" },
-      { id: "ew-schedule", word: "schedule", british: "**she**-dyuul", american: "**ske**-juul", ipaGB: "ˈʃedjuːl", ipaUS: "ˈskɛdʒul" },
-      { id: "ew-tomato", word: "tomato", british: "tə-**maa**-təu", american: "tə-**mei**-dou", ipaGB: "təˈmɑːtəʊ", ipaUS: "təˈmeɪɾoʊ" },
-      { id: "ew-vitamin", word: "vitamin", british: "**vi**-tə-min", american: "**vai**-də-min", ipaGB: "ˈvɪtəmɪn", ipaUS: "ˈvaɪɾəmɪn" },
-      { id: "ew-z", word: "Z (the letter)", sayGB: "zed", sayUS: "zee", british: "zed", american: "zii" },
-    ],
-  },
-  {
-    id: "ile-words",
-    section: "everyday-words",
-    title: "Other words ending in -ile",
-    words: [
-      { id: "ile-fragile", word: "fragile", british: "**fra**-jail", ipaGB: "ˈfrædʒaɪl" },
-      { id: "ile-hostile", word: "hostile", british: "**hos**-tail", ipaGB: "ˈhɒstaɪl" },
-    ],
-  },
 ];

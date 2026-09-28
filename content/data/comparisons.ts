@@ -77,25 +77,92 @@ export const quickAnswers: QuickAnswer[] = [
   },
 ];
 
-/** "What to recognise when Americans speak" — American clips only. */
+/**
+ * "Everyday words where one sound changes the meaning". `say` gets a Standard English clip;
+ * `mistake` is the same word said with the wrong sound, in the American voice (its IPA forces the mistake);
+ * `heard` is the word listeners may hear instead, or absent when it is not a real word.
+ */
+export type MeaningChange = {
+  say: Word;
+  mistake: Word;
+  heard?: Word;
+  rule: RuleSlug;
+};
+
+export const meaningChanges: MeaningChange[] = [
+  { say: { id: "mc-little", word: "little", british: "**li**-təl", ipaGB: "ˈlɪtl" }, mistake: { id: "mc-little-mistake", word: "little", american: "**li**-dəl or **li**-rəl", ipaUS: "ˈlɪɾl" }, rule: "say-every-t" },
+  { say: { id: "mc-litre", word: "litre", british: "**lii**-tə", ipaGB: "ˈliːtə" }, mistake: { id: "mc-litre-mistake", word: "litre", american: "**lii**-də", ipaUS: "ˈliɾɚ" }, heard: { id: "mc-leader", word: "leader", ipaGB: "ˈliːdə" }, rule: "say-every-t" },
+  { say: { id: "mc-writing", word: "writing", british: "**rai**-ting", ipaGB: "ˈraɪtɪŋ" }, mistake: { id: "mc-writing-mistake", word: "writing", american: "**rai**-ding", ipaUS: "ˈraɪɾɪŋ" }, heard: { id: "mc-riding", word: "riding", ipaGB: "ˈraɪdɪŋ" }, rule: "say-every-t" },
+  { say: { id: "mc-putting", word: "putting", british: "**pu**-ting", ipaGB: "ˈpʊtɪŋ" }, mistake: { id: "mc-putting-mistake", word: "putting", american: "**pu**-ding", ipaUS: "ˈpʊɾɪŋ" }, heard: { id: "mc-pudding", word: "pudding", ipaGB: "ˈpʊdɪŋ" }, rule: "say-every-t" },
+  { say: { id: "mc-metal", word: "metal", british: "**me**-təl", ipaGB: "ˈmetl" }, mistake: { id: "mc-metal-mistake", word: "metal", american: "**me**-dəl", ipaUS: "ˈmɛɾl" }, heard: { id: "mc-medal", word: "medal", ipaGB: "ˈmedl" }, rule: "say-every-t" },
+  { say: { id: "mc-thirty", word: "thirty", british: "**thəə**-ti", ipaGB: "ˈθɜːti" }, mistake: { id: "mc-thirty-mistake", word: "thirty", american: "**thər**-di", ipaUS: "ˈθɝɾi" }, rule: "say-every-t" },
+  { say: { id: "mc-thirteen", word: "thirteen", british: "thəə-**tiin**", ipaGB: "θɜːˈtiːn" }, mistake: { id: "mc-thirteen-mistake", word: "thirteen", american: "**thəə**-tin", ipaUS: "ˈθɝtɪn" }, heard: { id: "mc-heard-thirty", word: "thirty", ipaGB: "ˈθɜːti" }, rule: "thirteen-vs-thirty" },
+  { say: { id: "mc-fourteen", word: "fourteen", british: "foo-**tiin**", ipaGB: "fɔːˈtiːn" }, mistake: { id: "mc-fourteen-mistake", word: "fourteen", american: "**foo**-tin", ipaUS: "ˈfɔrtɪn" }, heard: { id: "mc-forty", word: "forty", ipaGB: "ˈfɔːti" }, rule: "thirteen-vs-thirty" },
+  { say: { id: "mc-right", word: "right", british: "rait", ipaGB: "raɪt" }, mistake: { id: "mc-right-mistake", word: "right", american: "lait", ipaUS: "laɪt" }, heard: { id: "mc-light", word: "light", ipaGB: "laɪt" }, rule: "r-and-l" },
+  { say: { id: "mc-correct", word: "correct", british: "kə-**rekt**", ipaGB: "kəˈrekt" }, mistake: { id: "mc-correct-mistake", word: "correct", american: "kə-**lekt**", ipaUS: "kəˈlɛkt" }, heard: { id: "mc-collect", word: "collect", ipaGB: "kəˈlekt" }, rule: "r-and-l" },
+  { say: { id: "mc-work", word: "work", british: "wəək", ipaGB: "wɜːk" }, mistake: { id: "mc-work-mistake", word: "work", american: "wook", ipaUS: "wɔk" }, heard: { id: "mc-walk", word: "walk", ipaGB: "wɔːk" }, rule: "drop-the-r" },
+  { say: { id: "mc-hot", word: "hot", british: "hot", ipaGB: "hɒt" }, mistake: { id: "mc-hot-mistake", word: "hot", american: "haat", ipaUS: "hɑt" }, heard: { id: "mc-heart", word: "heart", ipaGB: "hɑːt" }, rule: "short-o" },
+  { say: { id: "mc-not", word: "not", british: "not", ipaGB: "nɒt" }, mistake: { id: "mc-not-mistake", word: "not", american: "nat", ipaUS: "nɑt" }, heard: { id: "mc-nut", word: "nut", ipaGB: "nʌt" }, rule: "short-o" },
+  { say: { id: "mc-cant", word: "can't", british: "kaant", ipaGB: "kɑːnt" }, mistake: { id: "mc-cant-mistake", word: "can't", american: "kan", ipaUS: "kæn" }, heard: { id: "mc-can", word: "can", ipaGB: "kæn" }, rule: "long-vowels" },
+  { say: { id: "mc-sheep", word: "sheep", british: "shiip", ipaGB: "ʃiːp" }, mistake: { id: "mc-sheep-mistake", word: "sheep", american: "ship", ipaUS: "ʃɪp" }, heard: { id: "mc-ship", word: "ship", ipaGB: "ʃɪp" }, rule: "long-vowels" },
+  { say: { id: "mc-leave", word: "leave", british: "liiv", ipaGB: "liːv" }, mistake: { id: "mc-leave-mistake", word: "leave", american: "liv", ipaUS: "lɪv" }, heard: { id: "mc-live", word: "live", ipaGB: "lɪv" }, rule: "long-vowels" },
+];
+
+/**
+ * "Habits to avoid, and what to say instead". Each row's `words` has an American clip
+ * (what the habit sounds like) and a Standard English clip (what to say instead).
+ */
 export type AmericanHabit = {
   habit: string;
   example: string;
-  /** What you hear, as an American-only Word (no British clip). */
-  heard: Word;
+  words: Word;
 };
 
 export const americanHabits: AmericanHabit[] = [
-  { habit: "Tap the t between vowels", example: "water, better, data", heard: { id: "us-tap-t", word: "water, better, data", american: "**waa**-dər, **be**-dər, **dei**-də" } },
-  { habit: "Drop the t after n", example: "twenty, internet, interview", heard: { id: "us-drop-t", word: "twenty, internet, interview", american: "**twe**-ni, **i**-nər-net, **i**-nər-vyuu" } },
-  { habit: "Stop the t before n", example: "button, important, certain", heard: { id: "us-stop-t", word: "button, important, certain", american: "**ba**'n, im-**por**'nt, **sər**'n" } },
-  { habit: "Shrink can to kən", example: "I can go, I can't go", heard: { id: "us-can", word: "I can go. I can't go.", american: "I kən **go**, I **kant** go" } },
-  { habit: "Use aa for o", example: "hot, job, got", heard: { id: "us-aa-for-o", word: "hot, job, got", american: "haat, jaab, gaat" } },
-  { habit: "Say r after vowels", example: "car, work, first", heard: { id: "us-r-after-vowel", word: "car, work, first", american: "kaar, wərk, fərst" } },
   {
-    habit: "Join words together",
-    example: "going to, want to, got to, let me, kind of, don't know",
-    heard: { id: "us-join", word: "gonna, wanna, gotta, lemme, kinda, dunno", american: "gonna, wanna, gotta, lemme, kinda, dunno" },
+    habit: "Tapping the t between vowels",
+    example: "water, better, little",
+    words: { id: "habit-tap-t", word: "water, better, little", american: "**waa**-dər, **be**-dər, **li**-dəl", british: "**woo**-tə, **be**-tə, **li**-təl" },
   },
-  { habit: "Say zee for Z", example: "Z", heard: { id: "us-zee", word: "Z", sayUS: "zee", american: "zii" } },
+  {
+    habit: "Tapping the t in -ty numbers",
+    example: "thirty, forty, eighty",
+    words: { id: "habit-ty-numbers", word: "thirty, forty, eighty", american: "**thər**-di, **for**-di, **ei**-di", british: "**thəə**-ti, **foo**-ti, **ei**-ti" },
+  },
+  {
+    habit: "Dropping the t after n",
+    example: "twenty, internet, interview",
+    words: { id: "habit-drop-t", word: "twenty, internet, interview", american: "**twe**-ni, **i**-nər-net, **i**-nər-vyuu", british: "**twen**-ti, **in**-tə-net, **in**-tə-vyuu" },
+  },
+  {
+    habit: "Stopping the t in the throat before n",
+    example: "button, important, certain",
+    words: { id: "habit-stop-t", word: "button, important, certain", american: "**ba**'n, im-**por**'nt, **sər**'n", british: "**ba**-tən, im-**poo**-tənt, **səə**-tən" },
+  },
+  {
+    habit: "Dropping the t in can't",
+    example: "I can't go",
+    words: { id: "habit-cant", word: "I can't go", american: "I **kan'** go", british: "I **kaant** go, or I **ka**-not go" },
+  },
+  {
+    habit: "Saying aa for o",
+    example: "hot, job, got",
+    words: { id: "habit-aa-for-o", word: "hot, job, got", american: "haat, jaab, gaat", british: "hot, job, got" },
+  },
+  {
+    habit: "Saying r after vowels",
+    example: "car, work, first",
+    words: { id: "habit-r-after-vowel", word: "car, work, first", american: "kaar, wərk, fərst", british: "kaa, wəək, fəəst" },
+  },
+  {
+    habit: "Joining words together",
+    example: "going to, want to, let me, kind of, don't know",
+    words: {
+      id: "habit-join",
+      word: "going to, want to, let me, kind of, don't know",
+      sayUS: "gonna, wanna, lemme, kinda, dunno",
+      american: "gonna, wanna, lemme, kinda, dunno",
+      british: "Say every word: going to, want to, let me, kind of, don't know",
+    },
+  },
 ];

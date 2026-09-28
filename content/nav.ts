@@ -73,8 +73,8 @@ export const nav: NavSection[] = [
   {
     title: "Reference",
     items: [
-      { title: "Everyday words that differ", href: "/everyday-words" },
-      { title: "Recognise American English", href: "/recognise-american" },
+      { title: "Words that change meaning", href: "/everyday-words" },
+      { title: "Habits to avoid", href: "/recognise-american" },
       { title: "Writing: one spelling system", href: "/writing" },
       { title: "Daily practice", href: "/daily-practice" },
       { title: "Word finder", href: "/words" },

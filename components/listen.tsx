@@ -19,12 +19,14 @@ type ListenProps = {
   /** What is spoken, for the accessible name: "water". */
   label: string;
   accent?: Accent;
+  /** The clip demonstrates a mistake: labelled and coloured as not to copy. */
+  mistake?: boolean;
   /** Visible text next to the icon, e.g. "Play both". */
   children?: React.ReactNode;
   className?: string;
 };
 
-export function Listen({ src, label, accent = "gb", children, className }: ListenProps) {
+export function Listen({ src, label, accent = "gb", mistake = false, children, className }: ListenProps) {
   const srcs = (Array.isArray(src) ? src : [src]).filter((s): s is string => Boolean(s));
   const nowPlaying = useNowPlaying();
 
@@ -32,7 +34,8 @@ export function Listen({ src, label, accent = "gb", children, className }: Liste
 
   const playing = nowPlaying !== null && srcs.includes(nowPlaying);
   const Icon = playing ? VolumeX : Volume2;
-  const name = `${playing ? "Stop" : "Play"} ${label} (${accentLabel[accent]})`;
+  const description = mistake ? "the mistake, don't copy" : accentLabel[accent];
+  const name = `${playing ? "Stop" : "Play"} ${label} (${description})`;
 
   const button = (
     <Button
@@ -44,7 +47,7 @@ export function Listen({ src, label, accent = "gb", children, className }: Liste
       onClick={() => (playing ? stop() : play(...srcs))}
       className={cn(
         "text-muted-foreground hover:text-primary aria-pressed:bg-accent aria-pressed:text-primary",
-        accent === "us" && "hover:text-avoid aria-pressed:text-avoid",
+        (accent === "us" || mistake) && "hover:text-avoid aria-pressed:text-avoid",
         className,
       )}
     >
@@ -58,7 +61,7 @@ export function Listen({ src, label, accent = "gb", children, className }: Liste
   return (
     <Tooltip>
       <TooltipTrigger asChild>{button}</TooltipTrigger>
-      <TooltipContent>{`Play (${accentLabel[accent]})`}</TooltipContent>
+      <TooltipContent>{`Play (${description})`}</TooltipContent>
     </Tooltip>
   );
 }

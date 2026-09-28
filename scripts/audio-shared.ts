@@ -1,11 +1,17 @@
 import { createHash } from "node:crypto";
-import { readFileSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 import path from "node:path";
 
 import type { Clip } from "../content/data/clips";
 import type { Accent } from "../content/data/types";
 
 export const ROOT = path.resolve(import.meta.dirname, "..");
+
+// Load .env.local then .env (see .env.sample). Variables already set in the shell win.
+for (const file of [".env.local", ".env"]) {
+  const envPath = path.join(ROOT, file);
+  if (existsSync(envPath)) process.loadEnvFile(envPath);
+}
 export const AUDIO_DIR = path.join(ROOT, "public", "audio");
 export const MANIFEST_PATH = path.join(ROOT, "content", "data", "audio-manifest.json");
 
@@ -17,7 +23,7 @@ export const VOICES: Record<Accent, { languageCode: string; name: string }> = {
   us: { languageCode: "en-US", name: process.env.TTS_VOICE_US ?? "en-US-Neural2-D" },
 };
 
-export const SPEAKING_RATE = 0.9;
+export const SPEAKING_RATE = Number(process.env.TTS_SPEAKING_RATE ?? 0.9);
 
 export const clipFile = (c: Pick<Clip, "accent" | "id">) =>
   path.join(AUDIO_DIR, c.accent, `${c.id}.mp3`);
