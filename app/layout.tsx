@@ -15,13 +15,13 @@ const mono = JetBrains_Mono({ variable: "--font-mono", subsets: ["latin"] });
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"),
   title: {
-    default: "Clear English: a pronunciation guide for Kinyarwanda speakers",
-    template: "%s · Clear English",
+    default: "Clear English Rwanda: English pronunciation for Kinyarwanda speakers",
+    template: "%s · Clear English Rwanda",
   },
   description:
-    "A reference guide to clear, Standard English pronunciation for Rwandans: six rules, word lists with audio, and the American habits to recognise.",
+    "Speak English that is understood the first time. An English pronunciation guide for Rwandans and Kinyarwanda speakers: six rules, the words where one sound changes the meaning, and audio for every example.",
   openGraph: {
-    siteName: "Clear English",
+    siteName: "Clear English Rwanda",
     type: "website",
     locale: "en_GB",
   },

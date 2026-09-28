@@ -2,7 +2,6 @@ import Link from "next/link";
 import { ArrowDown, ArrowRight } from "lucide-react";
 import { cn } from "cn";
 
-import { rules } from "@/content/nav";
 
 function Figure({
   title,
@@ -73,86 +72,116 @@ const simpleTable = (head: string[], rows: (string | number)[][]) => (
 
 /* 1. Where each rule sits: effect versus effort ------------------------------------------ */
 
-// Relative positions (0–10) read from the guide's text: rules 3 and 4 need daily practice
-// and matter most; the other four are single changes you can make this week.
-const ruleEffort: Record<number, { effort: number; effect: number; short: string }> = {
-  1: { effort: 2, effect: 7.5, short: "Full t" },
-  2: { effort: 1.5, effect: 5.5, short: "-teen / -ty" },
-  3: { effort: 8.5, effect: 9.5, short: "r and l" },
-  4: { effort: 7, effect: 7.5, short: "əə, no r" },
-  5: { effort: 3.5, effect: 4.5, short: "Short o" },
-  6: { effort: 4, effect: 6.5, short: "Long vowels" },
-};
+type QuadrantItem = { label: string; href?: string };
+type Quadrant = { title: string; tone: "quick-win" | "default" | "skip"; items: QuadrantItem[] };
+
+// Row by row: high effect (easier, harder), then low effect (easier, harder).
+const quadrants: Quadrant[] = [
+  {
+    title: "Quick wins: start here",
+    tone: "quick-win",
+    items: [
+      { label: "Rule 1: the full t (twenty, water)", href: "/rules/say-every-t" },
+      { label: "Rule 2: thirteen versus thirty", href: "/rules/thirteen-vs-thirty" },
+      { label: "Rule 5: o in hot, job, stop", href: "/rules/short-o" },
+      { label: "Rule 6: long vowels (can't, sheep)", href: "/rules/long-vowels" },
+    ],
+  },
+  {
+    title: "Practise every day",
+    tone: "default",
+    items: [
+      { label: "Rule 3: r versus l (right, light)", href: "/rules/r-and-l" },
+      { label: "Rule 4: the əə vowel (work, first)", href: "/rules/drop-the-r" },
+    ],
+  },
+  {
+    title: "Nice to have",
+    tone: "default",
+    items: [
+      { label: "Rule 4: drop r after a vowel (car)", href: "/rules/drop-the-r" },
+      { label: "Rule 4: r before a vowel (far away)", href: "/rules/drop-the-r" },
+    ],
+  },
+  {
+    title: "Skip",
+    tone: "skip",
+    items: [{ label: "The American r sound" }, { label: "A native accent, American or British" }],
+  },
+];
+
+/** Arrowhead at the end of an axis line, pointing up unless rotated. */
+function AxisArrow({ className }: { className: string }) {
+  return (
+    <svg viewBox="0 0 10 8" className={cn("absolute h-2 w-2.5 fill-muted-foreground/50", className)} aria-hidden>
+      <polygon points="5,0 10,8 0,8" />
+    </svg>
+  );
+}
 
 export function EffectEffortChart() {
-  const W = 560;
-  const H = 320;
-  const pad = { l: 44, r: 16, t: 16, b: 40 };
-  const x = (v: number) => pad.l + (v / 10) * (W - pad.l - pad.r);
-  const y = (v: number) => H - pad.b - (v / 10) * (H - pad.t - pad.b);
-
   return (
     <Figure
       title="Where each rule sits: effect versus effort"
-      caption="Start with the quick wins on the left. Practise rules 3 and 4 every day: they take longest but make the biggest difference."
-      table={simpleTable(
-        ["Rule", "Type", "Effort (0–10)", "Effect (0–10)"],
-        rules.map((r) => [`${r.number}. ${r.title}`, r.quickWin ? "Quick win" : "Daily practice", ruleEffort[r.number].effort, ruleEffort[r.number].effect]),
-      )}
+      caption="Start with the quick wins. Practise rules 3 and 4 every day: they take longest but make the biggest difference."
     >
-      <Legend
-        items={[
-          { label: "Quick win", color: "var(--chart-1)" },
-          { label: "Daily practice", color: "var(--chart-2)" },
-        ]}
-      />
-      <svg viewBox={`0 0 ${W} ${H}`} className="h-auto w-full" role="img" aria-label="Scatter chart of the six rules by effort and effect">
-        {/* quadrant split */}
-        <line x1={x(5)} x2={x(5)} y1={y(0)} y2={y(10)} stroke="var(--border)" strokeDasharray="4 4" />
-        <line x1={x(0)} x2={x(10)} y1={y(5)} y2={y(5)} stroke="var(--border)" strokeDasharray="4 4" />
-        <line x1={x(0)} x2={x(10)} y1={y(0)} y2={y(0)} stroke="var(--muted-foreground)" strokeOpacity={0.5} />
-        <line x1={x(0)} x2={x(0)} y1={y(0)} y2={y(10)} stroke="var(--muted-foreground)" strokeOpacity={0.5} />
-        <text x={x(5)} y={H - 12} textAnchor="middle" className="fill-muted-foreground text-[12px]">
-          Effort to learn →
-        </text>
-        <text transform={`translate(16 ${y(5)}) rotate(-90)`} textAnchor="middle" className="fill-muted-foreground text-[12px]">
-          Effect on being understood →
-        </text>
-        <text x={x(0.2)} y={y(9.6)} className="fill-muted-foreground text-[11px]">
-          Quick wins
-        </text>
-        <text x={x(9.8)} y={y(0.4)} textAnchor="end" className="fill-muted-foreground text-[11px]">
-          Lower priority
-        </text>
-        {rules.map((r) => {
-          const p = ruleEffort[r.number];
-          const color = r.quickWin ? "var(--chart-1)" : "var(--chart-2)";
-          const labelLeft = p.effort > 6;
-          return (
-            <Link key={r.slug} href={`/rules/${r.slug}`} className="group">
-              <title>{`Rule ${r.number}: ${r.title}. Effort ${p.effort}/10, effect ${p.effect}/10`}</title>
-              <circle cx={x(p.effort)} cy={y(p.effect)} r={16} fill="transparent" />
-              <circle
-                cx={x(p.effort)}
-                cy={y(p.effect)}
-                r={7}
-                fill={color}
-                stroke="var(--card)"
-                strokeWidth={2}
-                className="transition-[r] group-hover:[r:9]"
-              />
-              <text
-                x={x(p.effort) + (labelLeft ? -12 : 12)}
-                y={y(p.effect) + 4}
-                textAnchor={labelLeft ? "end" : "start"}
-                className="fill-foreground text-[12px] font-medium group-hover:underline"
+      <div className="grid grid-cols-[auto_auto_1fr] text-muted-foreground">
+        {/* y axis: title, then High/Low ticks */}
+        <div className="flex items-center justify-center pr-1 sm:pr-2">
+          <span className="rotate-180 text-xs font-medium [writing-mode:vertical-rl]">Effect on being understood</span>
+        </div>
+        <div className="flex flex-col justify-between py-3 pr-2 text-right text-xs">
+          <span>High</span>
+          <span>Low</span>
+        </div>
+
+        {/* plot area: the left and bottom borders are the axes */}
+        <div className="relative border-b-2 border-l-2 border-muted-foreground/50 pt-3 pr-3 pb-2 pl-2">
+          <AxisArrow className="top-0 left-[-1px] -translate-x-1/2 -translate-y-1/2" />
+          <AxisArrow className="right-0 bottom-[-1px] translate-x-1/2 translate-y-1/2 rotate-90" />
+          <div className="grid grid-cols-2 gap-1.5 text-foreground sm:gap-2">
+            {quadrants.map((q) => (
+              <section
+                key={q.title}
+                aria-label={q.title}
+                className={cn(
+                  "rounded-lg border bg-card p-3 sm:p-4",
+                  q.tone === "quick-win" && "border-2 border-chart-1 bg-chart-1/10",
+                )}
               >
-                {`${r.number} · ${p.short}`}
-              </text>
-            </Link>
-          );
-        })}
-      </svg>
+                <h3 className="text-sm font-semibold sm:text-base">{q.title}</h3>
+                <ul className="mt-2 space-y-1.5 text-sm sm:mt-3 sm:space-y-2 sm:text-base">
+                  {q.items.map((item) => (
+                    <li key={item.label} className={cn("flex gap-2", q.tone === "skip" && "text-muted-foreground")}>
+                      <span
+                        aria-hidden
+                        className={cn(
+                          "mt-1.5 size-2.5 shrink-0 rounded-full sm:mt-2",
+                          q.tone === "quick-win" ? "bg-chart-1" : "bg-muted-foreground/40",
+                        )}
+                      />
+                      {item.href ? (
+                        <Link href={item.href} className="underline-offset-4 hover:text-primary hover:underline">
+                          {item.label}
+                        </Link>
+                      ) : (
+                        <span>{item.label}</span>
+                      )}
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            ))}
+          </div>
+        </div>
+
+        {/* x axis: Easier/Harder ticks, then title */}
+        <div className="col-start-3 flex justify-between px-2 pt-1.5 text-xs">
+          <span>Easier to learn</span>
+          <span>Harder to learn</span>
+        </div>
+        <div className="col-start-3 pt-1 text-center text-xs font-medium">Effort for a Kinyarwanda speaker</div>
+      </div>
     </Figure>
   );
 }
@@ -318,7 +347,7 @@ export function SoundCountChart() {
 const kinyaVowels = ["i", "e", "a", "o", "u"];
 const vowelLandings: { label: string; vowel: string; note: string; tone: "good" | "avoid" | "neutral" }[] = [
   { label: "hot (Standard English)", vowel: "o", note: "short o, a different vowel from hut", tone: "good" },
-  { label: "hot (American)", vowel: "a", note: "a held longer: only length separates not from nut", tone: "avoid" },
+  { label: "hot (American)", vowel: "a", note: "a held longer: only length separates hot from hut", tone: "avoid" },
   { label: "hut, nut, cup", vowel: "a", note: "how Kinyarwanda speakers usually say it", tone: "neutral" },
 ];
 

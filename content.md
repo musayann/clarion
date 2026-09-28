@@ -6,9 +6,13 @@ This guide has one goal: when you speak English, people understand you the first
 
 **What 'Standard English' means in this guide.** It is the pronunciation used in international English and in standard British English: the English of BBC World Service newsreaders and of the 'UK' audio in learner's dictionaries. It is not a London accent or a British street accent: those drop the t in water ('wa'er'), the opposite of Rule 1.
 
-Whenever this guide shows an American and a Standard English version of a sound, say the Standard English version, and learn to understand the American one. American English is equally correct; this guide follows one model so that you learn one consistent set of sounds.
+Whenever this guide shows an American and a Standard English version of a sound, say the Standard English version, and learn to understand the American one. **Why Standard English is easier for Kinyarwanda speakers.** American English is correct for Americans, but three of its sounds are hard for a Kinyarwanda speaker to copy without being misunderstood. The Standard English versions are closer to sounds you already make:
 
-For each sound in this guide, the Standard English version is easier for a Kinyarwanda speaker to say without being misunderstood. Each rule explains why.
+- **A clear t.** The American t in water and better is tapped, and a tapped t is almost exactly the Kinyarwanda r, so listeners hear 'berrer' or 'beller', and writing as riding. The Standard English t stops the air completely, and nobody mistakes it for r. See Rule 1.
+- **Words that end in a vowel.** Standard English drops the r after a vowel: car is kaa, and computer ends in tə. Kinyarwanda syllables also end in vowels, so this comes naturally. American English keeps an r there, one more place where your r can be heard as l. See Rule 4.
+- **The Kinyarwanda o.** Standard English says hot, job and stop with the Kinyarwanda o. The American vowel is the a you use for hut, held longer, so hot can be heard as hut or heart. See Rule 5.
+
+Keeping r and l apart and the stress in numbers work the same way in both styles.
 
 &#91;embedded content: where each rule sits · effect versus effort\]
 
@@ -152,13 +156,13 @@ In Standard English, car, more and computer end in a vowel, just like Kinyarwand
 
 **r before a vowel in the next word.** Say the r when the next word starts with a vowel sound: far away (faa rə-**wei**), four hours (foo **rau**-əz), never again (**ne**-və rə-**gen**).
 
-## Rule 5: keep the o in hot, not and job
+## Rule 5: keep the o in hot, job and stop
 
-Say hot, not and job with the Kinyarwanda o, short (not held), as in Standard English. Kinyarwanda speakers usually say the vowel in hut, nut and cup as a.
+Say hot, job and stop with the Kinyarwanda o, short (not held), as in Standard English. Kinyarwanda speakers usually say the vowel in hut, nut and cup as a.
 
 &#91;embedded content: which Kinyarwanda vowel each style lands on\]
 
-The American vowel in hot is that same a held longer, so only length separates not from nut. To a listener used to Standard English, the American-style haat can even sound like heart. The Standard English o is a different vowel from a, a contrast you already make in Kinyarwanda.
+The American vowel in hot is that same a held longer, so only length separates hot from hut. To a listener used to Standard English, the American-style haat can even sound like heart. The Standard English o is a different vowel from a, a contrast you already make in Kinyarwanda.
 
 | Keep o | Different from a |
 | --- | --- |
@@ -222,7 +226,7 @@ Words such as tomato, schedule or the letter Z are said differently in American 
 
 ## Habits to avoid, and what to say instead
 
-You will hear these habits in American films, music and online videos. They are normal for native speakers, but if you copy them you become harder to understand, so say the Standard English version in the last column.
+You will hear these habits in American films, music and online videos. They are normal for Americans, but when a Kinyarwanda speaker copies them, listeners often hear a different word, so say the Standard English version in the last column.
 
 | Habit | Example | Sounds like | Say instead |
 | --- | --- | --- | --- |
@@ -291,7 +295,7 @@ Fifteen minutes a day on these five steps covers every rule in this guide.
 
 1. 3 minutes: r and l pairs (Rule 3). First one pair every 2 seconds, then at your normal speaking speed.
 2. 3 minutes: t words and numbers (Rules 1 and 2): twenty, thirty, thirteen, water, better.
-3. 3 minutes: vowel pairs (Rules 4 to 6): work and walk, not and nut, ship and sheep, can and can't.
+3. 3 minutes: vowel pairs (Rules 4 to 6): work and walk, hot and hut, ship and sheep, can and can't.
 4. 3 minutes: read one paragraph aloud and record it on your phone.
 5. 3 minutes: listen back and mark every word that broke a rule.
 

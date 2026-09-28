@@ -41,8 +41,8 @@ export const rules: Rule[] = [
   {
     slug: "short-o",
     number: 5,
-    title: "Keep the o in hot, not and job",
-    summary: "Say hot, not and job with the Kinyarwanda o, short.",
+    title: "Keep the o in hot, job and stop",
+    summary: "Say hot, job and stop with the Kinyarwanda o, short.",
     quickWin: true,
   },
   {
@@ -62,7 +62,7 @@ export const nav: NavSection[] = [
     title: "Start here",
     items: [
       { title: "Overview", href: "/" },
-      { title: "Sound names and spellings", href: "/guide/sound-names" },
+      { title: "How to read this guide", href: "/guide/sound-names" },
       { title: "Which style to use", href: "/guide/which-style" },
     ],
   },

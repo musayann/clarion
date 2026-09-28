@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, BookOpen, Ear, Mic, PenLine, Search, Timer, Zap } from "lucide-react";
+import { ArrowRight, BookOpen, Ear, Mic, PenLine, Search, Timer } from "lucide-react";
 
 import { EffectEffortChart } from "@/components/figures";
 import { Badge } from "@/components/ui/badge";
@@ -17,22 +17,57 @@ const reference = [
 
 export default function Home() {
   const quickWins = rules.filter((r) => r.quickWin);
+  const link = "font-medium text-primary underline underline-offset-4";
+
+  const steps = [
+    <>
+      <span className="font-medium">Start with the quick wins:</span> rules{" "}
+      {quickWins.map((r, i) => (
+        <span key={r.slug}>
+          {i > 0 && (i === quickWins.length - 1 ? " and " : ", ")}
+          <Link href={`/rules/${r.slug}`} className={link}>
+            {r.number}
+          </Link>
+        </span>
+      ))}
+      . Each is one change you can make this week.
+    </>,
+    <>
+      <span className="font-medium">Practise rules 3 and 4 every day</span> for 3 minutes each, using the{" "}
+      <Link href="/daily-practice" className={link}>
+        daily routine
+      </Link>
+      .
+    </>,
+    <>
+      <span className="font-medium">Say the Standard English version, not the American one.</span> Copied American sounds
+      are what most often make Rwandans hard to understand.{" "}
+      <Link href="/guide/which-style" className={link}>
+        Which style to use
+      </Link>
+    </>,
+  ];
 
   return (
     <div className="mx-auto w-full max-w-5xl px-4 py-10 sm:px-6 lg:px-8 lg:py-16">
       <section className="max-w-3xl">
-        <p className="text-sm font-semibold text-primary">A pronunciation guide for Kinyarwanda speakers</p>
+        <p className="text-sm font-semibold text-primary">Clear English Rwanda</p>
         <h1 className="mt-3 text-4xl font-bold tracking-tight text-balance sm:text-5xl">
-          Clear English
-          <span className="block text-muted-foreground">be understood everywhere</span>
+          An English Pronunciation Guide
+          <span className="block text-muted-foreground">For Kinyarwanda Speakers</span>
         </h1>
         <p className="mt-6 text-lg leading-8 text-pretty text-muted-foreground">
-          A reference for Rwandans who speak English, are learning it, or want to sound clearer. Six rules, the everyday
-          words where one sound changes the meaning, and audio for every example, all in{" "}
+          Kinyarwanda treats <em className="text-foreground">r</em> and <em className="text-foreground">l</em> as one sound, so English words like right and light, or grass
+          and glass, can sound the same. Copying an American accent makes it worse: the American <em className="text-foreground">t</em> sounds like
+          the Kinyarwanda <em className="text-foreground">r</em>, so writing is heard as riding.
+        </p>
+        <p className="mt-4 text-lg leading-8 text-pretty text-muted-foreground">
+          This guide teaches the{" "}
           <Link href="/guide/sound-names#what-standard-english-means" className="font-medium text-foreground underline underline-offset-4">
             Standard English
-          </Link>
-          .
+          </Link>{" "}
+          version of each sound, the one that is easiest for Kinyarwanda speakers to say clearly, in six short rules with audio for
+          every example.
         </p>
         <div className="mt-8 flex flex-wrap gap-3">
           <Link
@@ -48,59 +83,18 @@ export default function Home() {
       </section>
 
       <section className="mt-14 max-w-3xl">
-        <div>
-          <h2 className="text-2xl font-semibold tracking-tight">How to use this guide</h2>
-          <div className="mt-4 space-y-4 leading-7">
-            <p className="font-medium">
-              This guide has one goal: when you speak English, people understand you the first time. You do not need to
-              sound like a native speaker; you need the few sounds that decide whether people understand you.
-            </p>
-            <p>
-              <Link href="/guide/sound-names#what-standard-english-means" className="font-medium text-primary underline underline-offset-4">
-                Standard English
-              </Link>{" "}
-              is the pronunciation used in international English and in standard British English: the English of BBC World
-              Service newsreaders and of the &lsquo;UK&rsquo; audio in learner&apos;s dictionaries. It is not a London
-              accent or a British street accent: those drop the t in water (&lsquo;wa&apos;er&rsquo;), the opposite of
-              Rule 1.
-            </p>
-            <p>
-              Whenever this guide shows an American and a Standard English version of a sound, say the Standard English
-              version, and learn to understand the American one. American English is equally correct; this guide follows
-              one model so that you learn one consistent set of sounds.
-            </p>
-            <p>
-              For each sound in this guide, the Standard English version is easier for a Kinyarwanda speaker to say without
-              being misunderstood. Each rule explains why.
-            </p>
-          </div>
-        </div>
-        <div className="mt-8 rounded-xl border border-stress bg-stress/20 p-5">
-          <h2 className="flex items-center gap-2 text-lg font-semibold">
-            <Zap className="size-5" aria-hidden /> Quick wins
-          </h2>
-          <p className="mt-1 text-sm text-muted-foreground">Each one is a single change you can make this week.</p>
-          <ul className="mt-4 grid gap-x-6 gap-y-3 sm:grid-cols-2">
-            {quickWins.map((r) => (
-              <li key={r.slug}>
-                <Link href={`/rules/${r.slug}`} className="group block">
-                  <span className="font-medium group-hover:text-primary group-hover:underline">
-                    {r.number}. {r.title}
-                  </span>
-                  <span className="block text-sm text-muted-foreground">{r.summary}</span>
-                </Link>
-              </li>
-            ))}
-          </ul>
-          <p className="mt-4 border-t border-stress pt-3 text-sm">
-            Then practise <Link href="/rules/r-and-l" className="font-medium underline underline-offset-4">Rule 3 (r and l)</Link> and{" "}
-            <Link href="/rules/drop-the-r" className="font-medium underline underline-offset-4">Rule 4 (the əə vowel)</Link> for 3 minutes each, every day, using the{" "}
-            <Link href="/daily-practice" className="font-medium underline underline-offset-4">daily routine</Link>.
-          </p>
-        </div>
+        <h2 className="text-2xl font-semibold tracking-tight">How to use this guide</h2>
+        <ol className="mt-5 space-y-4">
+          {steps.map((step, i) => (
+            <li key={i} className="flex gap-3">
+              <span className="grid size-7 shrink-0 place-items-center rounded-full bg-primary/10 text-sm font-bold text-primary">
+                {i + 1}
+              </span>
+              <p className="pt-0.5 leading-7">{step}</p>
+            </li>
+          ))}
+        </ol>
       </section>
-
-      <EffectEffortChart />
 
       <section className="mt-14">
         <h2 className="text-2xl font-semibold tracking-tight">The six rules</h2>
@@ -125,6 +119,8 @@ export default function Home() {
           ))}
         </div>
       </section>
+
+      <EffectEffortChart />
 
       <section className="mt-14">
         <h2 className="text-2xl font-semibold tracking-tight">Reference</h2>

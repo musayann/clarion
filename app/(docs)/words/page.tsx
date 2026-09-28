@@ -21,8 +21,8 @@ export default function WordsPage() {
   return (
     <>
       <PageHeader eyebrow="Reference" title="Word finder">
-        Every word in the guide in one place. Type to filter, tap 🔊 to hear the Standard English pronunciation, and follow
-        the link to the rule it belongs to.
+        Every word in the guide in one place. Type to filter, tap 🔊 to listen, and follow the link to the rule it belongs
+        to. Copy the green ✓ Standard English form; the red ✗ American form is there so you recognise it, not to copy.
       </PageHeader>
       <Suspense>
         <WordFinder entries={entries} />

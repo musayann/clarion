@@ -3,7 +3,7 @@
 import { useMemo } from "react";
 import Link from "next/link";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import { Search } from "lucide-react";
+import { CircleCheck, CircleX, Search } from "lucide-react";
 
 import { Listen } from "@/components/listen";
 import { Respell } from "@/components/respell";
@@ -52,9 +52,19 @@ export function WordFinder({ entries }: { entries: Entry[] }) {
           className="h-11 pl-9 text-base"
         />
       </div>
-      <p className="mt-2 text-sm text-muted-foreground" aria-live="polite">
-        {count} {count === 1 ? "word" : "words"}
-      </p>
+      <div className="mt-3 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-muted-foreground">
+        <span aria-live="polite">
+          {count} {count === 1 ? "word" : "words"}
+        </span>
+        <span className="inline-flex items-center gap-1.5">
+          <CircleCheck className="size-3.5 text-good" aria-hidden />
+          Say this (Standard English)
+        </span>
+        <span className="inline-flex items-center gap-1.5">
+          <CircleX className="size-3.5 text-avoid" aria-hidden />
+          Recognise, don&apos;t copy (American)
+        </span>
+      </div>
 
       {sections.map(([title, list]) => (
         <section key={title} className="mt-8">
@@ -63,13 +73,15 @@ export function WordFinder({ entries }: { entries: Entry[] }) {
             {list.map((e) => (
               <li key={`${e.id}-${e.group}`} className="flex flex-wrap items-center gap-x-4 gap-y-1 px-4 py-2.5">
                 <span className="min-w-28 text-base font-medium">{e.word}</span>
-                <span className="inline-flex items-center gap-1">
+                <span className="inline-flex items-center gap-1.5 rounded-md bg-good-soft/40 py-0.5 pr-0.5 pl-2">
+                  <CircleCheck className="size-3.5 shrink-0 text-good" aria-label="Say this" />
                   {e.british && e.british !== e.word && <Respell text={e.british} />}
                   <Listen src={e.srcGB} label={e.word} />
                 </span>
                 {e.american && (
-                  <span className="inline-flex items-center gap-1 text-sm text-muted-foreground">
-                    US <Respell text={e.american} />
+                  <span className="inline-flex items-center gap-1.5 rounded-md bg-avoid-soft/40 py-0.5 pr-0.5 pl-2 text-sm text-muted-foreground">
+                    <CircleX className="size-3.5 shrink-0 text-avoid" aria-label="American: recognise, don't copy" />
+                    <Respell text={e.american} />
                     <Listen src={e.srcUS} label={e.word} accent="us" />
                   </span>
                 )}
