@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
+import { Letters } from "@/components/respell";
 import { flatNav } from "@/content/nav";
 
 export function PrevNext() {
@@ -20,7 +21,7 @@ export function PrevNext() {
           <span className="flex items-center gap-1 text-xs text-muted-foreground">
             <ChevronLeft className="size-3.5" aria-hidden /> Previous
           </span>
-          <span className="mt-1 block font-medium group-hover:text-primary">{prev.title}</span>
+          <span className="mt-1 block font-medium group-hover:text-primary"><Letters text={prev.title} /></span>
         </Link>
       ) : (
         <span />
@@ -33,7 +34,7 @@ export function PrevNext() {
           <span className="flex items-center justify-end gap-1 text-xs text-muted-foreground">
             Next <ChevronRight className="size-3.5" aria-hidden />
           </span>
-          <span className="mt-1 block font-medium group-hover:text-primary">{next.title}</span>
+          <span className="mt-1 block font-medium group-hover:text-primary"><Letters text={next.title} /></span>
         </Link>
       )}
     </nav>

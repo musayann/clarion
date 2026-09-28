@@ -1,4 +1,6 @@
-import { americanDifferences, americanHabits, meaningChanges, quickAnswers } from "./comparisons";
+import { silentRWords } from "../../components/figures/data";
+
+import { americanDifferences, meaningChanges, quickAnswers } from "./comparisons";
 import { pairGroups } from "./pairs";
 import { sentenceGroups } from "./sentences";
 import type { Accent, Word } from "./types";
@@ -33,7 +35,7 @@ export function allClips(): Clip[] {
     ...quickAnswers.map((q) => q.examples),
     ...meaningChanges.flatMap((m) => [m.say, m.mistake, ...(m.heard ? [m.heard] : [])]),
     ...americanDifferences.flatMap((d) => [d.say, d.american, ...(d.heard ? [d.heard] : [])]),
-    ...americanHabits.map((h) => h.words),
+    ...silentRWords.filter((w) => w.id.startsWith("sr-")),
   ];
   const clips = [
     ...words.flatMap(clipsForWord),

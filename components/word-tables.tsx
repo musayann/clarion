@@ -1,9 +1,9 @@
 import Link from "next/link";
-import { ArrowUpRight, CircleCheck, Ear } from "lucide-react";
+import { ArrowUpRight, CircleAlert, CircleCheck, Ear } from "lucide-react";
 import { cn } from "cn";
 
 import { Listen } from "@/components/listen";
-import { Respell } from "@/components/respell";
+import { Letters, plainText, Respell } from "@/components/respell";
 import {
   Table,
   TableBody,
@@ -12,7 +12,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { americanDifferences, americanHabits, meaningChanges, quickAnswers } from "@/content/data/comparisons";
+import { americanDifferences, meaningChanges, quickAnswers } from "@/content/data/comparisons";
 import { pairGroups } from "@/content/data/pairs";
 import { sentenceGroups } from "@/content/data/sentences";
 import type { Word } from "@/content/data/types";
@@ -42,7 +42,7 @@ function TableFrame({ id, children, caption }: { id?: string; children: React.Re
   return (
     <figure id={id} className="my-6 scroll-mt-20 overflow-hidden rounded-xl border bg-card">
       {caption && (
-        <figcaption className="border-b bg-muted/50 px-4 py-2 text-sm font-medium">{caption}</figcaption>
+        <figcaption className="border-b bg-muted/50 px-4 py-2 text-sm font-medium"><Letters text={caption} /></figcaption>
       )}
       {children}
     </figure>
@@ -159,7 +159,7 @@ export function WordTable({ group: groupId, dictionary = true }: { group: string
 export function WordList({ group: groupId }: { group: string }) {
   const group = find(wordGroups, groupId, "word group");
   return (
-    <ul id={groupAnchor(group.id)} className="my-5 flex scroll-mt-20 flex-wrap gap-2" aria-label={group.title}>
+    <ul id={groupAnchor(group.id)} className="my-5 flex scroll-mt-20 flex-wrap gap-2" aria-label={plainText(group.title)}>
       {group.words.map((w) => (
         <li
           key={w.id}
@@ -196,8 +196,27 @@ export function PairTable({ group: groupId }: { group: string }) {
       <Table>
         <TableHeader>
           <TableRow className="hover:bg-transparent">
-            <TableHead className={headClass}>{group.labels[0]}</TableHead>
-            <TableHead className={headClass}>{group.labels[1]}</TableHead>
+            {group.contrast ? (
+              <>
+                <TableHead className={cn(headClass, "bg-good-soft text-good")}>
+                  <span className="inline-flex items-center gap-1.5">
+                    <CircleCheck className="size-3.5" aria-hidden />
+                    <Letters text={group.labels[0]} />
+                  </span>
+                </TableHead>
+                <TableHead className={cn(headClass, "bg-caution-soft text-caution")}>
+                  <span className="inline-flex items-center gap-1.5">
+                    <CircleAlert className="size-3.5" aria-hidden />
+                    <Letters text={group.labels[1]} />
+                  </span>
+                </TableHead>
+              </>
+            ) : (
+              <>
+                <TableHead className={headClass}><Letters text={group.labels[0]} /></TableHead>
+                <TableHead className={headClass}><Letters text={group.labels[1]} /></TableHead>
+              </>
+            )}
             <TableHead className={cn(headClass, "w-0 text-right")}>
               <span className="sr-only">Play both</span>
             </TableHead>
@@ -206,10 +225,10 @@ export function PairTable({ group: groupId }: { group: string }) {
         <TableBody>
           {group.pairs.map(({ a, b }) => (
             <TableRow key={a.id}>
-              <TableCell className={cellClass}>
+              <TableCell className={cn(cellClass, group.contrast && "bg-good-soft/40")}>
                 <PairCell w={a} />
               </TableCell>
-              <TableCell className={cellClass}>
+              <TableCell className={cn(cellClass, group.contrast && "bg-caution-soft/40")}>
                 <PairCell w={b} />
               </TableCell>
               <TableCell className={cn(cellClass, "text-right")}>
@@ -265,7 +284,7 @@ export function QuickAnswersTable() {
           {quickAnswers.map((q) => (
             <TableRow key={q.examples.id} className="align-top">
               <TableCell className={cn(cellClass, "min-w-36 whitespace-normal")}>
-                <div className="font-medium">{q.sound}</div>
+                <div className="font-medium"><Letters text={q.sound} /></div>
                 <div className="text-sm text-muted-foreground">{q.examples.word}</div>
                 {q.rule && (
                   <Link href={ruleHref(q.rule)} className="text-xs text-primary underline-offset-4 hover:underline">
@@ -278,10 +297,10 @@ export function QuickAnswersTable() {
                   <Respell text={q.examples.british!} className="text-base font-medium" />
                   <Listen src={clipSrc("gb", q.examples.id)} label={q.examples.word} />
                 </span>
-                {q.britishNote && <div className="text-xs text-muted-foreground">({q.britishNote})</div>}
+                {q.britishNote && <div className="text-xs text-muted-foreground">(<Letters text={q.britishNote} />)</div>}
                 {q.sayNote && <div className="text-xs font-medium text-good">{q.sayNote}</div>}
               </TableCell>
-              <TableCell className={cn(cellClass, "min-w-48 whitespace-normal text-sm")}>{q.check}</TableCell>
+              <TableCell className={cn(cellClass, "min-w-48 whitespace-normal text-sm")}><Letters text={q.check} /></TableCell>
               <TableCell className={cn(cellClass, compareCellClass, "text-sm")}>
                 {q.same ? (
                   "Same in both"
@@ -291,7 +310,7 @@ export function QuickAnswersTable() {
                       <Respell text={q.examples.american!} />
                       <Listen src={clipSrc("us", q.examples.id)} label={q.examples.word} accent="us" />
                     </span>
-                    {q.americanNote && <div className="text-xs">({q.americanNote})</div>}
+                    {q.americanNote && <div className="text-xs">(<Letters text={q.americanNote} />)</div>}
                   </>
                 )}
               </TableCell>
@@ -348,7 +367,7 @@ export function MeaningChangeTable() {
                 <TableCell className={cellClass}>
                   <Link
                     href={ruleHref(rule.slug)}
-                    title={`Rule ${rule.number}: ${rule.title}`}
+                    title={plainText(`Rule ${rule.number}: ${rule.title}`)}
                     className="text-sm text-primary underline-offset-4 hover:underline"
                   >
                     Rule {rule.number}
@@ -371,9 +390,9 @@ export function AmericanDifferenceTable() {
         <TableHeader>
           <TableRow className="hover:bg-transparent">
             <TableHead className={headClass}>Word</TableHead>
-            <VerdictHead verdict="say" label="Say this" detail="Standard English" />
-            <VerdictHead verdict="compare" label="Also heard" detail="American" />
-            <TableHead className={headClass}>Some listeners may hear</TableHead>
+            <VerdictHead verdict="say" label="Say this" detail="Standard English" wrap />
+            <VerdictHead verdict="compare" label="Also heard" detail="American" wrap />
+            <TableHead className={cn(headClass, "h-auto min-w-28 py-2 whitespace-normal")}>Some listeners may hear</TableHead>
             <TableHead className={headClass}>Rule</TableHead>
           </TableRow>
         </TableHeader>
@@ -408,7 +427,7 @@ export function AmericanDifferenceTable() {
                 <TableCell className={cellClass}>
                   <Link
                     href={ruleHref(rule.slug)}
-                    title={`Rule ${rule.number}: ${rule.title}`}
+                    title={plainText(`Rule ${rule.number}: ${rule.title}`)}
                     className="text-sm text-primary underline-offset-4 hover:underline"
                   >
                     Rule {rule.number}
@@ -417,44 +436,6 @@ export function AmericanDifferenceTable() {
               </TableRow>
             );
           })}
-        </TableBody>
-      </Table>
-    </TableFrame>
-  );
-}
-
-/** Habit | Example | Also heard (American clip) | Say this (Standard English clip) */
-export function AmericanHabitsTable() {
-  return (
-    <TableFrame id="american-habits">
-      <Table>
-        <TableHeader>
-          <TableRow className="hover:bg-transparent">
-            <TableHead className={headClass}>Habit</TableHead>
-            <TableHead className={headClass}>Example</TableHead>
-            <VerdictHead verdict="compare" label="Also heard" detail="American" />
-            <VerdictHead verdict="say" label="Say this" detail="Standard English" />
-          </TableRow>
-        </TableHeader>
-        <TableBody>
-          {americanHabits.map((h) => (
-            <TableRow key={h.words.id} className="align-top">
-              <TableCell className={cn(cellClass, "min-w-40 whitespace-normal font-medium")}>{h.habit}</TableCell>
-              <TableCell className={cn(cellClass, "min-w-40 whitespace-normal")}>{h.example}</TableCell>
-              <TableCell className={cn(cellClass, compareCellClass)}>
-                <span className="inline-flex items-center gap-1">
-                  <Respell text={h.words.american!} className="whitespace-normal" />
-                  <Listen src={clipSrc("us", h.words.id)} label={h.example} accent="us" />
-                </span>
-              </TableCell>
-              <TableCell className={cn(cellClass, sayCellClass)}>
-                <span className="inline-flex items-center gap-1">
-                  <Respell text={h.words.british!} className="whitespace-normal" />
-                  <Listen src={clipSrc("gb", h.words.id)} label={h.example} />
-                </span>
-              </TableCell>
-            </TableRow>
-          ))}
         </TableBody>
       </Table>
     </TableFrame>

@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, BookOpen, Ear, Mic, PenLine, Search, Timer } from "lucide-react";
+import { ArrowRight, Ear, Mic, PenLine, Search, Timer } from "lucide-react";
 
 import { EffectEffortChart } from "@/components/figures";
 import { course, JsonLd } from "@/components/json-ld";
+import { Letters } from "@/components/respell";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { rules } from "@/content/nav";
@@ -14,7 +15,6 @@ export const metadata: Metadata = pageMetadata({ description: siteDescription, h
 const reference = [
   { href: "/guide/which-style", title: "Which style to use", text: "Quick answers for every sound, and how to check.", icon: Ear },
   { href: "/everyday-words", title: "Words that change meaning", text: "writing or riding, right or light, sheep or ship.", icon: Mic },
-  { href: "/recognise-american", title: "Listen and compare", text: "American sounds you will hear, next to what to say.", icon: BookOpen },
   { href: "/writing", title: "Writing: one spelling system", text: "Spelling, dates, false friends and idioms.", icon: PenLine },
   { href: "/daily-practice", title: "Daily practice", text: "15 minutes a day covers every rule.", icon: Timer },
   { href: "/words", title: "Word finder", text: "Look up any word in the guide, with audio.", icon: Search },
@@ -133,8 +133,8 @@ export default function Home() {
                       <Badge variant="outline">Daily practice</Badge>
                     )}
                   </div>
-                  <CardTitle className="mt-2 text-base group-hover:text-primary">{r.title}</CardTitle>
-                  <CardDescription>{r.summary}</CardDescription>
+                  <CardTitle className="mt-2 text-base group-hover:text-primary"><Letters text={r.title} /></CardTitle>
+                  <CardDescription><Letters text={r.summary} /></CardDescription>
                 </CardHeader>
               </Card>
             </Link>

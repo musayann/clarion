@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { FileText, Search, Type } from "lucide-react";
 
-import { Respell } from "@/components/respell";
+import { Letters, plainText, Respell } from "@/components/respell";
 import { Button } from "@/components/ui/button";
 import {
   CommandDialog,
@@ -66,7 +66,7 @@ export function SearchCommand({ words }: { words: IndexEntry[] }) {
               <CommandItem
                 key={`${w.id}-${w.group}`}
                 value={`${w.word} ${w.id} ${w.group}`}
-                keywords={[w.sectionTitle]}
+                keywords={[plainText(w.sectionTitle)]}
                 onSelect={() => go(w.href)}
               >
                 <Type aria-hidden />
@@ -76,15 +76,15 @@ export function SearchCommand({ words }: { words: IndexEntry[] }) {
                     <Respell text={w.british} />
                   </span>
                 )}
-                <span className="ml-auto truncate text-xs text-muted-foreground">{w.sectionTitle}</span>
+                <span className="ml-auto truncate text-xs text-muted-foreground"><Letters text={w.sectionTitle} /></span>
               </CommandItem>
             ))}
           </CommandGroup>
           <CommandGroup heading="Pages">
             {flatNav.map((p) => (
-              <CommandItem key={p.href} value={`page ${p.title}`} onSelect={() => go(p.href)}>
+              <CommandItem key={p.href} value={`page ${plainText(p.title)}`} onSelect={() => go(p.href)}>
                 <FileText aria-hidden />
-                {p.title}
+                <Letters text={p.title} />
               </CommandItem>
             ))}
           </CommandGroup>

@@ -1,3 +1,4 @@
+import { Letters } from "@/components/respell";
 import { Badge } from "@/components/ui/badge";
 
 type PageHeaderProps = {
@@ -18,7 +19,7 @@ export function PageHeader({ eyebrow, title, children, quickWin }: PageHeaderPro
           )}
         </div>
       )}
-      <h1 className="text-3xl font-bold tracking-tight text-balance sm:text-4xl">{title}</h1>
+      <h1 className="text-3xl font-bold tracking-tight text-balance sm:text-4xl"><Letters text={title} /></h1>
       {children && <div className="text-lg leading-8 text-pretty text-muted-foreground">{children}</div>}
     </header>
   );

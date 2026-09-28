@@ -47,38 +47,6 @@
     "src": "/audio/gb/er-work.mp3",
     "hash": "d0d8654b5dcd"
   },
-  "gb/habit-aa-for-o": {
-    "src": "/audio/gb/habit-aa-for-o.mp3",
-    "hash": "30fdb8651333"
-  },
-  "gb/habit-cant": {
-    "src": "/audio/gb/habit-cant.mp3",
-    "hash": "6bf955ae7f6c"
-  },
-  "gb/habit-drop-t": {
-    "src": "/audio/gb/habit-drop-t.mp3",
-    "hash": "2cb583eb5916"
-  },
-  "gb/habit-join": {
-    "src": "/audio/gb/habit-join.mp3",
-    "hash": "098d39cef965"
-  },
-  "gb/habit-r-after-vowel": {
-    "src": "/audio/gb/habit-r-after-vowel.mp3",
-    "hash": "7d4839f33346"
-  },
-  "gb/habit-stop-t": {
-    "src": "/audio/gb/habit-stop-t.mp3",
-    "hash": "d326aecaa299"
-  },
-  "gb/habit-tap-t": {
-    "src": "/audio/gb/habit-tap-t.mp3",
-    "hash": "6b4981920883"
-  },
-  "gb/habit-ty-numbers": {
-    "src": "/audio/gb/habit-ty-numbers.mp3",
-    "hash": "36fd2dc60110"
-  },
   "gb/lr-far-away": {
     "src": "/audio/gb/lr-far-away.mp3",
     "hash": "197d92d85088"
@@ -675,6 +643,14 @@
     "src": "/audio/gb/sl-sit.mp3",
     "hash": "f5410e50975c"
   },
+  "gb/sr-car": {
+    "src": "/audio/gb/sr-car.mp3",
+    "hash": "f95e71e73ac4"
+  },
+  "gb/sr-more": {
+    "src": "/audio/gb/sr-more.mp3",
+    "hash": "e0ee2a44f54f"
+  },
   "gb/st-castle": {
     "src": "/audio/gb/st-castle.mp3",
     "hash": "704b6f274a9f"
@@ -711,6 +687,10 @@
     "src": "/audio/gb/t-better.mp3",
     "hash": "9e3de1dcb468"
   },
+  "gb/t-button": {
+    "src": "/audio/gb/t-button.mp3",
+    "hash": "16c9e6fef502"
+  },
   "gb/t-city": {
     "src": "/audio/gb/t-city.mp3",
     "hash": "153aac91cd80"
@@ -718,6 +698,10 @@
   "gb/t-computer": {
     "src": "/audio/gb/t-computer.mp3",
     "hash": "637722a404d9"
+  },
+  "gb/t-important": {
+    "src": "/audio/gb/t-important.mp3",
+    "hash": "03babd5ae7b6"
   },
   "gb/t-internet": {
     "src": "/audio/gb/t-internet.mp3",
@@ -735,37 +719,37 @@
     "src": "/audio/gb/t-water.mp3",
     "hash": "4d744eff1b01"
   },
-  "us/habit-aa-for-o": {
-    "src": "/audio/us/habit-aa-for-o.mp3",
-    "hash": "76d089898cff"
+  "gb/th-fifth": {
+    "src": "/audio/gb/th-fifth.mp3",
+    "hash": "1922877a843c"
   },
-  "us/habit-cant": {
-    "src": "/audio/us/habit-cant.mp3",
-    "hash": "76ed9158c89d"
+  "gb/th-fourth": {
+    "src": "/audio/gb/th-fourth.mp3",
+    "hash": "fe29eba6f608"
   },
-  "us/habit-drop-t": {
-    "src": "/audio/us/habit-drop-t.mp3",
-    "hash": "b92e0c659eab"
+  "gb/th-free": {
+    "src": "/audio/gb/th-free.mp3",
+    "hash": "5d05f83a5ac8"
   },
-  "us/habit-join": {
-    "src": "/audio/us/habit-join.mp3",
-    "hash": "d17d0ccb509b"
+  "gb/th-third": {
+    "src": "/audio/gb/th-third.mp3",
+    "hash": "043b33ca47ed"
   },
-  "us/habit-r-after-vowel": {
-    "src": "/audio/us/habit-r-after-vowel.mp3",
-    "hash": "76780dd3ae7a"
+  "gb/th-thousand": {
+    "src": "/audio/gb/th-thousand.mp3",
+    "hash": "e5cd8f6b3ea5"
   },
-  "us/habit-stop-t": {
-    "src": "/audio/us/habit-stop-t.mp3",
-    "hash": "5f7c15e6788f"
+  "gb/th-three-f": {
+    "src": "/audio/gb/th-three-f.mp3",
+    "hash": "6c258e4fac49"
   },
-  "us/habit-tap-t": {
-    "src": "/audio/us/habit-tap-t.mp3",
-    "hash": "06b75b437bf6"
+  "gb/th-three-t": {
+    "src": "/audio/gb/th-three-t.mp3",
+    "hash": "6c258e4fac49"
   },
-  "us/habit-ty-numbers": {
-    "src": "/audio/us/habit-ty-numbers.mp3",
-    "hash": "f1828f9d3219"
+  "gb/th-tree": {
+    "src": "/audio/gb/th-tree.mp3",
+    "hash": "ecca9ad05979"
   },
   "us/mc-hot-us": {
     "src": "/audio/us/mc-hot-us.mp3",
@@ -839,6 +823,10 @@
     "src": "/audio/us/t-better.mp3",
     "hash": "f76e25785f68"
   },
+  "us/t-button": {
+    "src": "/audio/us/t-button.mp3",
+    "hash": "305e7ae1b134"
+  },
   "us/t-city": {
     "src": "/audio/us/t-city.mp3",
     "hash": "31194efddef6"
@@ -846,6 +834,10 @@
   "us/t-computer": {
     "src": "/audio/us/t-computer.mp3",
     "hash": "f03e15a0c07b"
+  },
+  "us/t-important": {
+    "src": "/audio/us/t-important.mp3",
+    "hash": "55430f696df0"
   },
   "us/t-internet": {
     "src": "/audio/us/t-internet.mp3",

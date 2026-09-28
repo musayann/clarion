@@ -1,7 +1,7 @@
 import "server-only";
 
-import { figureText, quadrants, soundCounts, stressPairs, vowelLandings } from "@/components/figures/data";
-import { americanDifferences, americanHabits, meaningChanges, quickAnswers } from "@/content/data/comparisons";
+import { figureText, type Landing, quadrants, silentRWords, stressPairs, tLandings, vowelLandings } from "@/components/figures/data";
+import { americanDifferences, meaningChanges, quickAnswers } from "@/content/data/comparisons";
 import { pairGroups } from "@/content/data/pairs";
 import { sentenceGroups } from "@/content/data/sentences";
 import type { Accent, Word } from "@/content/data/types";
@@ -118,13 +118,6 @@ function americanDifferenceTable() {
   );
 }
 
-function americanHabitsTable() {
-  return table(
-    ["Habit", "Example", "Also heard (American)", "Say this (Standard English)"],
-    americanHabits.map((h) => [h.habit, h.example, us(h.words), say(h.words)]),
-  );
-}
-
 const figure = (text: { title: string; caption: string }, body: string) =>
   `**Figure: ${text.title}.** ${text.caption}\n\n${body}`;
 
@@ -149,25 +142,26 @@ function teenTyStress() {
     n.syllables.map((s, i) => (i === n.stress ? `**${s}**` : s)).join("-");
   return figure(
     figureText.teenTy,
-    stressPairs.map((pair) => `- ${pair.map((n) => `${n.n}: ${spell(n)}`).join(" versus ")}`).join("\n"),
+    stressPairs.map((pair) => `- ${pair.map((n) => `${n.word} (${n.n}): ${spell(n)}`).join(" versus ")}`).join("\n"),
   );
 }
 
-function soundCountChart() {
+function silentR() {
   return figure(
-    figureText.soundCount,
-    table(
-      ["Word", "Standard English", "Sounds", "American", "Sounds", "Ends in a vowel (Standard English)"],
-      soundCounts.map((s) => [s.word, s.gb, String(s.gbN), s.us, String(s.usN), s.endsInVowel ? "yes" : "no"]),
-    ),
+    figureText.silentR,
+    silentRWords.map((w) => `- ${w.word.replaceAll("r", "~~r~~")} → ${w.british}${w.endsInVowel ? " ●" : ""}`).join("\n"),
   );
 }
+
+const startingPoints = (landings: Landing[]) =>
+  landings.map((l) => `- ${l.label}: rough starting point Kinyarwanda ${l.sound} (${l.note})`).join("\n");
 
 function vowelMap() {
-  return figure(
-    figureText.vowelMap,
-    vowelLandings.map((l) => `- ${l.label}: rough starting point Kinyarwanda ${l.vowel} (${l.note})`).join("\n"),
-  );
+  return figure(figureText.vowelMap, startingPoints(vowelLandings));
+}
+
+function tStartMap() {
+  return figure(figureText.tStart, startingPoints(tLandings));
 }
 
 /** Flow-level components with no children, keyed by their MDX name. */
@@ -179,12 +173,12 @@ export const blocks: Record<string, (props: Props) => string> = {
   QuickAnswersTable: quickAnswersTable,
   MeaningChangeTable: meaningChangeTable,
   AmericanDifferenceTable: americanDifferenceTable,
-  AmericanHabitsTable: americanHabitsTable,
   EffectEffortChart: effectEffortChart,
   TRuleFlow: tRuleFlow,
   TeenTyStress: teenTyStress,
-  SoundCountChart: soundCountChart,
+  SilentR: silentR,
   VowelMap: vowelMap,
+  TStartMap: tStartMap,
 };
 
 export { audio, mdLink, table };

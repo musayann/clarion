@@ -6,11 +6,10 @@ import { cn } from "cn";
 import { Callout } from "@/components/callout";
 import * as Figures from "@/components/figures";
 import { PageHeader } from "@/components/page-header";
-import { Sp } from "@/components/respell";
+import { Sound, Sp } from "@/components/respell";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import {
   AmericanDifferenceTable,
-  AmericanHabitsTable,
   MeaningChangeTable,
   Hear,
   PairTable,
@@ -50,6 +49,8 @@ const components: MDXComponents = {
         {children}
       </a>
     ),
+  // *r*, *l* and *t* name a sound; any other *text* stays plain italics.
+  em: ({ children }) => (typeof children === "string" && /^[rlt]$/.test(children) ? <Sound>{children}</Sound> : <em>{children}</em>),
   strong: ({ children }) => <strong className="font-semibold">{children}</strong>,
   blockquote: ({ children }) => <blockquote className="my-6 border-l-2 pl-4 italic text-muted-foreground">{children}</blockquote>,
   hr: () => <hr className="my-10" />,
@@ -78,7 +79,6 @@ const components: MDXComponents = {
   PairTable,
   PracticeSentences,
   QuickAnswersTable,
-  AmericanHabitsTable,
   AmericanDifferenceTable,
   MeaningChangeTable,
   ...Figures,

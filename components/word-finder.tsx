@@ -6,7 +6,7 @@ import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { CircleCheck, Ear, Search } from "lucide-react";
 
 import { Listen } from "@/components/listen";
-import { Respell } from "@/components/respell";
+import { Letters, Respell } from "@/components/respell";
 import { Input } from "@/components/ui/input";
 import type { IndexEntry } from "@/lib/word-index";
 
@@ -84,7 +84,7 @@ export function WordFinderView({
 
       {sections.map(([title, list]) => (
         <section key={title} className="mt-8">
-          <h2 className="mb-3 text-sm font-semibold uppercase tracking-wide text-muted-foreground">{title}</h2>
+          <h2 className="mb-3 text-sm font-semibold uppercase tracking-wide text-muted-foreground"><Letters text={title} /></h2>
           <ul className="divide-y rounded-xl border bg-card">
             {list.map((e) => (
               <li key={`${e.id}-${e.group}`} className="flex flex-wrap items-center gap-x-4 gap-y-1 px-4 py-2.5">

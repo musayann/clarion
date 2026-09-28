@@ -13,8 +13,8 @@ export const rules: Rule[] = [
   {
     slug: "say-every-t",
     number: 1,
-    title: "Use a clear t",
-    summary: "Practise a full t in words such as water, better and twenty.",
+    title: "Use a clear *t*",
+    summary: "Practise a full *t* in words such as water, better and twenty.",
     quickWin: true,
   },
   {
@@ -27,15 +27,15 @@ export const rules: Rule[] = [
   {
     slug: "r-and-l",
     number: 3,
-    title: "Keep r and l apart",
-    summary: "l: the tongue touches the ridge and stays. r: the tongue touches nothing.",
+    title: "Keep *r* and *l* apart",
+    summary: "*l*: the tongue touches the ridge and stays. *r*: the tongue touches nothing.",
     quickWin: false,
   },
   {
     slug: "drop-the-r",
     number: 4,
-    title: "After a vowel, drop the r",
-    summary: "Say r only when a vowel sound comes straight after it.",
+    title: "After a vowel, drop the *r*",
+    summary: "Say *r* only when a vowel sound comes straight after it.",
     quickWin: false,
   },
   {
@@ -76,7 +76,6 @@ export const nav: NavSection[] = [
     title: "Reference",
     items: [
       { title: "Words that change meaning", href: "/everyday-words" },
-      { title: "Listen and compare", href: "/recognise-american" },
       { title: "Writing: one spelling system", href: "/writing" },
       { title: "Daily practice", href: "/daily-practice" },
       { title: "Word finder", href: "/words" },

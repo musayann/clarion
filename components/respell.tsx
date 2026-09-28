@@ -44,3 +44,27 @@ export function Sp({ children }: { children: React.ReactNode }) {
     </span>
   );
 }
+
+/** A sound letter such as r, l or t, set in the serif italic so it stands out from the text. */
+export function Sound({ children }: { children: React.ReactNode }) {
+  return <em className="font-sound text-[1.1em] leading-none">{children}</em>;
+}
+
+/**
+ * Renders plain data text in which a sound letter is marked like markdown,
+ * e.g. "full *t*": the letter between single * is shown as a <Sound>.
+ */
+export function Letters({ text }: { text: string }) {
+  // One span, so a flex parent (sidebar, search) doesn't space the pieces apart.
+  return (
+    <span>
+      {text
+        .split(/(\*[^*]+\*)/g)
+        .filter(Boolean)
+        .map((part, i) => (part.startsWith("*") ? <Sound key={i}>{part.slice(1, -1)}</Sound> : part))}
+    </span>
+  );
+}
+
+/** The same text without the * marks, for page titles, labels and search. */
+export const plainText = (text: string) => text.replaceAll("*", "");

@@ -16,6 +16,7 @@ import {
   SidebarMenuItem,
   useSidebar,
 } from "@/components/ui/sidebar";
+import { Letters } from "@/components/respell";
 import { nav } from "@/content/nav";
 
 /** The ə with sound waves. Same drawing as app/icon.svg; fixed brand colours in both themes. */
@@ -69,7 +70,7 @@ export function AppSidebar() {
                   <SidebarMenuItem key={item.href}>
                     <SidebarMenuButton asChild isActive={pathname === item.href}>
                       <Link href={item.href} onClick={() => setOpenMobile(false)}>
-                        {item.title}
+                        <Letters text={item.title} />
                       </Link>
                     </SidebarMenuButton>
                   </SidebarMenuItem>

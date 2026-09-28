@@ -12,8 +12,7 @@ export type RuleSlug =
 export type Section =
   | RuleSlug
   | "which-style"
-  | "everyday-words"
-  | "recognise-american";
+  | "everyday-words";
 
 /**
  * A spoken item. `british` and `american` are the guide's sound spellings,
@@ -52,6 +51,8 @@ export type PairGroup = {
   section: Section;
   title: string;
   labels: [string, string];
+  /** The first word is the sound to say, the second the one it must not become. */
+  contrast?: boolean;
   pairs: Pair[];
 };
 

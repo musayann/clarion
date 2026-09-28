@@ -3,6 +3,7 @@
 import { usePathname } from "next/navigation";
 
 import { JsonLd } from "@/components/json-ld";
+import { plainText } from "@/components/respell";
 import { flatNav } from "@/content/nav";
 import { absoluteUrl } from "@/lib/site";
 
@@ -14,7 +15,7 @@ export function BreadcrumbsJsonLd() {
 
   const crumbs = [
     { name: "Overview", url: absoluteUrl("/") },
-    { name: page.title, url: absoluteUrl(page.href) },
+    { name: plainText(page.title), url: absoluteUrl(page.href) },
   ];
   return (
     <JsonLd

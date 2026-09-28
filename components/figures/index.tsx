@@ -1,75 +1,33 @@
+import { Fragment } from "react";
 import Link from "next/link";
 import { ArrowDown, ArrowRight } from "lucide-react";
 import { cn } from "cn";
 
-import { figureText, kinyaVowels, quadrants, soundCounts, stressPairs, vowelLandings } from "./data";
+import { Listen } from "@/components/listen";
+import { Letters, Respell } from "@/components/respell";
+import { clipSrc } from "@/lib/audio";
+
+import { figureText, kinyaConsonants, kinyaVowels, type Landing, quadrants, silentRWords, stressPairs, tLandings, vowelLandings } from "./data";
 
 function Figure({
   title,
   caption,
   children,
-  table,
 }: {
   title: string;
   caption?: React.ReactNode;
   children: React.ReactNode;
-  /** Same data as a table, for screen readers and anyone who prefers numbers. */
-  table?: React.ReactNode;
 }) {
   return (
     <figure className="my-8 rounded-xl border bg-card p-4 sm:p-6">
       <figcaption className="mb-4">
-        <p className="font-semibold">{title}</p>
-        {caption && <p className="mt-1 text-sm text-muted-foreground">{caption}</p>}
+        <p className="font-semibold"><Letters text={title} /></p>
+        {caption && <p className="mt-1 text-sm text-muted-foreground">{typeof caption === "string" ? <Letters text={caption} /> : caption}</p>}
       </figcaption>
       {children}
-      {table && (
-        <details className="mt-4 text-sm">
-          <summary className="cursor-pointer text-muted-foreground hover:text-foreground">Show as a table</summary>
-          <div className="mt-3 overflow-x-auto">{table}</div>
-        </details>
-      )}
     </figure>
   );
 }
-
-function Legend({ items }: { items: { label: string; color: string }[] }) {
-  return (
-    <ul className="mb-3 flex flex-wrap gap-4 text-xs text-muted-foreground">
-      {items.map((i) => (
-        <li key={i.label} className="flex items-center gap-1.5">
-          <span className="size-2.5 rounded-full" style={{ background: i.color }} aria-hidden />
-          {i.label}
-        </li>
-      ))}
-    </ul>
-  );
-}
-
-const simpleTable = (head: string[], rows: (string | number)[][]) => (
-  <table className="w-full text-left">
-    <thead>
-      <tr>
-        {head.map((h) => (
-          <th key={h} className="border-b py-1 pr-4 font-medium">
-            {h}
-          </th>
-        ))}
-      </tr>
-    </thead>
-    <tbody>
-      {rows.map((r, i) => (
-        <tr key={i}>
-          {r.map((c, j) => (
-            <td key={j} className="border-b py-1 pr-4 tabular-nums">
-              {c}
-            </td>
-          ))}
-        </tr>
-      ))}
-    </tbody>
-  </table>
-);
 
 /* 1. Our suggested practice priorities --------------------------------------------------- */
 
@@ -125,10 +83,10 @@ export function EffectEffortChart() {
                       />
                       {item.href ? (
                         <Link href={item.href} className="underline-offset-4 hover:text-primary hover:underline">
-                          {item.label}
+                          <Letters text={item.label} />
                         </Link>
                       ) : (
-                        <span>{item.label}</span>
+                        <span><Letters text={item.label} /></span>
                       )}
                     </li>
                   ))}
@@ -179,28 +137,34 @@ export function TeenTyStress() {
     >
       <div className="grid gap-4 sm:grid-cols-3">
         {stressPairs.map((pair) => (
-          <div key={pair[0].n} className="space-y-3 rounded-lg bg-muted/40 p-3">
-            {pair.map((num) => (
-              <div key={num.n} className="flex items-end gap-2">
-                <span className="w-7 text-sm tabular-nums text-muted-foreground">{num.n}</span>
-                {num.syllables.map((s, i) => {
-                  const stressed = i === num.stress;
-                  return (
-                    <span
-                      key={i}
-                      className={cn(
-                        "rounded-md px-2 text-center",
-                        stressed
-                          ? "-translate-y-1.5 bg-stress py-1.5 text-lg font-bold text-stress-foreground"
-                          : "border bg-card py-1 text-sm text-muted-foreground",
-                        stressed && s.endsWith("iin") && "min-w-20",
-                      )}
-                    >
-                      {s}
-                    </span>
-                  );
-                })}
-              </div>
+          <div key={pair[0].n} className="grid grid-cols-[auto_1fr] items-end gap-x-3 rounded-lg bg-muted/40 px-3 py-1">
+            {pair.map((num, row) => (
+              <Fragment key={num.n}>
+                {row > 0 && <div className="col-span-2 border-t" aria-hidden />}
+                <span className="flex gap-1.5 pb-3.5 text-sm">
+                  <span className="tabular-nums text-muted-foreground">{num.n}</span>
+                  <span className="font-medium">{num.word}</span>
+                </span>
+                <span className="flex items-end gap-1.5 py-2 pt-4">
+                  {num.syllables.map((s, i) => {
+                    const stressed = i === num.stress;
+                    return (
+                      <span
+                        key={i}
+                        className={cn(
+                          "rounded-md px-2 text-center",
+                          stressed
+                            ? "-translate-y-1.5 bg-stress py-1.5 text-lg font-bold text-stress-foreground"
+                            : "border bg-card py-1 text-sm text-muted-foreground",
+                          stressed && s.endsWith("iin") && "min-w-16",
+                        )}
+                      >
+                        {s}
+                      </span>
+                    );
+                  })}
+                </span>
+              </Fragment>
             ))}
           </div>
         ))}
@@ -209,50 +173,84 @@ export function TeenTyStress() {
   );
 }
 
-/* 4. Sounds per word: Standard English versus American -------------------------------------------- */
+/* 4. The r you don't say ------------------------------------------------------------------ */
 
-export function SoundCountChart() {
-  const max = 9;
+export function SilentR() {
   return (
-    <Figure
-      title={figureText.soundCount.title}
-      caption={figureText.soundCount.caption}
-      table={simpleTable(
-        ["Word", "Standard English", "Sounds", "American", "Sounds"],
-        soundCounts.map((s) => [s.word, s.gb, s.gbN, s.us, s.usN]),
-      )}
-    >
-      <Legend
-        items={[
-          { label: "Standard English", color: "var(--chart-1)" },
-          { label: "American", color: "var(--chart-2)" },
-        ]}
-      />
-      <div className="space-y-3" role="img" aria-label="Bar chart of sounds per word, Standard English versus American">
-        {soundCounts.map((s) => (
-          <div key={s.word} className="grid grid-cols-[5.5rem_1fr] items-center gap-3">
-            <span className="text-sm font-medium">
-              {s.word}
-              {s.endsInVowel && <span className="ml-1 text-chart-1" aria-hidden>●</span>}
-            </span>
-            <div className="space-y-0.5">
-              {(
-                [
-                  ["gb", s.gbN, s.gb, "var(--chart-1)"],
-                  ["us", s.usN, s.us, "var(--chart-2)"],
-                ] as const
-              ).map(([k, n, spelled, color]) => (
-                <div key={k} className="group flex items-center gap-2" title={`${k === "gb" ? "Standard English" : "American"} ${spelled}: ${n} sounds`}>
-                  <div
-                    className="h-3 rounded-r-[4px] transition-opacity group-hover:opacity-80"
-                    style={{ width: `${(n / max) * 100}%`, background: color }}
-                  />
-                  <span className="shrink-0 text-xs tabular-nums text-muted-foreground">
-                    {n} <span className="hidden sm:inline">· {spelled}</span>
+    <Figure title={figureText.silentR.title} caption={figureText.silentR.caption}>
+      <ul className="grid grid-cols-[auto_auto_1fr] items-center gap-x-6 divide-y border-t">
+        {silentRWords.map((w) => (
+          <li key={w.word} className="col-span-3 grid grid-cols-subgrid items-center py-2 pl-2">
+            <span className="text-lg font-medium" aria-label={`${w.word}, written with a silent r`}>
+              {w.word.split(/(r)/).map((part, i) =>
+                part === "r" ? (
+                  <span key={i} className="font-sound text-[1.1em] text-muted-foreground line-through decoration-2">
+                    r
                   </span>
+                ) : (
+                  part
+                ),
+              )}
+            </span>
+            <ArrowRight className="size-4 text-muted-foreground" aria-hidden />
+            <span className="flex items-center text-lg">
+              <Respell text={w.british} />
+              {w.endsInVowel && (
+                <span className="ml-2 text-chart-1" aria-label="ends in a vowel">
+                  ●
+                </span>
+              )}
+              <Listen src={clipSrc("gb", w.id)} label={w.word} className="ml-1" />
+            </span>
+          </li>
+        ))}
+      </ul>
+    </Figure>
+  );
+}
+
+/* 5. Kinyarwanda sounds as starting points ----------------------------------------------- */
+
+/** Rows of English sounds, each pointing at the Kinyarwanda sound closest to it. */
+function StartingPoints({ text, sounds, landings }: { text: { title: string; caption: string }; sounds: string[]; landings: Landing[] }) {
+  const columns = { gridTemplateColumns: `repeat(${sounds.length}, minmax(0, 1fr))` };
+  return (
+    <Figure title={text.title} caption={text.caption}>
+      <div className="space-y-3">
+        <div className="grid gap-2 sm:ml-[14rem]" style={columns}>
+          {sounds.map((v) => (
+            <div key={v} className="rounded-md border bg-muted/50 py-2 text-center text-lg font-semibold">
+              {v}
+            </div>
+          ))}
+        </div>
+        {landings.map((l) => (
+          <div key={l.label} className="grid gap-2 sm:grid-cols-[13.5rem_1fr] sm:items-center">
+            <div className="flex items-center gap-2 text-sm font-medium">
+              {l.label}
+              <ArrowRight className="size-4 text-muted-foreground max-sm:hidden" aria-hidden />
+            </div>
+            <div className="grid gap-2" style={columns}>
+              {sounds.map((v) => (
+                <div
+                  key={v}
+                  className={cn(
+                    "h-8 rounded-md",
+                    v === l.sound
+                      ? l.tone === "good"
+                        ? "bg-good text-background"
+                        : "bg-muted-foreground/40"
+                      : "border border-dashed",
+                  )}
+                  aria-hidden={v !== l.sound}
+                >
+                  {v === l.sound && <span className="sr-only">rough starting point: {v}</span>}
                 </div>
               ))}
             </div>
+            <p className="text-xs text-muted-foreground sm:col-start-2">
+              <Letters text={l.note} />
+            </p>
           </div>
         ))}
       </div>
@@ -260,52 +258,10 @@ export function SoundCountChart() {
   );
 }
 
-/* 5. Kinyarwanda vowels as starting points ----------------------------------------------- */
-
 export function VowelMap() {
-  return (
-    <Figure
-      title={figureText.vowelMap.title}
-      caption={figureText.vowelMap.caption}
-    >
-      <div className="space-y-3">
-        <div className="grid grid-cols-5 gap-2 sm:ml-[14rem]">
-          {kinyaVowels.map((v) => (
-            <div key={v} className="rounded-md border bg-muted/50 py-2 text-center text-lg font-semibold">
-              {v}
-            </div>
-          ))}
-        </div>
-        {vowelLandings.map((l) => (
-          <div key={l.label} className="grid gap-2 sm:grid-cols-[13.5rem_1fr] sm:items-center">
-            <div className="flex items-center gap-2 text-sm font-medium">
-              {l.label}
-              <ArrowRight className="size-4 text-muted-foreground max-sm:hidden" aria-hidden />
-            </div>
-            <div className="grid grid-cols-5 gap-2">
-              {kinyaVowels.map((v) => (
-                <div
-                  key={v}
-                  className={cn(
-                    "h-8 rounded-md",
-                    v === l.vowel
-                      ? l.tone === "good"
-                        ? "bg-good text-background"
-                        : l.tone === "compare"
-                          ? "bg-chart-2"
-                          : "bg-muted-foreground/40"
-                      : "border border-dashed",
-                  )}
-                  aria-hidden={v !== l.vowel}
-                >
-                  {v === l.vowel && <span className="sr-only">rough starting point: {v}</span>}
-                </div>
-              ))}
-            </div>
-            <p className="text-xs text-muted-foreground sm:col-start-2">{l.note}</p>
-          </div>
-        ))}
-      </div>
-    </Figure>
-  );
+  return <StartingPoints text={figureText.vowelMap} sounds={kinyaVowels} landings={vowelLandings} />;
+}
+
+export function TStartMap() {
+  return <StartingPoints text={figureText.tStart} sounds={kinyaConsonants} landings={tLandings} />;
 }

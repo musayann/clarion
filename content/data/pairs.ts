@@ -23,10 +23,21 @@ export const pairGroups: PairGroup[] = [
     ],
   },
   {
+    id: "th-three",
+    section: "thirteen-vs-thirty",
+    title: "The th in three",
+    labels: ["Say th", "Not to be confused with"],
+    contrast: true,
+    pairs: [
+      { a: w("th-three-f", "three", { ipaGB: "θriː" }), b: w("th-free", "free", { ipaGB: "friː" }) },
+      { a: w("th-three-t", "three", { ipaGB: "θriː" }), b: w("th-tree", "tree", { ipaGB: "triː" }) },
+    ],
+  },
+  {
     id: "r-l",
     section: "r-and-l",
-    title: "r and l pairs",
-    labels: ["r", "l"],
+    title: "R and L pairs",
+    labels: ["*r*", "*l*"],
     pairs: [
       { a: w("rl-right", "right"), b: w("rl-light", "light") },
       { a: w("rl-road", "road"), b: w("rl-load", "load") },
@@ -45,6 +56,7 @@ export const pairGroups: PairGroup[] = [
     section: "drop-the-r",
     title: "The əə vowel",
     labels: ["Say əə", "Not to be confused with"],
+    contrast: true,
     pairs: [
       { a: w("er-work", "work", { british: "wəək", ipaGB: "wɜːk" }), b: w("er-walk", "walk", { british: "wook", ipaGB: "wɔːk" }) },
       { a: w("er-first", "first", { british: "fəəst", ipaGB: "fɜːst" }), b: w("er-fast", "fast", { british: "faast", ipaGB: "fɑːst" }) },
@@ -59,6 +71,7 @@ export const pairGroups: PairGroup[] = [
     section: "short-o",
     title: "Keep o, not a",
     labels: ["Keep o", "Different from a"],
+    contrast: true,
     pairs: [
       { a: w("oa-not", "not"), b: w("oa-nut", "nut") },
       { a: w("oa-hot", "hot"), b: w("oa-hut", "hut") },

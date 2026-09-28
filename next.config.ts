@@ -9,7 +9,10 @@ const nextConfig: NextConfig = {
   pageExtensions: ["ts", "tsx", "md", "mdx"],
 
   async redirects() {
-    return [{ source: "/guide/sound-names", destination: "/guide/get-started", permanent: true }];
+    return [
+      { source: "/guide/sound-names", destination: "/guide/get-started", permanent: true },
+      { source: "/recognise-american", destination: "/everyday-words#where-american-english-differs", permanent: true },
+    ];
   },
 
   // Markdown versions of every page for AI agents, served by app/md/[...path]/route.ts.

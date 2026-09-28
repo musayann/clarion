@@ -1,13 +1,20 @@
 /** Data behind the figures, shared by the React figures and their markdown versions. */
 
+import type { Word } from "@/content/data/types";
+
 export const figureText = {
   effectEffort: {
     title: "Our suggested practice priorities",
     caption:
-      "These priorities come from our own experience. Start with the easy ones and return to r and l and the vowel in work each day. Your pace may vary.",
+      "These priorities come from our own experience. Start with the easy ones and return to *r* and *l* and the vowel in work each day. Your pace may vary.",
+  },
+  tStart: {
+    title: "Your Kinyarwanda *t* as a starting point",
+    caption:
+      "The full *t* starts from the *t* you already say in Kinyarwanda. Keep it apart from d, so writing and riding stay two words, and don't let it slide towards the Kinyarwanda *r*.",
   },
   tRule: {
-    title: "Practise a clear t",
+    title: "Practise a clear *t*",
     caption: "Follow these steps with water, better and twenty.",
   },
   teenTy: {
@@ -15,15 +22,15 @@ export const figureText = {
     caption:
       "The stressed syllable is louder, longer and higher. In -teen numbers it is the last one, and its ii is long.",
   },
-  soundCount: {
-    title: "Sounds per word: without the r, Standard English words are shorter",
+  silentR: {
+    title: "The *r* you don't say",
     caption:
-      "Counted from the sound spellings in this guide; a long vowel counts as one sound. ● marks words that end in a vowel in Standard English, just like Kinyarwanda words.",
+      "Each word is written with an *r*, but no vowel sound comes after it, so you don't say it. ● marks words that end in a vowel, just like Kinyarwanda words.",
   },
   vowelMap: {
     title: "Kinyarwanda vowels as starting points",
     caption:
-      "These are rough learning approximations, not identical sounds. Two examples near a can still have different vowels. Listen to the recordings for the target sound and length.",
+      "These are rough learning approximations, not identical sounds. Listen to the recordings for the target sound and length.",
   },
 };
 
@@ -36,7 +43,7 @@ export const quadrants: Quadrant[] = [
     title: "Easy start: begin here",
     tone: "quick-win",
     items: [
-      { label: "Rule 1: the full t (twenty, water)", href: "/rules/say-every-t" },
+      { label: "Rule 1: the full *t* (twenty, water)", href: "/rules/say-every-t" },
       { label: "Rule 2: thirteen versus thirty", href: "/rules/thirteen-vs-thirty" },
       { label: "Rule 5: o in hot, job, stop", href: "/rules/short-o" },
       { label: "Rule 6: long vowels (can't, sheep)", href: "/rules/long-vowels" },
@@ -46,7 +53,7 @@ export const quadrants: Quadrant[] = [
     title: "Practise every day",
     tone: "default",
     items: [
-      { label: "Rule 3: r versus l (right, light)", href: "/rules/r-and-l" },
+      { label: "Rule 3: *r* versus *l* (right, light)", href: "/rules/r-and-l" },
       { label: "Rule 4: the əə vowel (work, first)", href: "/rules/drop-the-r" },
     ],
   },
@@ -54,47 +61,57 @@ export const quadrants: Quadrant[] = [
     title: "Nice to have",
     tone: "default",
     items: [
-      { label: "Rule 4: drop r after a vowel (car)", href: "/rules/drop-the-r" },
-      { label: "Rule 4: r before a vowel (far away)", href: "/rules/drop-the-r" },
+      { label: "Rule 4: drop *r* after a vowel (car)", href: "/rules/drop-the-r" },
+      { label: "Rule 4: *r* before a vowel (far away)", href: "/rules/drop-the-r" },
     ],
   },
   {
     title: "Skip",
     tone: "skip",
-    items: [{ label: "The American r sound" }, { label: "A native accent, American or British" }],
+    items: [{ label: "The American *r* sound" }, { label: "A native accent, American or British" }],
   },
 ];
 
-export const stressPairs: { n: string; syllables: [string, string]; stress: 0 | 1 }[][] = [
+export const stressPairs: { n: string; word: string; syllables: [string, string]; stress: 0 | 1 }[][] = [
   [
-    { n: "13", syllables: ["thəə", "tiin"], stress: 1 },
-    { n: "30", syllables: ["thəə", "ti"], stress: 0 },
+    { n: "13", word: "thirteen", syllables: ["thəə", "tiin"], stress: 1 },
+    { n: "30", word: "thirty", syllables: ["thəə", "ti"], stress: 0 },
   ],
   [
-    { n: "14", syllables: ["foo", "tiin"], stress: 1 },
-    { n: "40", syllables: ["foo", "ti"], stress: 0 },
+    { n: "14", word: "fourteen", syllables: ["foo", "tiin"], stress: 1 },
+    { n: "40", word: "forty", syllables: ["foo", "ti"], stress: 0 },
   ],
   [
-    { n: "15", syllables: ["fif", "tiin"], stress: 1 },
-    { n: "50", syllables: ["fif", "ti"], stress: 0 },
+    { n: "15", word: "fifteen", syllables: ["fif", "tiin"], stress: 1 },
+    { n: "50", word: "fifty", syllables: ["fif", "ti"], stress: 0 },
   ],
 ];
 
-// Counted from the guide's sound spellings: a long vowel (aa, oo, əə …) is one sound.
-export const soundCounts: { word: string; gb: string; us: string; gbN: number; usN: number; endsInVowel: boolean }[] = [
-  { word: "car", gb: "kaa", us: "kaar", gbN: 2, usN: 3, endsInVowel: true },
-  { word: "more", gb: "moo", us: "moor", gbN: 2, usN: 3, endsInVowel: true },
-  { word: "hard", gb: "haad", us: "haard", gbN: 3, usN: 4, endsInVowel: false },
-  { word: "work", gb: "wəək", us: "wərk", gbN: 3, usN: 4, endsInVowel: false },
-  { word: "first", gb: "fəəst", us: "fərst", gbN: 4, usN: 5, endsInVowel: false },
-  { word: "water", gb: "woo-tə", us: "waa-dər", gbN: 4, usN: 5, endsInVowel: true },
-  { word: "better", gb: "be-tə", us: "be-dər", gbN: 4, usN: 5, endsInVowel: true },
-  { word: "computer", gb: "kəm-pyuu-tə", us: "kəm-pyuu-dər", gbN: 8, usN: 9, endsInVowel: true },
+/**
+ * Every r in these words is silent in Standard English. Ids starting with sr- have their own
+ * clips; the others reuse the clips of the same word in the pair and word tables.
+ */
+export const silentRWords: (Word & { british: string; endsInVowel: boolean })[] = [
+  { id: "sr-car", word: "car", british: "kaa", ipaGB: "kɑː", endsInVowel: true },
+  { id: "sr-more", word: "more", british: "moo", ipaGB: "mɔː", endsInVowel: true },
+  { id: "er-hard", word: "hard", british: "haad", endsInVowel: false },
+  { id: "er-work", word: "work", british: "wəək", endsInVowel: false },
+  { id: "er-first", word: "first", british: "fəəst", endsInVowel: false },
+  { id: "t-water", word: "water", british: "**woo**-tə", endsInVowel: true },
+  { id: "t-computer", word: "computer", british: "kəm-**pyuu**-tə", endsInVowel: true },
+];
+
+/** An English sound and the Kinyarwanda sound closest to it. */
+export type Landing = { label: string; sound: string; note: string; tone: "good" | "neutral" };
+
+export const kinyaConsonants = ["t", "d", "r"];
+export const tLandings: Landing[] = [
+  { label: "writing, metal", sound: "t", note: "start from your Kinyarwanda *t*: the tongue stops the air completely", tone: "good" },
+  { label: "riding, medal", sound: "d", note: "start from your Kinyarwanda d: the same tongue position, with your voice on", tone: "neutral" },
 ];
 
 export const kinyaVowels = ["i", "e", "a", "o", "u"];
-export const vowelLandings: { label: string; vowel: string; note: string; tone: "good" | "compare" | "neutral" }[] = [
-  { label: "hot (Standard English)", vowel: "o", note: "start from a short o, then match the recording", tone: "good" },
-  { label: "hot (American)", vowel: "a", note: "an a-like starting point; its vowel differs from hut", tone: "compare" },
-  { label: "hut, nut, cup", vowel: "a", note: "a rough a-like starting point; match each recording", tone: "neutral" },
+export const vowelLandings: Landing[] = [
+  { label: "hot, job, stop", sound: "o", note: "start from a short o, then match the recording", tone: "good" },
+  { label: "hut, nut, cup", sound: "a", note: "a rough a-like starting point; match each recording", tone: "neutral" },
 ];

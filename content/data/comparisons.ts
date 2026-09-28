@@ -16,33 +16,33 @@ export type QuickAnswer = {
 
 export const quickAnswers: QuickAnswer[] = [
   {
-    sound: "t between vowels",
+    sound: "*t* between vowels",
     examples: { id: "qa-t-vowels", word: "water, better", british: "**woo**-tə, **be**-tə", american: "**waa**-dər, **be**-dər" },
-    americanNote: "tapped t",
-    britishNote: "full t",
+    americanNote: "tapped *t*",
+    britishNote: "full *t*",
     check: "Your tongue stops the air completely",
     rule: "say-every-t",
   },
   {
-    sound: "t after n",
+    sound: "*t* after n",
     examples: { id: "qa-t-after-n", word: "twenty, internet", british: "**twen**-ti, **in**-tə-net", american: "**twe**-ni, **i**-nər-net" },
-    americanNote: "no t",
-    britishNote: "full t",
-    check: "You hear a t between the n and the vowel after it",
+    americanNote: "no *t*",
+    britishNote: "full *t*",
+    check: "You hear a *t* between the n and the vowel after it",
     rule: "say-every-t",
   },
   {
-    sound: "r after a vowel",
+    sound: "*r* after a vowel",
     examples: { id: "qa-r-after-vowel", word: "car, hard", british: "kaa, haad", american: "kaar, haard" },
-    americanNote: "r said",
-    britishNote: "r silent",
-    check: "You go straight from aa to the next sound, with no r",
+    americanNote: "*r* said",
+    britishNote: "*r* silent",
+    check: "You go straight from aa to the next sound, with no *r*",
     rule: "drop-the-r",
   },
   {
     sound: "The vowel in work",
     examples: { id: "qa-work-vowel", word: "work, first", british: "wəək, fəəst", american: "wərk, fərst" },
-    check: "Hold the vowel longer, match the recording, and leave out the r",
+    check: "Hold the vowel longer, match the recording, and leave out the *r*",
     rule: "drop-the-r",
   },
   {
@@ -54,22 +54,22 @@ export const quickAnswers: QuickAnswer[] = [
   {
     sound: "can't",
     examples: { id: "qa-cant", word: "can't", british: "kaant", american: "kant", ipaGB: "kɑːnt", ipaUS: "kænt" },
-    americanNote: "t often silent",
+    americanNote: "*t* often silent",
     sayNote: "or say 'cannot'",
-    check: "Match the aa sound and length to the recording, then say a full t",
+    check: "Match the aa sound and length to the recording, then say a full *t*",
     rule: "long-vowels",
   },
   {
-    sound: "r and l",
+    sound: "*r* and *l*",
     examples: { id: "qa-r-l", word: "right, light", british: "right, light", american: "right, light" },
     same: true,
-    check: "l: tongue touches the ridge and stays. r: tongue touches nothing",
+    check: "*l*: tongue touches the ridge and stays. *r*: tongue touches nothing",
     rule: "r-and-l",
   },
   {
     sound: "-teen and -ty",
     examples: { id: "qa-teen-ty", word: "thirteen, thirty", british: "thəə-**tiin**, **thəə**-ti", american: "thər-**tiin**, **thər**-di" },
-    check: "-teen: last syllable stressed. -ty: first syllable stressed, full t",
+    check: "-teen: last syllable stressed. -ty: first syllable stressed, full *t*",
     rule: "thirteen-vs-thirty",
   },
 ];
@@ -117,63 +117,4 @@ export const americanDifferences: AmericanDifference[] = [
   { say: { id: "mc-thirty", word: "thirty", british: "**thəə**-ti", ipaGB: "ˈθɜːti" }, american: { id: "mc-thirty-us", word: "thirty", american: "**thər**-di", ipaUS: "ˈθɝɾi" }, rule: "say-every-t" },
   { say: { id: "mc-hot", word: "hot", british: "hot", ipaGB: "hɒt" }, american: { id: "mc-hot-us", word: "hot", american: "haat", ipaUS: "hɑt" }, heard: { id: "mc-heart", word: "heart", ipaGB: "hɑːt" }, rule: "short-o" },
   { say: { id: "mc-not", word: "not", british: "not", ipaGB: "nɒt" }, american: { id: "mc-not-us", word: "not", american: "nat", ipaUS: "nɑt" }, heard: { id: "mc-nut", word: "nut", ipaGB: "nʌt" }, rule: "short-o" },
-];
-
-/**
- * "Listen and compare". Each row's `words` has an American clip
- * (what you will hear) and a Standard English clip (what to say).
- */
-export type AmericanHabit = {
-  habit: string;
-  example: string;
-  words: Word;
-};
-
-export const americanHabits: AmericanHabit[] = [
-  {
-    habit: "Tapping the t between vowels",
-    example: "water, better, little",
-    words: { id: "habit-tap-t", word: "water, better, little", american: "**waa**-dər, **be**-dər, **li**-dəl", british: "**woo**-tə, **be**-tə, **li**-təl" },
-  },
-  {
-    habit: "Tapping the t in -ty numbers",
-    example: "thirty, forty, eighty",
-    words: { id: "habit-ty-numbers", word: "thirty, forty, eighty", american: "**thər**-di, **for**-di, **ei**-di", british: "**thəə**-ti, **foo**-ti, **ei**-ti" },
-  },
-  {
-    habit: "Dropping the t after n",
-    example: "twenty, internet, interview",
-    words: { id: "habit-drop-t", word: "twenty, internet, interview", american: "**twe**-ni, **i**-nər-net, **i**-nər-vyuu", british: "**twen**-ti, **in**-tə-net, **in**-tə-vyuu" },
-  },
-  {
-    habit: "Stopping the t in the throat before n",
-    example: "button, important, certain",
-    words: { id: "habit-stop-t", word: "button, important, certain", american: "**ba**'n, im-**por**'nt, **sər**'n", british: "**ba**-tən, im-**poo**-tənt, **səə**-tən" },
-  },
-  {
-    habit: "Dropping the t in can't",
-    example: "I can't go",
-    words: { id: "habit-cant", word: "I can't go", american: "I **kan'** go", british: "I **kaant** go, or I **ka**-not go" },
-  },
-  {
-    habit: "Saying aa for o",
-    example: "hot, job, got",
-    words: { id: "habit-aa-for-o", word: "hot, job, got", american: "haat, jaab, gaat", british: "hot, job, got" },
-  },
-  {
-    habit: "Saying r after vowels",
-    example: "car, work, first",
-    words: { id: "habit-r-after-vowel", word: "car, work, first", american: "kaar, wərk, fərst", british: "kaa, wəək, fəəst" },
-  },
-  {
-    habit: "Joining words together",
-    example: "going to, want to, let me, kind of, don't know",
-    words: {
-      id: "habit-join",
-      word: "going to, want to, let me, kind of, don't know",
-      sayUS: "gonna, wanna, lemme, kinda, dunno",
-      american: "gonna, wanna, lemme, kinda, dunno",
-      british: "Say every word: going to, want to, let me, kind of, don't know",
-    },
-  },
 ];

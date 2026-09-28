@@ -4,7 +4,7 @@ export const wordGroups: WordGroup[] = [
   {
     id: "t-words",
     section: "say-every-t",
-    title: "Words with a full t",
+    title: "Words with a full *t*",
     withAmerican: true,
     words: [
       { id: "t-water", word: "water", british: "**woo**-tə", american: "**waa**-dər", ipaGB: "ˈwɔːtə", ipaUS: "ˈwɑɾɚ" },
@@ -14,13 +14,15 @@ export const wordGroups: WordGroup[] = [
       { id: "t-internet", word: "internet", british: "**in**-tə-net", american: "**i**-nər-net", ipaGB: "ˈɪntənet", ipaUS: "ˈɪnɚnɛt" },
       { id: "t-computer", word: "computer", british: "kəm-**pyuu**-tə", american: "kəm-**pyuu**-dər", ipaGB: "kəmˈpjuːtə", ipaUS: "kəmˈpjuɾɚ" },
       { id: "t-meeting", word: "meeting", british: "**mii**-ting", american: "**mii**-ding", ipaGB: "ˈmiːtɪŋ", ipaUS: "ˈmiɾɪŋ" },
+      { id: "t-button", word: "button", british: "**ba**-tən", american: "**ba**'n", ipaGB: "ˈbʌtən", ipaUS: "ˈbʌʔn̩" },
+      { id: "t-important", word: "important", british: "im-**poo**-tənt", american: "im-**por**'nt", ipaGB: "ɪmˈpɔːtənt", ipaUS: "ɪmˈpɔɹʔn̩t" },
       { id: "t-a-lot-of", word: "a lot of", british: "ə **lo**-təv", american: "ə **laa**-dəv", ipaGB: "əˈlɒtəv", ipaUS: "əˈlɑɾəv" },
     ],
   },
   {
     id: "silent-t",
     section: "say-every-t",
-    title: "Silent t (don't say it)",
+    title: "Silent *t* (don't say it)",
     words: [
       { id: "st-listen", word: "listen", british: "**li**-sən", ipaGB: "ˈlɪsən" },
       { id: "st-castle", word: "castle", british: "**kaa**-səl", ipaGB: "ˈkɑːsəl" },
@@ -51,11 +53,22 @@ export const wordGroups: WordGroup[] = [
   {
     id: "linking-r",
     section: "drop-the-r",
-    title: "r before a vowel in the next word",
+    title: "*r* before a vowel in the next word",
     words: [
       { id: "lr-far-away", word: "far away", british: "faa rə-**wei**", ipaGB: "fɑːr əˈweɪ" },
       { id: "lr-four-hours", word: "four hours", british: "foo **rau**-əz", ipaGB: "fɔːr ˈaʊəz" },
       { id: "lr-never-again", word: "never again", british: "**ne**-və rə-**gen**", ipaGB: "ˈnevər əˈɡen" },
+    ],
+  },
+  {
+    id: "th-numbers",
+    section: "thirteen-vs-thirty",
+    title: "More numbers with th",
+    words: [
+      { id: "th-third", word: "third", ipaGB: "θɜːd" },
+      { id: "th-thousand", word: "thousand", ipaGB: "ˈθaʊzənd" },
+      { id: "th-fourth", word: "fourth", ipaGB: "fɔːθ" },
+      { id: "th-fifth", word: "fifth", ipaGB: "fɪfθ" },
     ],
   },
   {

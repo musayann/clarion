@@ -4,35 +4,35 @@
 
 This guide has one goal: when you speak English, people understand you the first time. You do not need to sound like a native speaker; you need the few sounds that decide whether people understand you.
 
-**What 'Standard English' means in this guide.** It is the pronunciation used in international English and in standard British English: the English of BBC World Service newsreaders and of the 'UK' audio in learner's dictionaries. It is not a London accent or a British street accent: those drop the t in water ('wa'er'), the opposite of Rule 1.
+**What 'Standard English' means in this guide.** It is the pronunciation used in international English and in standard British English: the English of BBC World Service newsreaders and of the 'UK' audio in learner's dictionaries. It is not a London accent or a British street accent: those drop the *t* in water ('wa'er'), the opposite of Rule 1.
 
 Whenever this guide shows an American and a Standard English version of a sound, say the Standard English version, and learn to understand the American one. **Why Standard English is easier for Kinyarwanda speakers.** American English is correct for Americans, but three of its sounds are hard for a Kinyarwanda speaker to copy without being misunderstood. The Standard English versions are closer to sounds you already make:
 
-- **A clear t.** The American t in water and better is tapped, and a tapped t is almost exactly the Kinyarwanda r, so listeners hear 'berrer' or 'beller', and writing as riding. The Standard English t stops the air completely, and nobody mistakes it for r. See Rule 1.
-- **Words that end in a vowel.** Standard English drops the r after a vowel: car is kaa, and computer ends in tə. Kinyarwanda syllables also end in vowels, so this comes naturally. American English keeps an r there, one more place where your r can be heard as l. See Rule 4.
+- **A clear *t*.** The American *t* in water and better is tapped, and a tapped *t* is almost exactly the Kinyarwanda *r*, so listeners hear 'berrer' or 'beller', and writing as riding. The Standard English *t* stops the air completely, and nobody mistakes it for *r*. See Rule 1.
+- **Words that end in a vowel.** Standard English drops the *r* after a vowel: car is kaa, and computer ends in tə. Kinyarwanda syllables also end in vowels, so this comes naturally. American English keeps an *r* there, one more place where your *r* can be heard as *l*. See Rule 4.
 - **The Kinyarwanda o.** Standard English says hot, job and stop with the Kinyarwanda o. The American vowel is the a you use for hut, held longer, so hot can be heard as hut or heart. See Rule 5.
 
-Keeping r and l apart and the stress in numbers work the same way in both styles.
+Keeping *r* and *l* apart and the stress in numbers work the same way in both styles.
 
 &#91;embedded content: where each rule sits · effect versus effort\]
 
-Start with the four rules in the 'Quick wins' box: each one is a single change you can make this week. Then practise Rule 3 (r and l) and Rule 4 (the əə vowel) for 3 minutes each, every day, using the routine at the end.
+Start with the four rules in the 'Quick wins' box: each one is a single change you can make this week. Then practise Rule 3 (*r* and *l*) and Rule 4 (the əə vowel) for 3 minutes each, every day, using the routine at the end.
 
 ## Which style to use: quick answers
 
-For every sound in this table, use the Standard English form. Only r versus l and the stress in numbers work the same way in both styles.
+For every sound in this table, use the Standard English form. Only *r* versus *l* and the stress in numbers work the same way in both styles.
 
 **Words and sound names used in this guide.** Each one is defined by what your mouth does, so you can check it yourself.
 
 | Name | What your mouth does | Example |
 | --- | --- | --- |
 | Vowel | The air flows out freely, with nothing blocking it: a, e, i, o, u and the sounds between them. | the a in 'car' |
-| Consonant | Your tongue, teeth or lips block the air or make it narrow. | t, r, l, n |
+| Consonant | Your tongue, teeth or lips block the air or make it narrow. | *t*, *r*, *l*, n |
 | Syllable | One beat of a word. Each syllable has one vowel sound. | **twen**-ti has 2 syllables |
-| Full t | The tongue tip presses on the ridge behind your top teeth and stops the air completely. You feel the pressure build, then you release it. | Standard English water (**woo**-tə), ten, top |
-| Tapped t | The tongue tip flicks the ridge once and the air never stops. It sounds like d, or like the Kinyarwanda r. | American water (**waa**-dər) |
-| l | The tongue tip presses on the ridge behind your top teeth and stays there for the whole sound. | light, load |
-| English r | The tongue touches nothing. The lips are pushed forward into a small circle, as for w. | right, road |
+| Full *t* | The tongue tip presses on the ridge behind your top teeth and stops the air completely. You feel the pressure build, then you release it. | Standard English water (**woo**-tə), ten, top |
+| Tapped *t* | The tongue tip flicks the ridge once and the air never stops. It sounds like d, or like the Kinyarwanda *r*. | American water (**waa**-dər) |
+| *l* | The tongue tip presses on the ridge behind your top teeth and stays there for the whole sound. | light, load |
+| English *r* | The tongue touches nothing. The lips are pushed forward into a small circle, as for w. | right, road |
 | ə | The tongue lies flat in the middle of the mouth, the jaw is half open and the lips stay in their normal position. Short. | the first sound in 'about' |
 | Long vowel | Written with a double letter (aa, ii, oo, uu, əə). Hold it about twice as long as the single letter. | sheep (shiip), work (wəək) |
 | Stress | The **bold** syllable. Say it louder, longer and on a higher note than the other syllables. | **twen**-ti |
@@ -41,26 +41,26 @@ For every sound in this table, use the Standard English form. Only r versus l an
 
 | Sound | American | Standard English | Say | How to check |
 | --- | --- | --- | --- | --- |
-| t between vowels: water, better | **waa**-dər, **be**-dər (tapped t) | **woo**-tə, **be**-tə (full t) | Standard English | Your tongue stops the air completely |
-| t after n: twenty, internet | **twe**-ni, **i**-nər-net (no t) | **twen**-ti, **in**-tə-net (full t) | Standard English | You hear a t between the n and the vowel after it |
-| r after a vowel: car, hard | kaar, haard (r said) | kaa, haad (r silent) | Standard English | You go straight from aa to the next sound, with no r |
-| The vowel in work: work, first | wərk, fərst | wəək, fəəst | Standard English | ə held twice as long, no r, lips do not move |
+| *t* between vowels: water, better | **waa**-dər, **be**-dər (tapped *t*) | **woo**-tə, **be**-tə (full *t*) | Standard English | Your tongue stops the air completely |
+| *t* after n: twenty, internet | **twe**-ni, **i**-nər-net (no *t*) | **twen**-ti, **in**-tə-net (full *t*) | Standard English | You hear a *t* between the n and the vowel after it |
+| *r* after a vowel: car, hard | kaar, haard (*r* said) | kaa, haad (*r* silent) | Standard English | You go straight from aa to the next sound, with no *r* |
+| The vowel in work: work, first | wərk, fərst | wəək, fəəst | Standard English | ə held twice as long, no *r*, lips do not move |
 | The vowel in hot: hot, job | haat, jaab | hot, job | Standard English | You say Kinyarwanda o, not a |
-| can't | kant (t often silent) | kaant | Standard English, or say 'cannot' | aa held twice as long as in can, then a full t |
-| r and l: right, light | right, light | right, light | Same in both | l: tongue touches the ridge and stays. r: tongue touches nothing |
-| -teen and -ty: thirteen, thirty | thər-**tiin**, **thər**-di | thəə-**tiin**, **thəə**-ti | Standard English | -teen: last syllable stressed. -ty: first syllable stressed, full t |
+| can't | kant (*t* often silent) | kaant | Standard English, or say 'cannot' | aa held twice as long as in can, then a full *t* |
+| *r* and *l*: right, light | right, light | right, light | Same in both | *l*: tongue touches the ridge and stays. *r*: tongue touches nothing |
+| -teen and -ty: thirteen, thirty | thər-**tiin**, **thər**-di | thəə-**tiin**, **thəə**-ti | Standard English | -teen: last syllable stressed. -ty: first syllable stressed, full *t* |
 
-So for twenty: say **twen**-ti, with a full t (your tongue stops the air completely before the i). Americans often say **twe**-ni; learn to understand it, but don't copy it.
+So for twenty: say **twen**-ti, with a full *t* (your tongue stops the air completely before the i). Americans often say **twe**-ni; learn to understand it, but don't copy it.
 
-## Rule 1: say every t in full
+## Rule 1: say every *t* in full
 
-Say every t you see in the spelling as a full t, as in Standard English. The only exceptions are the silent-t words listed below.
+Say every *t* you see in the spelling as a full *t*, as in Standard English. The only exceptions are the silent-*t* words listed below.
 
-A full t: press the tip of your tongue on the ridge behind your top teeth so the air stops completely, feel the pressure build, then release it. If your tongue only flicks the ridge and the air never stops, you have made the American tapped t.
+A full *t*: press the tip of your tongue on the ridge behind your top teeth so the air stops completely, feel the pressure build, then release it. If your tongue only flicks the ridge and the air never stops, you have made the American tapped *t*.
 
-&#91;embedded content: the t rule · 1 decision\]
+&#91;embedded content: the *t* rule · 1 decision\]
 
-Why: the American tapped t in water and better is almost exactly the Kinyarwanda r. If you copy it, better sounds like 'berrer' to most listeners outside North America, or 'beller' if your r slides towards l.
+Why: the American tapped *t* in water and better is almost exactly the Kinyarwanda *r*. If you copy it, better sounds like 'berrer' to most listeners outside North America, or 'beller' if your *r* slides towards *l*.
 
 | Word | Say it like this | You will hear Americans say |
 | --- | --- | --- |
@@ -73,7 +73,7 @@ Why: the American tapped t in water and better is almost exactly the Kinyarwanda
 | meeting | **mii**-ting | **mii**-ding |
 | a lot of | ə **lo**-təv | ə **laa**-dəv |
 
-**Silent t (don't say it):** listen (**li**-sən), castle (**kaa**-səl), whistle (**wi**-səl), fasten (**faa**-sən), Christmas (**kris**-məs), mortgage (**moo**-gij). Say often as **o**-fən (**of**-tən is also correct).
+**Silent *t* (don't say it):** listen (**li**-sən), castle (**kaa**-səl), whistle (**wi**-səl), fasten (**faa**-sən), Christmas (**kris**-məs), mortgage (**moo**-gij). Say often as **o**-fən (**of**-tən is also correct).
 
 **Practise these sentences:**
 
@@ -83,7 +83,7 @@ Why: the American tapped t in water and better is almost exactly the Kinyarwanda
 
 ## Rule 2: thirteen versus thirty
 
-In -teen numbers, stress the last syllable and hold its ii twice as long as a short i. In -ty numbers, stress the first syllable and say the final i short, with a full t.
+In -teen numbers, stress the last syllable and hold its ii twice as long as a short i. In -ty numbers, stress the first syllable and say the final i short, with a full *t*.
 
 This works the same way in both styles, and it prevents mistakes with prices, dates and quantities.
 
@@ -103,18 +103,18 @@ Twenty follows the -ty pattern: **twen**-ti, never **twe**-ni. Before a noun, na
 
 For prices, dates, times and quantities, confirm the number in digits: 'thirteen, that's one-three'.
 
-## Rule 3: keep r and l apart
+## Rule 3: keep *r* and *l* apart
 
-At the start of a syllable, make r and l with two different tongue positions: this is the most important rule in the guide. English uses the difference to separate hundreds of words, while Kinyarwanda treats r and l as one sound. It works the same way in American and Standard English.
+At the start of a syllable, make *r* and *l* with two different tongue positions: this is the most important rule in the guide. English uses the difference to separate hundreds of words, while Kinyarwanda treats *r* and *l* as one sound. It works the same way in American and Standard English.
 
 | Sound | Tongue | Lips | How to check |
 | --- | --- | --- | --- |
-| l | The tip presses on the ridge just behind your top teeth and stays there for the whole sound | In their normal position | You can hold the sound for 2 seconds (llll) without moving your tongue |
-| r | Touches nothing. Pull it back until the tip is behind the ridge, pointing up, with a gap | Pushed forward into a small circle, as for w | Your tongue touches nothing at any point. If it taps the ridge, that is the Kinyarwanda r, which English ears can hear as l or d |
+| *l* | The tip presses on the ridge just behind your top teeth and stays there for the whole sound | In their normal position | You can hold the sound for 2 seconds (llll) without moving your tongue |
+| *r* | Touches nothing. Pull it back until the tip is behind the ridge, pointing up, with a gap | Pushed forward into a small circle, as for w | Your tongue touches nothing at any point. If it taps the ridge, that is the Kinyarwanda *r*, which English ears can hear as *l* or d |
 
-Warm up: say la la la, then ra ra ra, then la ra la ra, 10 times each. On every l your tongue touches the ridge; on every r it touches nothing.
+Warm up: say la la la, then ra ra ra, then la ra la ra, 10 times each. On every *l* your tongue touches the ridge; on every *r* it touches nothing.
 
-| r | l |
+| *r* | *l* |
 | --- | --- |
 | right | light |
 | road | load |
@@ -135,15 +135,15 @@ Warm up: say la la la, then ra ra ra, then la ra la ra, 10 times each. On every 
 - Please collect the correct form.
 - I really like the new library.
 
-## Rule 4: after a vowel, drop the r
+## Rule 4: after a vowel, drop the *r*
 
-In Standard English, say r only when a vowel sound comes straight after it, even if that vowel starts the next word. In every other case the r is silent: car is kaa, hard is haad, and computer ends in tə. This removes one sound from the end of many words, which suits a Kinyarwanda speaker, since Kinyarwanda syllables end in vowels.
+In Standard English, say *r* only when a vowel sound comes straight after it, even if that vowel starts the next word. In every other case the *r* is silent: car is kaa, hard is haad, and computer ends in tə. This removes one sound from the end of many words, which suits a Kinyarwanda speaker, since Kinyarwanda syllables end in vowels.
 
 &#91;embedded content: counted from standard British and American pronunciations · 8 words\]
 
 In Standard English, car, more and computer end in a vowel, just like Kinyarwanda words.
 
-**The əə vowel.** Without the r, words like work and first depend on one long vowel, əə. Make ə (tongue flat in the middle of the mouth, jaw half open, lips in their normal position) and hold it twice as long. Check in a mirror that your lips don't move; the result must not sound like oo (walk) or aa (hard).
+**The əə vowel.** Without the *r*, words like work and first depend on one long vowel, əə. Make ə (tongue flat in the middle of the mouth, jaw half open, lips in their normal position) and hold it twice as long. Check in a mirror that your lips don't move; the result must not sound like oo (walk) or aa (hard).
 
 | Say əə | Not to be confused with |
 | --- | --- |
@@ -154,7 +154,7 @@ In Standard English, car, more and computer end in a vowel, just like Kinyarwand
 | hurt (həət) | heart (haat) |
 | turn (təən) | torn (toon) |
 
-**r before a vowel in the next word.** Say the r when the next word starts with a vowel sound: far away (faa rə-**wei**), four hours (foo **rau**-əz), never again (**ne**-və rə-**gen**).
+**r before a vowel in the next word.** Say the *r* when the next word starts with a vowel sound: far away (faa rə-**wei**), four hours (foo **rau**-əz), never again (**ne**-və rə-**gen**).
 
 ## Rule 5: keep the o in hot, job and stop
 
@@ -181,7 +181,7 @@ The American vowel in hot is that same a held longer, so only length separates h
 
 Kinyarwanda already separates short and long vowels, and Standard English uses the same difference in many common pairs. Hold every long vowel (a double letter in the sound spellings) about twice as long as the short one, as you do in Kinyarwanda.
 
-**can and can't.** Say can't as kaant: aa held twice as long, then a full t. Say can as kan, or as an unstressed kən in the middle of a sentence. When the answer matters (a promise, an appointment, a request), say 'cannot' instead of can't.
+**can and can't.** Say can't as kaant: aa held twice as long, then a full *t*. Say can as kan, or as an unstressed kən in the middle of a sentence. When the answer matters (a promise, an appointment, a request), say 'cannot' instead of can't.
 
 When Americans speak, listen for stress: 'I kən **go**' means can, and 'I **kant** go' means can't.
 
@@ -230,16 +230,16 @@ You will hear these habits in American films, music and online videos. They are 
 
 | Habit | Example | Sounds like | Say instead |
 | --- | --- | --- | --- |
-| Tapping the t between vowels | water, better, little | **waa**-dər, **be**-dər, **li**-dəl | **woo**-tə, **be**-tə, **li**-təl |
-| Tapping the t in -ty numbers | thirty, forty, eighty | **thər**-di, **for**-di, **ei**-di | **thəə**-ti, **foo**-ti, **ei**-ti |
-| Dropping the t after n | twenty, internet, interview | **twe**-ni, **i**-nər-net, **i**-nər-vyuu | **twen**-ti, **in**-tə-net, **in**-tə-vyuu |
-| Stopping the t in the throat before n | button, important, certain | **ba**'n, im-**por**'nt, **sər**'n | **ba**-tən, im-**poo**-tənt, **səə**-tən |
-| Dropping the t in can't | I can't go | I **kan'** go | I **kaant** go, or I **ka**-not go |
+| Tapping the *t* between vowels | water, better, little | **waa**-dər, **be**-dər, **li**-dəl | **woo**-tə, **be**-tə, **li**-təl |
+| Tapping the *t* in -ty numbers | thirty, forty, eighty | **thər**-di, **for**-di, **ei**-di | **thəə**-ti, **foo**-ti, **ei**-ti |
+| Dropping the *t* after n | twenty, internet, interview | **twe**-ni, **i**-nər-net, **i**-nər-vyuu | **twen**-ti, **in**-tə-net, **in**-tə-vyuu |
+| Stopping the *t* in the throat before n | button, important, certain | **ba**'n, im-**por**'nt, **sər**'n | **ba**-tən, im-**poo**-tənt, **səə**-tən |
+| Dropping the *t* in can't | I can't go | I **kan'** go | I **kaant** go, or I **ka**-not go |
 | Saying aa for o | hot, job, got | haat, jaab, gaat | hot, job, got |
-| Saying r after vowels | car, work, first | kaar, wərk, fərst | kaa, wəək, fəəst |
+| Saying *r* after vowels | car, work, first | kaar, wərk, fərst | kaa, wəək, fəəst |
 | Joining words together | going to, want to, let me, kind of, don't know | gonna, wanna, lemme, kinda, dunno | Say every word: going to, want to, let me, kind of, don't know |
 
-In the table, ' means the air stops in your throat for a moment, as in the middle of 'uh-oh'. The full t is what keeps pairs like latter and ladder, or metal and medal, apart when you speak.
+In the table, ' means the air stops in your throat for a moment, as in the middle of 'uh-oh'. The full *t* is what keeps pairs like latter and ladder, or metal and medal, apart when you speak.
 
 ## Writing: use one spelling system
 
@@ -293,8 +293,8 @@ Use -ise endings: organise, recognise, prioritise. (-ize is also correct in stan
 
 Fifteen minutes a day on these five steps covers every rule in this guide.
 
-1. 3 minutes: r and l pairs (Rule 3). First one pair every 2 seconds, then at your normal speaking speed.
-2. 3 minutes: t words and numbers (Rules 1 and 2): twenty, thirty, thirteen, water, better.
+1. 3 minutes: *r* and *l* pairs (Rule 3). First one pair every 2 seconds, then at your normal speaking speed.
+2. 3 minutes: *t* words and numbers (Rules 1 and 2): twenty, thirty, thirteen, water, better.
 3. 3 minutes: vowel pairs (Rules 4 to 6): work and walk, hot and hut, ship and sheep, can and can't.
 4. 3 minutes: read one paragraph aloud and record it on your phone.
 5. 3 minutes: listen back and mark every word that broke a rule.

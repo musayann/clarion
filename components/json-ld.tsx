@@ -1,4 +1,5 @@
 import { absoluteUrl, siteDescription, siteName } from "@/lib/site";
+import { plainText } from "@/components/respell";
 import { rules } from "@/content/nav";
 
 /** Structured data for search engines and AI. `<` is escaped so page text can't close the script tag. */
@@ -30,8 +31,8 @@ export const course = {
   },
   hasPart: rules.map((r) => ({
     "@type": "LearningResource",
-    name: `Rule ${r.number}: ${r.title}`,
-    description: r.summary,
+    name: plainText(`Rule ${r.number}: ${r.title}`),
+    description: plainText(r.summary),
     url: absoluteUrl(`/rules/${r.slug}`),
   })),
 };
