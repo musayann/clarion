@@ -1,0 +1,25 @@
+import { Badge } from "@/components/ui/badge";
+
+type PageHeaderProps = {
+  eyebrow?: string;
+  title: string;
+  children?: React.ReactNode;
+  quickWin?: boolean;
+};
+
+export function PageHeader({ eyebrow, title, children, quickWin }: PageHeaderProps) {
+  return (
+    <header className="mb-8 space-y-3">
+      {(eyebrow || quickWin) && (
+        <div className="flex items-center gap-2">
+          {eyebrow && <p className="text-sm font-semibold text-primary">{eyebrow}</p>}
+          {quickWin && (
+            <Badge className="bg-stress text-stress-foreground">Quick win</Badge>
+          )}
+        </div>
+      )}
+      <h1 className="text-3xl font-bold tracking-tight text-balance sm:text-4xl">{title}</h1>
+      {children && <div className="text-lg leading-8 text-pretty text-muted-foreground">{children}</div>}
+    </header>
+  );
+}

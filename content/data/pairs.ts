@@ -1,0 +1,90 @@
+import type { PairGroup, Word } from "./types";
+
+const w = (id: string, word: string, extra: Partial<Word> = {}): Word => ({
+  id,
+  word,
+  ...extra,
+});
+
+export const pairGroups: PairGroup[] = [
+  {
+    id: "teen-ty",
+    section: "thirteen-vs-thirty",
+    title: "-teen and -ty numbers",
+    labels: ["-teen", "-ty"],
+    pairs: [
+      { a: w("n-13", "thirteen", { note: "13", british: "thəə-**tiin**", ipaGB: "θɜːˈtiːn" }), b: w("n-30", "thirty", { note: "30", british: "**thəə**-ti", ipaGB: "ˈθɜːti" }) },
+      { a: w("n-14", "fourteen", { note: "14", british: "foo-**tiin**", ipaGB: "fɔːˈtiːn" }), b: w("n-40", "forty", { note: "40", british: "**foo**-ti", ipaGB: "ˈfɔːti" }) },
+      { a: w("n-15", "fifteen", { note: "15", british: "fif-**tiin**", ipaGB: "fɪfˈtiːn" }), b: w("n-50", "fifty", { note: "50", british: "**fif**-ti", ipaGB: "ˈfɪfti" }) },
+      { a: w("n-16", "sixteen", { note: "16", british: "siks-**tiin**", ipaGB: "sɪksˈtiːn" }), b: w("n-60", "sixty", { note: "60", british: "**siks**-ti", ipaGB: "ˈsɪksti" }) },
+      { a: w("n-17", "seventeen", { note: "17", british: "se-vən-**tiin**", ipaGB: "sevənˈtiːn" }), b: w("n-70", "seventy", { note: "70", british: "**se**-vən-ti", ipaGB: "ˈsevənti" }) },
+      { a: w("n-18", "eighteen", { note: "18", british: "ei-**tiin**", ipaGB: "eɪˈtiːn" }), b: w("n-80", "eighty", { note: "80", british: "**ei**-ti", ipaGB: "ˈeɪti" }) },
+      { a: w("n-19", "nineteen", { note: "19", british: "nain-**tiin**", ipaGB: "naɪnˈtiːn" }), b: w("n-90", "ninety", { note: "90", british: "**nain**-ti", ipaGB: "ˈnaɪnti" }) },
+    ],
+  },
+  {
+    id: "r-l",
+    section: "r-and-l",
+    title: "r and l pairs",
+    labels: ["r", "l"],
+    pairs: [
+      { a: w("rl-right", "right"), b: w("rl-light", "light") },
+      { a: w("rl-road", "road"), b: w("rl-load", "load") },
+      { a: w("rl-rock", "rock"), b: w("rl-lock", "lock") },
+      { a: w("rl-rate", "rate"), b: w("rl-late", "late") },
+      { a: w("rl-pray", "pray"), b: w("rl-play", "play") },
+      { a: w("rl-grass", "grass", { ipaGB: "ɡrɑːs" }), b: w("rl-glass", "glass", { ipaGB: "ɡlɑːs" }) },
+      { a: w("rl-fry", "fry"), b: w("rl-fly", "fly") },
+      { a: w("rl-crowd", "crowd"), b: w("rl-cloud", "cloud") },
+      { a: w("rl-correct", "correct"), b: w("rl-collect", "collect") },
+      { a: w("rl-arrive", "arrive"), b: w("rl-alive", "alive") },
+    ],
+  },
+  {
+    id: "er-vowel",
+    section: "drop-the-r",
+    title: "The əə vowel",
+    labels: ["Say əə", "Not to be confused with"],
+    pairs: [
+      { a: w("er-work", "work", { british: "wəək", ipaGB: "wɜːk" }), b: w("er-walk", "walk", { british: "wook", ipaGB: "wɔːk" }) },
+      { a: w("er-first", "first", { british: "fəəst", ipaGB: "fɜːst" }), b: w("er-fast", "fast", { british: "faast", ipaGB: "fɑːst" }) },
+      { a: w("er-heard", "heard", { british: "həəd", ipaGB: "hɜːd" }), b: w("er-hard", "hard", { british: "haad", ipaGB: "hɑːd" }) },
+      { a: w("er-burn", "burn", { british: "bəən", ipaGB: "bɜːn" }), b: w("er-barn", "barn", { british: "baan", ipaGB: "bɑːn" }) },
+      { a: w("er-hurt", "hurt", { british: "həət", ipaGB: "hɜːt" }), b: w("er-heart", "heart", { british: "haat", ipaGB: "hɑːt" }) },
+      { a: w("er-turn", "turn", { british: "təən", ipaGB: "tɜːn" }), b: w("er-torn", "torn", { british: "toon", ipaGB: "tɔːn" }) },
+    ],
+  },
+  {
+    id: "o-a",
+    section: "short-o",
+    title: "Keep o, not a",
+    labels: ["Keep o", "Different from a"],
+    pairs: [
+      { a: w("oa-not", "not"), b: w("oa-nut", "nut") },
+      { a: w("oa-hot", "hot"), b: w("oa-hut", "hut") },
+      { a: w("oa-lock", "lock"), b: w("oa-luck", "luck") },
+      { a: w("oa-shot", "shot"), b: w("oa-shut", "shut") },
+      { a: w("oa-cop", "cop"), b: w("oa-cup", "cup") },
+      { a: w("oa-dog", "dog"), b: w("oa-dug", "dug") },
+      { a: w("oa-boss", "boss"), b: w("oa-bus", "bus") },
+      { a: w("oa-body", "body"), b: w("oa-buddy", "buddy") },
+    ],
+  },
+  {
+    id: "short-long",
+    section: "long-vowels",
+    title: "Short and long vowels",
+    labels: ["Short", "Long"],
+    pairs: [
+      { a: w("sl-ship", "ship", { british: "ship", ipaGB: "ʃɪp" }), b: w("sl-sheep", "sheep", { british: "shiip", ipaGB: "ʃiːp" }) },
+      { a: w("sl-live", "live", { british: "liv", ipaGB: "lɪv" }), b: w("sl-leave", "leave", { british: "liiv", ipaGB: "liːv" }) },
+      { a: w("sl-fill", "fill", { british: "fil", ipaGB: "fɪl" }), b: w("sl-feel", "feel", { british: "fiil", ipaGB: "fiːl" }) },
+      { a: w("sl-sit", "sit", { british: "sit", ipaGB: "sɪt" }), b: w("sl-seat", "seat", { british: "siit", ipaGB: "siːt" }) },
+      { a: w("sl-full", "full", { british: "ful", ipaGB: "fʊl" }), b: w("sl-fool", "fool", { british: "fuul", ipaGB: "fuːl" }) },
+      { a: w("sl-pull", "pull", { british: "pul", ipaGB: "pʊl" }), b: w("sl-pool", "pool", { british: "puul", ipaGB: "puːl" }) },
+      { a: w("sl-cut", "cut", { british: "kat", ipaGB: "kʌt" }), b: w("sl-cart", "cart", { british: "kaat", ipaGB: "kɑːt" }) },
+      { a: w("sl-hut", "hut", { british: "hat", ipaGB: "hʌt" }), b: w("sl-heart", "heart", { british: "haat", ipaGB: "hɑːt" }) },
+      { a: w("sl-can", "can", { british: "kan", ipaGB: "kæn" }), b: w("sl-cant", "can't", { british: "kaant", ipaGB: "kɑːnt" }) },
+    ],
+  },
+];
