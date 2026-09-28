@@ -1,6 +1,6 @@
 import type { RuleSlug, Word } from "./types";
 
-/** "Which style to use: quick answers" — each row's examples get a Standard English and an American clip. */
+/** "Which pronunciation to practise" — each row's examples get a Standard English and an American clip. */
 export type QuickAnswer = {
   sound: string;
   examples: Word;

@@ -13,7 +13,7 @@ import { absoluteUrl, pageMetadata, siteDescription, siteName } from "@/lib/site
 export const metadata: Metadata = pageMetadata({ description: siteDescription, href: "/" });
 
 const reference = [
-  { href: "/guide/which-style", title: "Which style to use", text: "Quick answers for every sound, and how to check.", icon: Ear },
+  { href: "/guide/which-style", title: "Which pronunciation to practise", text: "Quick answers for every sound, and how to check.", icon: Ear },
   { href: "/everyday-words", title: "Words that change meaning", text: "writing or riding, right or light, sheep or ship.", icon: Mic },
   { href: "/writing", title: "Writing: one spelling system", text: "Spelling, dates, false friends and idioms.", icon: PenLine },
   { href: "/daily-practice", title: "Daily practice", text: "15 minutes a day covers every rule.", icon: Timer },
@@ -48,7 +48,7 @@ export default function Home() {
       <span className="font-medium">Practise the Standard English form shown here.</span> Listen to the American
       example so you can recognise another pronunciation of the same word.{" "}
       <Link href="/guide/which-style" className={link}>
-        Which style to use
+        Which pronunciation to practise
       </Link>
     </>,
   ];
@@ -81,13 +81,15 @@ export default function Home() {
           <span className="block text-muted-foreground">For Kinyarwanda Speakers</span>
         </h1>
         <p className="mt-6 text-lg leading-8 text-pretty text-muted-foreground">
-          An English pronunciation guide for Kinyarwanda speakers. It focuses on the features of Kinyarwanda
-          pronunciation that, in our experience, most often cause misunderstandings when carried into English. It
-          sets them out as six rules, with audio examples and a{" "}
+          This guide focuses on the features of Kinyarwanda pronunciation that, in our experience, most often cause
+          misunderstandings when carried into English. The aim is to be easily understood, not to change your accent.
+        </p>
+        <p className="mt-4 text-lg leading-8 text-pretty text-muted-foreground">
+          Each of the six rules explains one feature, with example words and audio in{" "}
           <Link href="/guide/standard-english" className="font-medium text-foreground underline underline-offset-4">
             Standard English
-          </Link>{" "}
-          model to follow.
+          </Link>
+          .
         </p>
         <div className="mt-8 flex flex-wrap gap-3">
           <Link

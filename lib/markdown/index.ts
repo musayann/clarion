@@ -118,13 +118,15 @@ function home(): Omit<PageMarkdown, "href"> {
   const quickWins = rules.filter((r) => r.quickWin).map((r) => r.number);
   const md = `# An English pronunciation guide for Kinyarwanda speakers
 
-An English pronunciation guide for Kinyarwanda speakers. It focuses on the features of Kinyarwanda pronunciation that, in our experience, most often cause misunderstandings when carried into English. It sets them out as six rules, with audio examples and a ${mdLink("/guide/standard-english", "Standard English")} model to follow.
+This guide focuses on the features of Kinyarwanda pronunciation that, in our experience, most often cause misunderstandings when carried into English. The aim is to be easily understood, not to change your accent.
+
+Each of the six rules explains one feature, with example words and audio in ${mdLink("/guide/standard-english", "Standard English")}.
 
 ## How to use this guide
 
 1. **Start with the easy ones:** rules ${quickWins.slice(0, -1).join(", ")} and ${quickWins.at(-1)}. Each is one change you can make this week.
 2. **Practise a little every day** with the 15-minute ${mdLink("/daily-practice", "daily routine")}.
-3. **Practise the Standard English form shown here.** Listen to the American example so you can recognise another pronunciation of the same word. See ${mdLink("/guide/which-style", "Which style to use")}.
+3. **Practise the Standard English form shown here.** Listen to the American example so you can recognise another pronunciation of the same word. See ${mdLink("/guide/which-style", "Which pronunciation to practise")}.
 
 ## The six rules
 
@@ -216,7 +218,7 @@ export async function llmsTxt(): Promise<string> {
 
 > ${siteDescription}
 
-The guide builds on familiar sounds and focused practice. Standard English here means British Received Pronunciation (RP), the model taught here, chosen from our experience helping Kinyarwanda speakers with English. Practise those examples and use the American comparisons to build listening skills. Sound spellings mark the stressed syllable in **bold**; audio links are MP3 clips (Standard English and, where shown, American).
+The guide focuses on the features of Kinyarwanda pronunciation that, in our experience, most often cause misunderstandings when carried into English. The aim is to be easily understood, not to change your accent. Standard English here means British Received Pronunciation (RP), the model the guide follows. Practise the Standard English examples and use the American comparisons to build listening skills. Sound spellings mark the stressed syllable in **bold**; audio links are MP3 clips (Standard English and, where shown, American).
 
 Every page is available as markdown: add \`.md\` to its URL (\`/index.md\` for the home page), or request the page with \`Accept: text/markdown\`. The whole guide in one file: ${absoluteUrl("/llms-full.txt")}
 

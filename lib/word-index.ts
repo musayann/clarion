@@ -16,7 +16,7 @@ export type IndexEntry = {
 };
 
 const sectionPages: Record<Exclude<Section, (typeof rules)[number]["slug"]>, { title: string; href: string }> = {
-  "which-style": { title: "Which style to use", href: "/guide/which-style" },
+  "which-style": { title: "Which pronunciation to practise", href: "/guide/which-style" },
   "everyday-words": { title: "Words that change meaning", href: "/everyday-words" },
 };
 

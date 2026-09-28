@@ -9,6 +9,6 @@ export default function Image() {
   return ogImage({
     eyebrow: "English pronunciation guide",
     title: "For Kinyarwanda speakers",
-    text: "Six practical rules drawn from our experience, with audio examples and a clear Standard English model.",
+    text: "The sounds that most often cause misunderstandings, set out as six rules with audio examples and a Standard English model.",
   });
 }
