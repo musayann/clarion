@@ -124,7 +124,7 @@ This guide teaches the ${mdLink("/guide/clarity-not-accent", "Standard English")
 
 1. **Start with the quick wins:** rules ${quickWins.slice(0, -1).join(", ")} and ${quickWins.at(-1)}. Each is one change you can make this week.
 2. **Practise rules 3 and 4 every day** for 3 minutes each, using the ${mdLink("/daily-practice", "daily routine")}.
-3. **Say the Standard English version, not the American one.** Copied American sounds are what most often make Rwandans hard to understand. See ${mdLink("/guide/which-style", "Which style to use")}.
+3. **Say the Standard English version, not the American one.** Some speakers lose clarity when they copy unfamiliar accent features, such as a tapped t. Standard English gives you a clear alternative. See ${mdLink("/guide/which-style", "Which style to use")}.
 
 ## The six rules
 

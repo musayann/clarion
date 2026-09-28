@@ -45,8 +45,9 @@ export default function Home() {
       .
     </>,
     <>
-      <span className="font-medium">Say the Standard English version, not the American one.</span> Copied American sounds
-      are what most often make Rwandans hard to understand.{" "}
+      <span className="font-medium">Say the Standard English version, not the American one.</span> Some speakers lose
+      clarity when they copy unfamiliar accent features, such as a tapped t. Standard English gives you a clear
+      alternative.{" "}
       <Link href="/guide/which-style" className={link}>
         Which style to use
       </Link>
