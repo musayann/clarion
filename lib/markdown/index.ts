@@ -118,7 +118,7 @@ function home(): Omit<PageMarkdown, "href"> {
 
 Kinyarwanda treats _r_ and _l_ as one sound, so English words like right and light, or grass and glass, can sound the same. Copying an American accent makes it worse: the American _t_ sounds like the Kinyarwanda _r_, so writing is heard as riding.
 
-This guide teaches the ${mdLink("/guide/get-started", "Standard English")} version of each sound, the one that is easiest for Kinyarwanda speakers to say clearly, in six short rules with audio for every example.
+This guide teaches the ${mdLink("/guide/clarity-not-accent", "Standard English")} version of each sound, the one that is easiest for Kinyarwanda speakers to say clearly, in six short rules with audio for every example.
 
 ## How to use this guide
 
@@ -216,7 +216,7 @@ export async function llmsTxt(): Promise<string> {
 
 > ${siteDescription}
 
-The guide teaches the Standard English version of each sound, because copying American sounds is what most often makes Kinyarwanda speakers hard to understand. Sound spellings mark the stressed syllable in **bold**; audio links are MP3 clips (Standard English and, where shown, American).
+The goal is to be understood the first time, not a particular accent. A few sounds cause most misunderstandings, such as a tapped t that sounds like the Kinyarwanda r, so the guide teaches the Standard English version of each sound: the clearest for Kinyarwanda speakers. Sound spellings mark the stressed syllable in **bold**; audio links are MP3 clips (Standard English and, where shown, American).
 
 Every page is available as markdown: add \`.md\` to its URL (\`/index.md\` for the home page), or request the page with \`Accept: text/markdown\`. The whole guide in one file: ${absoluteUrl("/llms-full.txt")}
 
