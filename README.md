@@ -1,6 +1,4 @@
-# Clear English Rwanda
-
-An English pronunciation guide for Kinyarwanda speakers. Many Rwandans copy an American accent, and several American sounds are heard as different words when a Kinyarwanda speaker says them. This is a reference site for Rwandans on clear Standard English pronunciation, as heard on the BBC World Service and in dictionary 'UK' audio. It covers six rules, everyday words where one sound changes the meaning, the American habits not to copy, and standard British spelling, with audio for every example. The source text is `content.md`.
+# Clarion
 
 Built with Next.js (App Router, MDX), Tailwind CSS and shadcn/ui. Every page is statically generated.
 
