@@ -6,7 +6,10 @@ export type QuickAnswer = {
   examples: Word;
   americanNote?: string;
   britishNote?: string;
-  say: string;
+  /** Shown under the Standard English form, e.g. an easier alternative. */
+  sayNote?: string;
+  /** Both accents say it the same way. */
+  same?: true;
   check: string;
   rule?: RuleSlug;
 };
@@ -17,7 +20,6 @@ export const quickAnswers: QuickAnswer[] = [
     examples: { id: "qa-t-vowels", word: "water, better", british: "**woo**-tə, **be**-tə", american: "**waa**-dər, **be**-dər" },
     americanNote: "tapped t",
     britishNote: "full t",
-    say: "Standard English",
     check: "Your tongue stops the air completely",
     rule: "say-every-t",
   },
@@ -26,7 +28,6 @@ export const quickAnswers: QuickAnswer[] = [
     examples: { id: "qa-t-after-n", word: "twenty, internet", british: "**twen**-ti, **in**-tə-net", american: "**twe**-ni, **i**-nər-net" },
     americanNote: "no t",
     britishNote: "full t",
-    say: "Standard English",
     check: "You hear a t between the n and the vowel after it",
     rule: "say-every-t",
   },
@@ -35,21 +36,18 @@ export const quickAnswers: QuickAnswer[] = [
     examples: { id: "qa-r-after-vowel", word: "car, hard", british: "kaa, haad", american: "kaar, haard" },
     americanNote: "r said",
     britishNote: "r silent",
-    say: "Standard English",
     check: "You go straight from aa to the next sound, with no r",
     rule: "drop-the-r",
   },
   {
     sound: "The vowel in work",
     examples: { id: "qa-work-vowel", word: "work, first", british: "wəək, fəəst", american: "wərk, fərst" },
-    say: "Standard English",
     check: "ə held twice as long, no r, lips do not move",
     rule: "drop-the-r",
   },
   {
     sound: "The vowel in hot",
     examples: { id: "qa-hot-vowel", word: "hot, job", british: "hot, job", american: "haat, jaab" },
-    say: "Standard English",
     check: "You say Kinyarwanda o, not a",
     rule: "short-o",
   },
@@ -57,21 +55,20 @@ export const quickAnswers: QuickAnswer[] = [
     sound: "can't",
     examples: { id: "qa-cant", word: "can't", british: "kaant", american: "kant", ipaGB: "kɑːnt", ipaUS: "kænt" },
     americanNote: "t often silent",
-    say: "Standard English, or say 'cannot'",
+    sayNote: "or say 'cannot'",
     check: "aa held twice as long as in can, then a full t",
     rule: "long-vowels",
   },
   {
     sound: "r and l",
     examples: { id: "qa-r-l", word: "right, light", british: "right, light", american: "right, light" },
-    say: "Same in both",
+    same: true,
     check: "l: tongue touches the ridge and stays. r: tongue touches nothing",
     rule: "r-and-l",
   },
   {
     sound: "-teen and -ty",
     examples: { id: "qa-teen-ty", word: "thirteen, thirty", british: "thəə-**tiin**, **thəə**-ti", american: "thər-**tiin**, **thər**-di" },
-    say: "Standard English",
     check: "-teen: last syllable stressed. -ty: first syllable stressed, full t",
     rule: "thirteen-vs-thirty",
   },

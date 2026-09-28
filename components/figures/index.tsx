@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ArrowDown, ArrowRight } from "lucide-react";
 import { cn } from "cn";
 
+import { figureText, kinyaVowels, quadrants, soundCounts, stressPairs, vowelLandings } from "./data";
 
 function Figure({
   title,
@@ -72,44 +73,6 @@ const simpleTable = (head: string[], rows: (string | number)[][]) => (
 
 /* 1. Where each rule sits: effect versus effort ------------------------------------------ */
 
-type QuadrantItem = { label: string; href?: string };
-type Quadrant = { title: string; tone: "quick-win" | "default" | "skip"; items: QuadrantItem[] };
-
-// Row by row: high effect (easier, harder), then low effect (easier, harder).
-const quadrants: Quadrant[] = [
-  {
-    title: "Quick wins: start here",
-    tone: "quick-win",
-    items: [
-      { label: "Rule 1: the full t (twenty, water)", href: "/rules/say-every-t" },
-      { label: "Rule 2: thirteen versus thirty", href: "/rules/thirteen-vs-thirty" },
-      { label: "Rule 5: o in hot, job, stop", href: "/rules/short-o" },
-      { label: "Rule 6: long vowels (can't, sheep)", href: "/rules/long-vowels" },
-    ],
-  },
-  {
-    title: "Practise every day",
-    tone: "default",
-    items: [
-      { label: "Rule 3: r versus l (right, light)", href: "/rules/r-and-l" },
-      { label: "Rule 4: the əə vowel (work, first)", href: "/rules/drop-the-r" },
-    ],
-  },
-  {
-    title: "Nice to have",
-    tone: "default",
-    items: [
-      { label: "Rule 4: drop r after a vowel (car)", href: "/rules/drop-the-r" },
-      { label: "Rule 4: r before a vowel (far away)", href: "/rules/drop-the-r" },
-    ],
-  },
-  {
-    title: "Skip",
-    tone: "skip",
-    items: [{ label: "The American r sound" }, { label: "A native accent, American or British" }],
-  },
-];
-
 /** Arrowhead at the end of an axis line, pointing up unless rotated. */
 function AxisArrow({ className }: { className: string }) {
   return (
@@ -122,8 +85,8 @@ function AxisArrow({ className }: { className: string }) {
 export function EffectEffortChart() {
   return (
     <Figure
-      title="Where each rule sits: effect versus effort"
-      caption="Start with the quick wins. Practise rules 3 and 4 every day: they take longest but make the biggest difference."
+      title={figureText.effectEffort.title}
+      caption={figureText.effectEffort.caption}
     >
       <div className="grid grid-cols-[auto_auto_1fr] text-muted-foreground">
         {/* y axis: title, then High/Low ticks */}
@@ -191,7 +154,7 @@ export function EffectEffortChart() {
 export function TRuleFlow() {
   const box = "rounded-lg border px-4 py-3 text-center";
   return (
-    <Figure title="The t rule: one decision" caption="There is only one question to ask about a t in the spelling.">
+    <Figure title={figureText.tRule.title} caption={figureText.tRule.caption}>
       <div className="flex flex-col items-center gap-2">
         <div className={cn(box, "bg-muted/50 font-medium")}>You see a t in the spelling</div>
         <ArrowDown className="size-4 text-muted-foreground" aria-hidden />
@@ -226,26 +189,11 @@ export function TRuleFlow() {
 
 /* 3. Stress in -teen and -ty numbers ------------------------------------------------------ */
 
-const stressPairs: { n: string; syllables: [string, string]; stress: 0 | 1 }[][] = [
-  [
-    { n: "13", syllables: ["thəə", "tiin"], stress: 1 },
-    { n: "30", syllables: ["thəə", "ti"], stress: 0 },
-  ],
-  [
-    { n: "14", syllables: ["foo", "tiin"], stress: 1 },
-    { n: "40", syllables: ["foo", "ti"], stress: 0 },
-  ],
-  [
-    { n: "15", syllables: ["fif", "tiin"], stress: 1 },
-    { n: "50", syllables: ["fif", "ti"], stress: 0 },
-  ],
-];
-
 export function TeenTyStress() {
   return (
     <Figure
-      title="Stress in -teen and -ty numbers"
-      caption="The stressed syllable is louder, longer and higher. In -teen numbers it is the last one, and its ii is long."
+      title={figureText.teenTy.title}
+      caption={figureText.teenTy.caption}
     >
       <div className="grid gap-4 sm:grid-cols-3">
         {stressPairs.map((pair) => (
@@ -281,24 +229,12 @@ export function TeenTyStress() {
 
 /* 4. Sounds per word: Standard English versus American -------------------------------------------- */
 
-// Counted from the guide's sound spellings: a long vowel (aa, oo, əə …) is one sound.
-const soundCounts: { word: string; gb: string; us: string; gbN: number; usN: number; endsInVowel: boolean }[] = [
-  { word: "car", gb: "kaa", us: "kaar", gbN: 2, usN: 3, endsInVowel: true },
-  { word: "more", gb: "moo", us: "moor", gbN: 2, usN: 3, endsInVowel: true },
-  { word: "hard", gb: "haad", us: "haard", gbN: 3, usN: 4, endsInVowel: false },
-  { word: "work", gb: "wəək", us: "wərk", gbN: 3, usN: 4, endsInVowel: false },
-  { word: "first", gb: "fəəst", us: "fərst", gbN: 4, usN: 5, endsInVowel: false },
-  { word: "water", gb: "woo-tə", us: "waa-dər", gbN: 4, usN: 5, endsInVowel: true },
-  { word: "better", gb: "be-tə", us: "be-dər", gbN: 4, usN: 5, endsInVowel: true },
-  { word: "computer", gb: "kəm-pyuu-tə", us: "kəm-pyuu-dər", gbN: 8, usN: 9, endsInVowel: true },
-];
-
 export function SoundCountChart() {
   const max = 9;
   return (
     <Figure
-      title="Sounds per word: without the r, Standard English words are shorter"
-      caption="Counted from the sound spellings in this guide; a long vowel counts as one sound. ● marks words that end in a vowel in Standard English, just like Kinyarwanda words."
+      title={figureText.soundCount.title}
+      caption={figureText.soundCount.caption}
       table={simpleTable(
         ["Word", "Standard English", "Sounds", "American", "Sounds"],
         soundCounts.map((s) => [s.word, s.gb, s.gbN, s.us, s.usN]),
@@ -344,18 +280,11 @@ export function SoundCountChart() {
 
 /* 5. Which Kinyarwanda vowel each style lands on ----------------------------------------- */
 
-const kinyaVowels = ["i", "e", "a", "o", "u"];
-const vowelLandings: { label: string; vowel: string; note: string; tone: "good" | "avoid" | "neutral" }[] = [
-  { label: "hot (Standard English)", vowel: "o", note: "short o, a different vowel from hut", tone: "good" },
-  { label: "hot (American)", vowel: "a", note: "a held longer: only length separates hot from hut", tone: "avoid" },
-  { label: "hut, nut, cup", vowel: "a", note: "how Kinyarwanda speakers usually say it", tone: "neutral" },
-];
-
 export function VowelMap() {
   return (
     <Figure
-      title="Which Kinyarwanda vowel each style lands on"
-      caption="The Standard English o in hot is a contrast you already make in Kinyarwanda. The American vowel sits on top of the a you use for hut."
+      title={figureText.vowelMap.title}
+      caption={figureText.vowelMap.caption}
     >
       <div className="space-y-3">
         <div className="grid grid-cols-5 gap-2 sm:ml-[14rem]">

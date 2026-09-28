@@ -1,7 +1,10 @@
-export const metadata = {
+import { pageMetadata } from "@/lib/site";
+
+export const metadata = pageMetadata({
   title: "Writing: one spelling system",
   description: "Standard British spelling, dates, false friends, sports idioms and grammar habits.",
-};
+  href: "/writing",
+});
 
 <PageHeader eyebrow="Reference" title="Writing: use one spelling system">
   Both spelling systems are correct. This guide uses standard British spelling, the system most common in East Africa.

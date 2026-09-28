@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowUpRight, CircleCheck, CircleX } from "lucide-react";
+import { ArrowUpRight, CircleCheck, CircleX, Ear } from "lucide-react";
 import { cn } from "cn";
 
 import { Listen } from "@/components/listen";
@@ -19,13 +19,7 @@ import type { Word } from "@/content/data/types";
 import { wordGroups } from "@/content/data/words";
 import { ruleHref, rules } from "@/content/nav";
 import { clipSrc } from "@/lib/audio";
-import { groupAnchor } from "@/lib/word-index";
-
-function find<T extends { id: string }>(list: T[], id: string, kind: string): T {
-  const item = list.find((x) => x.id === id);
-  if (!item) throw new Error(`Unknown ${kind} "${id}"`);
-  return item;
-}
+import { findById as find, groupAnchor } from "@/lib/word-index";
 
 /** Cambridge has recorded UK and US audio for single words. */
 function DictionaryLink({ word }: { word: string }) {
@@ -59,17 +53,48 @@ const headClass = "h-10 px-4 text-xs font-semibold uppercase tracking-wide text-
 const cellClass = "px-4 py-2.5";
 const sayCellClass = "bg-good-soft/30";
 const avoidCellClass = "bg-avoid-soft/30 text-muted-foreground";
+const recogniseCellClass = "bg-caution-soft/40 text-muted-foreground";
 
-/** Column header marking what to say (✓, green) or what not to copy (✗, red). */
-function VerdictHead({ verdict, label, detail }: { verdict: "say" | "avoid"; label: string; detail?: string }) {
-  const Icon = verdict === "say" ? CircleCheck : CircleX;
+const verdicts = {
+  say: { icon: CircleCheck, className: "bg-good-soft/60 text-good" },
+  avoid: { icon: CircleX, className: "bg-avoid-soft/60 text-avoid" },
+  recognise: { icon: Ear, className: "bg-caution-soft/60 text-caution" },
+};
+
+/**
+ * Column header marking what to say (✓, green), what to recognise but not copy (ear, amber),
+ * or a mistake (✗, red).
+ */
+function VerdictHead({
+  verdict,
+  label,
+  detail,
+  wrap = false,
+}: {
+  verdict: keyof typeof verdicts;
+  label: string;
+  detail?: string;
+  /** Put the detail on its own line so a long header doesn't widen the table. */
+  wrap?: boolean;
+}) {
+  const { icon: Icon, className } = verdicts[verdict];
   return (
-    <TableHead className={cn(headClass, verdict === "say" ? "bg-good-soft/60 text-good" : "bg-avoid-soft/60 text-avoid")}>
-      <span className="inline-flex items-center gap-1.5">
-        <Icon className="size-3.5" aria-hidden />
-        {label}
-        {detail && <span className="font-normal normal-case tracking-normal">({detail})</span>}
-      </span>
+    <TableHead className={cn(headClass, className, wrap && "h-auto py-2 whitespace-normal")}>
+      {wrap ? (
+        <span className="flex flex-col">
+          <span className="inline-flex items-center gap-1.5 whitespace-nowrap">
+            <Icon className="size-3.5" aria-hidden />
+            {label}
+          </span>
+          {detail && <span className="pl-5 font-normal normal-case tracking-normal">({detail})</span>}
+        </span>
+      ) : (
+        <span className="inline-flex items-center gap-1.5">
+          <Icon className="size-3.5" aria-hidden />
+          {label}
+          {detail && <span className="font-normal normal-case tracking-normal">({detail})</span>}
+        </span>
+      )}
     </TableHead>
   );
 }
@@ -226,6 +251,7 @@ export function Hear({ id, label, accent = "gb" }: { id: string; label: string; 
   return <Listen src={clipSrc(accent, id)} label={label} accent={accent} className="-my-1 align-middle" />;
 }
 
+/** Sound | Say this (Standard English clip) | How to check | Recognise, don't copy (American clip) */
 export function QuickAnswersTable() {
   return (
     <TableFrame id="quick-answers">
@@ -233,16 +259,15 @@ export function QuickAnswersTable() {
         <TableHeader>
           <TableRow className="hover:bg-transparent">
             <TableHead className={headClass}>Sound</TableHead>
-            <TableHead className={headClass}>American</TableHead>
-            <TableHead className={headClass}>Standard English</TableHead>
-            <TableHead className={headClass}>Say</TableHead>
+            <VerdictHead verdict="say" label="Say this" detail="Standard English" />
             <TableHead className={headClass}>How to check</TableHead>
+            <VerdictHead verdict="recognise" label="Recognise, don't copy" detail="American" wrap />
           </TableRow>
         </TableHeader>
         <TableBody>
           {quickAnswers.map((q) => (
             <TableRow key={q.examples.id} className="align-top">
-              <TableCell className={cn(cellClass, "min-w-40 whitespace-normal")}>
+              <TableCell className={cn(cellClass, "min-w-36 whitespace-normal")}>
                 <div className="font-medium">{q.sound}</div>
                 <div className="text-sm text-muted-foreground">{q.examples.word}</div>
                 {q.rule && (
@@ -251,22 +276,28 @@ export function QuickAnswersTable() {
                   </Link>
                 )}
               </TableCell>
-              <TableCell className={cn(cellClass, "text-muted-foreground")}>
+              <TableCell className={cn(cellClass, sayCellClass)}>
                 <span className="inline-flex items-center gap-1">
-                  <Respell text={q.examples.american!} />
-                  <Listen src={clipSrc("us", q.examples.id)} label={q.examples.word} accent="us" />
-                </span>
-                {q.americanNote && <div className="text-xs">({q.americanNote})</div>}
-              </TableCell>
-              <TableCell className={cellClass}>
-                <span className="inline-flex items-center gap-1">
-                  <Respell text={q.examples.british!} />
+                  <Respell text={q.examples.british!} className="text-base font-medium" />
                   <Listen src={clipSrc("gb", q.examples.id)} label={q.examples.word} />
                 </span>
                 {q.britishNote && <div className="text-xs text-muted-foreground">({q.britishNote})</div>}
+                {q.sayNote && <div className="text-xs font-medium text-good">{q.sayNote}</div>}
               </TableCell>
-              <TableCell className={cn(cellClass, "whitespace-normal font-medium text-good")}>{q.say}</TableCell>
-              <TableCell className={cn(cellClass, "min-w-56 whitespace-normal text-sm")}>{q.check}</TableCell>
+              <TableCell className={cn(cellClass, "min-w-48 whitespace-normal text-sm")}>{q.check}</TableCell>
+              <TableCell className={cn(cellClass, recogniseCellClass, "text-sm")}>
+                {q.same ? (
+                  "Same in both"
+                ) : (
+                  <>
+                    <span className="inline-flex items-center gap-1">
+                      <Respell text={q.examples.american!} />
+                      <Listen src={clipSrc("us", q.examples.id)} label={q.examples.word} accent="us" />
+                    </span>
+                    {q.americanNote && <div className="text-xs">({q.americanNote})</div>}
+                  </>
+                )}
+              </TableCell>
             </TableRow>
           ))}
         </TableBody>

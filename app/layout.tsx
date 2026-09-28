@@ -7,24 +7,18 @@ import { SiteHeader } from "@/components/site/site-header";
 import { ThemeProvider } from "@/components/site/theme";
 import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import { siteDescription, siteName, siteTitle, siteUrl } from "@/lib/site";
 
 // latin-ext carries ə, which every sound spelling in the guide uses.
 const sans = Inter({ variable: "--font-sans", subsets: ["latin", "latin-ext"] });
 const mono = JetBrains_Mono({ variable: "--font-mono", subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"),
-  title: {
-    default: "Clear English Rwanda: English pronunciation for Kinyarwanda speakers",
-    template: "%s · Clear English Rwanda",
-  },
-  description:
-    "Speak English that is understood the first time. An English pronunciation guide for Rwandans and Kinyarwanda speakers: six rules, the words where one sound changes the meaning, and audio for every example.",
-  openGraph: {
-    siteName: "Clear English Rwanda",
-    type: "website",
-    locale: "en_GB",
-  },
+  metadataBase: new URL(siteUrl),
+  title: { default: siteTitle, template: `%s · ${siteName}` },
+  description: siteDescription,
+  applicationName: siteName,
+  openGraph: { siteName, type: "website", locale: "en_GB" },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

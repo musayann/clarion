@@ -1,10 +1,15 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, BookOpen, Ear, Mic, PenLine, Search, Timer } from "lucide-react";
 
 import { EffectEffortChart } from "@/components/figures";
+import { course, JsonLd } from "@/components/json-ld";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { rules } from "@/content/nav";
+import { absoluteUrl, pageMetadata, siteDescription, siteName } from "@/lib/site";
+
+export const metadata: Metadata = pageMetadata({ description: siteDescription, href: "/" });
 
 const reference = [
   { href: "/guide/which-style", title: "Which style to use", text: "Quick answers for every sound, and how to check.", icon: Ear },
@@ -50,6 +55,25 @@ export default function Home() {
 
   return (
     <div className="mx-auto w-full max-w-5xl px-4 py-10 sm:px-6 lg:px-8 lg:py-16">
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "WebSite",
+              name: siteName,
+              url: absoluteUrl("/"),
+              inLanguage: "en-GB",
+              potentialAction: {
+                "@type": "SearchAction",
+                target: { "@type": "EntryPoint", urlTemplate: `${absoluteUrl("/words")}?q={search_term_string}` },
+                "query-input": "required name=search_term_string",
+              },
+            },
+            course,
+          ],
+        }}
+      />
       <section className="max-w-3xl">
         <p className="text-sm font-semibold text-primary">Clear English Rwanda</p>
         <h1 className="mt-3 text-4xl font-bold tracking-tight text-balance sm:text-5xl">
@@ -63,7 +87,7 @@ export default function Home() {
         </p>
         <p className="mt-4 text-lg leading-8 text-pretty text-muted-foreground">
           This guide teaches the{" "}
-          <Link href="/guide/sound-names#what-standard-english-means" className="font-medium text-foreground underline underline-offset-4">
+          <Link href="/guide/get-started#what-standard-english-means" className="font-medium text-foreground underline underline-offset-4">
             Standard English
           </Link>{" "}
           version of each sound, the one that is easiest for Kinyarwanda speakers to say clearly, in six short rules with audio for

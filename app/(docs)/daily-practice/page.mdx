@@ -1,7 +1,10 @@
-export const metadata = {
+import { pageMetadata } from "@/lib/site";
+
+export const metadata = pageMetadata({
   title: "Daily practice",
   description: "A 15-minute daily routine that covers every rule, a weekly self-test, and where to hear the difference.",
-};
+  href: "/daily-practice",
+});
 
 <PageHeader eyebrow="Reference" title="Daily practice: 15 minutes">
   Fifteen minutes a day on these five steps covers every rule in this guide.

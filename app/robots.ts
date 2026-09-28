@@ -1,7 +1,8 @@
 import type { MetadataRoute } from "next";
 
-const base = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+import { siteUrl } from "@/lib/site";
 
+// Every crawler is welcome, AI and search alike: the guide is free to read and to learn from.
 export default function robots(): MetadataRoute.Robots {
-  return { rules: { userAgent: "*", allow: "/" }, sitemap: `${base}/sitemap.xml` };
+  return { rules: { userAgent: "*", allow: "/" }, host: siteUrl, sitemap: `${siteUrl}/sitemap.xml` };
 }

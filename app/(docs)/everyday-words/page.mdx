@@ -1,7 +1,10 @@
-export const metadata = {
+import { pageMetadata } from "@/lib/site";
+
+export const metadata = pageMetadata({
   title: "Words where one sound changes the meaning",
   description: "Everyday words where one wrong sound makes listeners hear a different word or number, with audio.",
-};
+  href: "/everyday-words",
+});
 
 <PageHeader eyebrow="Reference" title="Everyday words where one sound changes the meaning">
   In these words, one wrong sound makes listeners hear a different word or a different number. Say the version in the

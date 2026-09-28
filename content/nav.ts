@@ -62,7 +62,7 @@ export const nav: NavSection[] = [
     title: "Start here",
     items: [
       { title: "Overview", href: "/" },
-      { title: "How to read this guide", href: "/guide/sound-names" },
+      { title: "Get started", href: "/guide/get-started" },
       { title: "Which style to use", href: "/guide/which-style" },
     ],
   },

@@ -21,6 +21,16 @@ const sectionPages: Record<Exclude<Section, (typeof rules)[number]["slug"]>, { t
   "recognise-american": { title: "Habits to avoid", href: "/recognise-american" },
 };
 
+export const wordFinderDescription =
+  "Search every word in the guide: its Standard English sound spelling, the American form, audio and the rule it belongs to.";
+
+/** Looks up a word, pair or sentence group by id; throws so a typo in MDX fails the build. */
+export function findById<T extends { id: string }>(list: T[], id: string, kind: string): T {
+  const item = list.find((x) => x.id === id);
+  if (!item) throw new Error(`Unknown ${kind} "${id}"`);
+  return item;
+}
+
 /** Element id of a word or pair table, distinct from the heading ids rehype-slug generates. */
 export const groupAnchor = (groupId: string) => `words-${groupId}`;
 

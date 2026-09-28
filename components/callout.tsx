@@ -11,8 +11,12 @@ const variants = {
   note: { icon: Info, title: "Note", className: "bg-muted/40 *:[svg]:text-muted-foreground" },
 } as const;
 
+export type CalloutVariant = keyof typeof variants;
+
+export const calloutTitle = (variant: CalloutVariant = "note") => variants[variant].title;
+
 type CalloutProps = {
-  variant?: keyof typeof variants;
+  variant?: CalloutVariant;
   title?: string;
   children: React.ReactNode;
 };

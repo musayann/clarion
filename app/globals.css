@@ -13,6 +13,8 @@
   --color-good-soft: var(--good-soft);
   --color-avoid: var(--avoid);
   --color-avoid-soft: var(--avoid-soft);
+  --color-caution: var(--caution);
+  --color-caution-soft: var(--caution-soft);
   --font-sans: var(--font-sans);
   --font-mono: var(--font-mono);
   --font-heading: var(--font-sans);
@@ -79,6 +81,8 @@
   --good-soft: oklch(0.95 0.035 155);
   --avoid: oklch(0.5 0.15 30);
   --avoid-soft: oklch(0.96 0.025 30);
+  --caution: oklch(0.52 0.11 62);
+  --caution-soft: oklch(0.965 0.03 75);
   --chart-1: #1f78b4;
   --chart-2: #c98a00;
   --chart-3: oklch(0.5 0.1 155);
@@ -120,6 +124,8 @@
   --good-soft: oklch(0.28 0.04 155);
   --avoid: oklch(0.75 0.12 35);
   --avoid-soft: oklch(0.28 0.04 30);
+  --caution: oklch(0.8 0.11 70);
+  --caution-soft: oklch(0.28 0.04 65);
   --chart-1: #3d9ad6;
   --chart-2: #b38612;
   --chart-3: oklch(0.72 0.11 155);

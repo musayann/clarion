@@ -2,14 +2,16 @@ import { Suspense } from "react";
 import type { Metadata } from "next";
 
 import { PageHeader } from "@/components/page-header";
-import { WordFinder } from "@/components/word-finder";
+import { WordFinder, WordFinderView } from "@/components/word-finder";
 import { clipSrc } from "@/lib/audio";
-import { buildWordIndex } from "@/lib/word-index";
+import { pageMetadata } from "@/lib/site";
+import { buildWordIndex, wordFinderDescription } from "@/lib/word-index";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Word finder",
-  description: "Search every word in the guide: its Standard English sound spelling, the American form, audio and the rule it belongs to.",
-};
+  description: wordFinderDescription,
+  href: "/words",
+});
 
 export default function WordsPage() {
   const entries = buildWordIndex().map((e) => ({
@@ -24,7 +26,7 @@ export default function WordsPage() {
         Every word in the guide in one place. Type to filter, tap 🔊 to listen, and follow the link to the rule it belongs
         to. Copy the green ✓ Standard English form; the red ✗ American form is there so you recognise it, not to copy.
       </PageHeader>
-      <Suspense>
+      <Suspense fallback={<WordFinderView entries={entries} query="" />}>
         <WordFinder entries={entries} />
       </Suspense>
     </>

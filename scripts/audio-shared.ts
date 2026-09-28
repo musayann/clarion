@@ -23,7 +23,7 @@ export const VOICES: Record<Accent, { languageCode: string; name: string }> = {
   us: { languageCode: "en-US", name: process.env.TTS_VOICE_US ?? "en-US-Neural2-D" },
 };
 
-export const SPEAKING_RATE = Number(process.env.TTS_SPEAKING_RATE ?? 0.9);
+export const SPEAKING_RATE = Number(process.env.TTS_SPEAKING_RATE ?? 0.8);
 
 export const clipFile = (c: Pick<Clip, "accent" | "id">) =>
   path.join(AUDIO_DIR, c.accent, `${c.id}.mp3`);

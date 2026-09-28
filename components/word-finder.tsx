@@ -12,11 +12,11 @@ import type { IndexEntry } from "@/lib/word-index";
 
 type Entry = IndexEntry & { srcGB?: string; srcUS?: string };
 
+/** Keeps the filter in ?q= so a search can be shared and linked to. */
 export function WordFinder({ entries }: { entries: Entry[] }) {
   const router = useRouter();
   const pathname = usePathname();
   const params = useSearchParams();
-  const query = params.get("q") ?? "";
 
   const setQuery = (q: string) => {
     const next = new URLSearchParams(params);
@@ -25,6 +25,22 @@ export function WordFinder({ entries }: { entries: Entry[] }) {
     router.replace(`${pathname}${next.size ? `?${next}` : ""}`, { scroll: false });
   };
 
+  return <WordFinderView entries={entries} query={params.get("q") ?? ""} onQueryChange={setQuery} />;
+}
+
+/**
+ * The search box and word list. Rendered with an empty query as the prerendered fallback,
+ * so the full list is in the static HTML for crawlers and agents.
+ */
+export function WordFinderView({
+  entries,
+  query,
+  onQueryChange,
+}: {
+  entries: Entry[];
+  query: string;
+  onQueryChange?: (q: string) => void;
+}) {
   const sections = useMemo(() => {
     const q = query.trim().toLowerCase();
     const matches = q ? entries.filter((e) => e.word.toLowerCase().includes(q)) : entries;
@@ -46,7 +62,7 @@ export function WordFinder({ entries }: { entries: Entry[] }) {
         <Input
           type="search"
           value={query}
-          onChange={(e) => setQuery(e.target.value)}
+          onChange={(e) => onQueryChange?.(e.target.value)}
           placeholder="Type a word, e.g. water"
           aria-label="Filter words"
           className="h-11 pl-9 text-base"
