@@ -81,11 +81,9 @@ export default function Home() {
           <span className="block text-muted-foreground">For Kinyarwanda Speakers</span>
         </h1>
         <p className="mt-6 text-lg leading-8 text-pretty text-muted-foreground">
-          Helping Kinyarwanda speakers with English, we have found that building on familiar sounds makes it easier
-          to speak clearly.
-        </p>
-        <p className="mt-4 text-lg leading-8 text-pretty text-muted-foreground">
-          This guide turns that experience into six practical rules, with audio examples and a clear{" "}
+          An English pronunciation guide for Kinyarwanda speakers. It focuses on the features of Kinyarwanda
+          pronunciation that, in our experience, most often cause misunderstandings when carried into English. It
+          sets them out as six rules, with audio examples and a{" "}
           <Link href="/guide/standard-english" className="font-medium text-foreground underline underline-offset-4">
             Standard English
           </Link>{" "}

@@ -118,9 +118,7 @@ function home(): Omit<PageMarkdown, "href"> {
   const quickWins = rules.filter((r) => r.quickWin).map((r) => r.number);
   const md = `# An English pronunciation guide for Kinyarwanda speakers
 
-Helping Kinyarwanda speakers with English, we have found that building on familiar sounds makes it easier to speak clearly.
-
-This guide turns that experience into six practical rules, with audio examples and a clear ${mdLink("/guide/standard-english", "Standard English")} model to follow.
+An English pronunciation guide for Kinyarwanda speakers. It focuses on the features of Kinyarwanda pronunciation that, in our experience, most often cause misunderstandings when carried into English. It sets them out as six rules, with audio examples and a ${mdLink("/guide/standard-english", "Standard English")} model to follow.
 
 ## How to use this guide
 
