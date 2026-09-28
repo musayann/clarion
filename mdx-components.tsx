@@ -51,6 +51,8 @@ const components: MDXComponents = {
     ),
   // *r*, *l* and *t* name a sound; any other *text* stays plain italics.
   em: ({ children }) => (typeof children === "string" && /^[rlt]$/.test(children) ? <Sound>{children}</Sound> : <em>{children}</em>),
+  // Keeps a word and its inline listen button on the same line.
+  Nowrap: ({ children }: { children: React.ReactNode }) => <span className="whitespace-nowrap">{children}</span>,
   strong: ({ children }) => <strong className="font-semibold">{children}</strong>,
   blockquote: ({ children }) => <blockquote className="my-6 border-l-2 pl-4 italic text-muted-foreground">{children}</blockquote>,
   hr: () => <hr className="my-10" />,

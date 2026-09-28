@@ -133,7 +133,7 @@ function effectEffortChart() {
 function tRuleFlow() {
   return figure(
     figureText.tRule,
-    "1. Listen\n2. Stop the air with your tongue\n3. Release and repeat",
+    `1. Listen ${audio("gb", "snd-t", "t")}\n2. Stop the air with your tongue\n3. Release and repeat`,
   );
 }
 
@@ -154,7 +154,7 @@ function silentR() {
 }
 
 const startingPoints = (landings: Landing[]) =>
-  landings.map((l) => `- ${l.label}: rough starting point Kinyarwanda ${l.sound} (${l.note})`).join("\n");
+  landings.map((l) => `- ${l.label}${l.clip ? ` ${audio("gb", l.clip, "vowel")}` : ""}: rough starting point Kinyarwanda ${l.sound} (${l.note})`).join("\n");
 
 function vowelMap() {
   return figure(figureText.vowelMap, startingPoints(vowelLandings));

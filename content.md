@@ -183,8 +183,6 @@ Kinyarwanda already separates short and long vowels, and Standard English uses t
 
 **can and can't.** Say can't as kaant: aa held twice as long, then a full *t*. Say can as kan, or as an unstressed kən in the middle of a sentence. When the answer matters (a promise, an appointment, a request), say 'cannot' instead of can't.
 
-When Americans speak, listen for stress: 'I kən **go**' means can, and 'I **kant** go' means can't.
-
 | Short | Long |
 | --- | --- |
 | ship (ship) | sheep (shiip) |

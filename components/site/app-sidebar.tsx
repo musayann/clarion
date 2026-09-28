@@ -81,7 +81,7 @@ export function AppSidebar() {
         ))}
       </SidebarContent>
       <SidebarFooter className="border-t p-4 text-xs text-muted-foreground">
-        An English pronunciation guide for Kinyarwanda speakers. Practise Standard English; listen to American comparisons.
+        An English pronunciation guide for Kinyarwanda speakers.
       </SidebarFooter>
     </Sidebar>
   );

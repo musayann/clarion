@@ -58,6 +58,8 @@ function jsx(node: JsxElement): RootContent[] {
       const label: BlockContent = { type: "paragraph", children: [{ type: "strong", children: [text(`${title}:`)] }] };
       return [{ type: "blockquote", children: [label, ...(children as BlockContent[])] }];
     }
+    case "Nowrap":
+      return children;
     case "Sp":
       return [{ type: "emphasis", children: children as PhrasingContent[] }];
     case "Hear":

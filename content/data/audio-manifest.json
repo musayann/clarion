@@ -543,6 +543,18 @@
     "src": "/audio/gb/rl-world.mp3",
     "hash": "719b0ffbb1c4"
   },
+  "gb/s-can-1": {
+    "src": "/audio/gb/s-can-1.mp3",
+    "hash": "df93f6d667f0"
+  },
+  "gb/s-can-2": {
+    "src": "/audio/gb/s-can-2.mp3",
+    "hash": "bb41ffada950"
+  },
+  "gb/s-can-3": {
+    "src": "/audio/gb/s-can-3.mp3",
+    "hash": "7ee9f796fa7d"
+  },
   "gb/s-n-1": {
     "src": "/audio/gb/s-n-1.mp3",
     "hash": "a1b1a08111f6"
@@ -642,6 +654,34 @@
   "gb/sl-sit": {
     "src": "/audio/gb/sl-sit.mp3",
     "hash": "f5410e50975c"
+  },
+  "gb/snd-aa": {
+    "src": "/audio/gb/snd-aa.mp3",
+    "hash": "240a18620d09"
+  },
+  "gb/snd-l": {
+    "src": "/audio/gb/snd-l.mp3",
+    "hash": "eafcd72f8dbc"
+  },
+  "gb/snd-o": {
+    "src": "/audio/gb/snd-o.mp3",
+    "hash": "35a76da47b5e"
+  },
+  "gb/snd-oo": {
+    "src": "/audio/gb/snd-oo.mp3",
+    "hash": "bb7a98d237b4"
+  },
+  "gb/snd-r": {
+    "src": "/audio/gb/snd-r.mp3",
+    "hash": "10043c99aba8"
+  },
+  "gb/snd-t": {
+    "src": "/audio/gb/snd-t.mp3",
+    "hash": "910ae6c97720"
+  },
+  "gb/snd-uh": {
+    "src": "/audio/gb/snd-uh.mp3",
+    "hash": "acac1f78729f"
   },
   "gb/sr-car": {
     "src": "/audio/gb/sr-car.mp3",

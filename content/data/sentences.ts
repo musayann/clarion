@@ -22,6 +22,16 @@ export const sentenceGroups: SentenceGroup[] = [
     ],
   },
   {
+    id: "can-sentences",
+    section: "long-vowels",
+    title: "can, can't and cannot in a sentence",
+    sentences: [
+      { id: "s-can-1", text: "I can come tomorrow." },
+      { id: "s-can-2", text: "I can't come tomorrow." },
+      { id: "s-can-3", text: "I cannot come tomorrow." },
+    ],
+  },
+  {
     id: "number-sentences",
     section: "thirteen-vs-thirty",
     title: "Confirm the number in digits",

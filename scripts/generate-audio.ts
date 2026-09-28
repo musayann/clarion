@@ -38,6 +38,7 @@ const escapeXml = (s: string) =>
   s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 
 function toSsml(c: Clip): string {
+  if (c.ssml) return `<speak>${c.ssml}</speak>`;
   const body = c.ipa
     ? `<phoneme alphabet="ipa" ph="${escapeXml(c.ipa)}">${escapeXml(c.text)}</phoneme>`
     : escapeXml(c.text);

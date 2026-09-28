@@ -117,8 +117,9 @@ export function TRuleFlow() {
         {steps.map((step, i) => (
           <li key={step} className="flex w-full flex-col items-center gap-2">
             {i > 0 && <ArrowDown className="size-4 text-muted-foreground" aria-hidden />}
-            <div className="w-full rounded-lg border border-primary/40 bg-accent/50 px-4 py-3 text-center font-medium">
+            <div className="flex w-full items-center justify-center gap-1 rounded-lg border border-primary/40 bg-accent/50 px-4 py-3 text-center font-medium">
               {step}
+              {i === 0 && <Listen src={clipSrc("gb", "snd-t")} label="t" className="-my-1" />}
             </div>
           </li>
         ))}
@@ -228,6 +229,7 @@ function StartingPoints({ text, sounds, landings }: { text: { title: string; cap
           <div key={l.label} className="grid gap-2 sm:grid-cols-[13.5rem_1fr] sm:items-center">
             <div className="flex items-center gap-2 text-sm font-medium">
               {l.label}
+              {l.clip && <Listen src={clipSrc("gb", l.clip)} label={`the vowel in ${l.label}`} className="-my-1" />}
               <ArrowRight className="size-4 text-muted-foreground max-sm:hidden" aria-hidden />
             </div>
             <div className="grid gap-2" style={columns}>

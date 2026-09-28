@@ -102,7 +102,7 @@ export const silentRWords: (Word & { british: string; endsInVowel: boolean })[] 
 ];
 
 /** An English sound and the Kinyarwanda sound closest to it. */
-export type Landing = { label: string; sound: string; note: string; tone: "good" | "neutral" };
+export type Landing = { label: string; sound: string; note: string; tone: "good" | "neutral"; clip?: string };
 
 export const kinyaConsonants = ["t", "d", "r"];
 export const tLandings: Landing[] = [
@@ -112,6 +112,6 @@ export const tLandings: Landing[] = [
 
 export const kinyaVowels = ["i", "e", "a", "o", "u"];
 export const vowelLandings: Landing[] = [
-  { label: "hot, job, stop", sound: "o", note: "start from a short o, then match the recording", tone: "good" },
-  { label: "hut, nut, cup", sound: "a", note: "a rough a-like starting point; match each recording", tone: "neutral" },
+  { label: "hot, job, stop", sound: "o", note: "start from a short o, then match the recording", tone: "good", clip: "snd-o" },
+  { label: "hut, nut, cup", sound: "a", note: "a rough a-like starting point; match each recording", tone: "neutral", clip: "snd-uh" },
 ];
