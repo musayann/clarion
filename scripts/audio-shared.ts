@@ -32,7 +32,7 @@ export const clipSrc = (c: Pick<Clip, "accent" | "id">) => `/audio/${c.accent}/$
 
 /** Changes whenever anything that affects the sound changes, so stale clips are regenerated. */
 export function clipHash(c: Clip): string {
-  const input = JSON.stringify({ text: c.text, ipa: c.ipa ?? null, ssml: c.ssml ?? null, voice: VOICES[c.accent].name, rate: SPEAKING_RATE });
+  const input = JSON.stringify({ text: c.text, ipa: c.ipa ?? null, ssml: c.ssml ?? null, voice: VOICES[c.accent].name, rate: c.speakingRate ?? SPEAKING_RATE });
   return createHash("sha1").update(input).digest("hex").slice(0, 12);
 }
 

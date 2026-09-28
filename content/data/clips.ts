@@ -14,6 +14,8 @@ export type Clip = {
   ipa?: string;
   /** Speech markup used instead of text and ipa, without the <speak> wrapper. */
   ssml?: string;
+  /** Speaking rate for this clip instead of the default. */
+  speakingRate?: number;
 };
 
 export const clipKey = (accent: Accent, id: string) => `${accent}/${id}`;
@@ -32,26 +34,22 @@ export function clipsForWord(w: Word): Clip[] {
 
 const phoneme = (text: string, ipa: string) => `<phoneme alphabet="ipa" ph="${ipa}">${text}</phoneme>`;
 
-/** A sound taught on its own: said slowly three times with pauses, then in a key word. */
-function soundClip(id: string, text: string, ipa: string, word: string, rate = "slow"): Clip {
-  const sound = `<prosody rate="${rate}">${phoneme(text, ipa)}</prosody>`;
-  return {
-    id,
-    accent: "gb",
-    text: `${text}, ${text}, ${text}, ${word}`,
-    ssml: [sound, sound, sound, word].join('<break time="700ms"/>'),
-  };
+/** A sound taught on its own, said once with no example word. */
+function soundClip(id: string, text: string, ipa: string, speakingRate?: number): Clip {
+  return speakingRate
+    ? { id, accent: "gb", text, ipa, speakingRate }
+    : { id, accent: "gb", text, ssml: `<prosody rate="slow">${phoneme(text, ipa)}</prosody>` };
 }
 
 /** Single sounds heard on their own in prose. Consonants go in a syllable, as text-to-speech can't say them alone. */
 export const soundClips: Clip[] = [
-  soundClip("snd-t", "ta", "tʰɑː", "water", "medium"),
-  soundClip("snd-l", "la", "lɑː", "light", "medium"),
-  soundClip("snd-r", "ra", "ɹɑː", "right", "medium"),
-  soundClip("snd-o", "o", "ɒ", "hot"),
-  soundClip("snd-uh", "u", "ʌ", "hut"),
-  soundClip("snd-oo", "or", "ɔː", "walk", "x-slow"),
-  soundClip("snd-aa", "ah", "ɑː", "hard", "x-slow"),
+  soundClip("snd-t", "ta", "tʰɑː", 0.6),
+  soundClip("snd-l", "la", "lɑː", 0.6),
+  soundClip("snd-r", "ra", "ɹɑː", 0.6),
+  soundClip("snd-o", "o", "ɒ", 0.5),
+  soundClip("snd-uh", "u", "ʌ"),
+  soundClip("snd-oo", "or", "ɔː", 0.6),
+  soundClip("snd-aa", "ah", "ɑː", 0.6),
 ];
 
 export function allClips(): Clip[] {

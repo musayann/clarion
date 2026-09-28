@@ -70,7 +70,7 @@ async function main() {
       const [res] = await client.synthesizeSpeech({
         input: { ssml: toSsml(c) },
         voice: VOICES[c.accent],
-        audioConfig: { audioEncoding: "MP3", speakingRate: SPEAKING_RATE, sampleRateHertz: 24000 },
+        audioConfig: { audioEncoding: "MP3", speakingRate: c.speakingRate ?? SPEAKING_RATE, sampleRateHertz: 24000 },
       });
       if (!res.audioContent) throw new Error(`No audio returned for ${clipKey(c.accent, c.id)}`);
       mkdirSync(path.dirname(clipFile(c)), { recursive: true });
