@@ -116,19 +116,19 @@ function home(): Omit<PageMarkdown, "href"> {
   const quickWins = rules.filter((r) => r.quickWin).map((r) => r.number);
   const md = `# An English pronunciation guide for Kinyarwanda speakers
 
-Speak English with clarity and confidence. Through our training with Kinyarwanda speakers, we have found that building on familiar sounds helps learners become comfortable speaking English.
+Helping Kinyarwanda speakers with English, we have found that building on familiar sounds makes it easier to speak clearly.
 
-This guide turns that experience into six practical rules, with audio examples and a clear ${mdLink("/guide/clarity-not-accent", "Standard English")} model to follow.
+This guide turns that experience into six practical rules, with audio examples and a clear ${mdLink("/guide/standard-english", "Standard English")} model to follow.
 
 ## How to use this guide
 
-1. **Start with the quick wins:** rules ${quickWins.slice(0, -1).join(", ")} and ${quickWins.at(-1)}. Each is one change you can make this week.
+1. **Start with the easy ones:** rules ${quickWins.slice(0, -1).join(", ")} and ${quickWins.at(-1)}. Each is one change you can make this week.
 2. **Practise a little every day** with the 15-minute ${mdLink("/daily-practice", "daily routine")}.
 3. **Practise the Standard English form shown here.** Listen to the American example so you can recognise another pronunciation of the same word. See ${mdLink("/guide/which-style", "Which style to use")}.
 
 ## The six rules
 
-${rules.map((r) => `- ${mdLink(ruleHref(r.slug), `Rule ${r.number}: ${r.title}`)} (${r.quickWin ? "quick win" : "daily practice"}): ${r.summary}`).join("\n")}
+${rules.map((r) => `- ${mdLink(ruleHref(r.slug), `Rule ${r.number}: ${r.title}`)} (${r.quickWin ? "easy start" : "daily practice"}): ${r.summary}`).join("\n")}
 
 ${blocks.EffectEffortChart({})}
 
@@ -168,7 +168,7 @@ async function mdxPage(href: string): Promise<Omit<PageMarkdown, "href">> {
   if (rule) {
     const { root } = await mdxToMarkdown(`content/rules/${rule.slug}.mdx`);
     const title = `Rule ${rule.number}: ${rule.title}`;
-    const intro = `# ${title}\n\n${rule.quickWin ? "Quick win. " : ""}Rule ${rule.number} of 6.\n\n> **The rule:** ${rule.summary}\n\n`;
+    const intro = `# ${title}\n\n${rule.quickWin ? "Easy start. " : ""}Rule ${rule.number} of 6.\n\n> **The rule:** ${rule.summary}\n\n`;
     return { title, description: rule.summary, markdown: intro + stringify(root) };
   }
   const { root, esm } = await mdxToMarkdown(`app/(docs)${href}/page.mdx`);
@@ -216,7 +216,7 @@ export async function llmsTxt(): Promise<string> {
 
 > ${siteDescription}
 
-The guide builds clarity and confidence through familiar sounds and focused practice. Standard English names the pronunciation model taught here, shaped by our training with Kinyarwanda speakers. Practise those examples and use the American comparisons to build listening skills. Sound spellings mark the stressed syllable in **bold**; audio links are MP3 clips (Standard English and, where shown, American).
+The guide builds on familiar sounds and focused practice. Standard English here means British Received Pronunciation (RP), the model taught here, chosen from our experience helping Kinyarwanda speakers with English. Practise those examples and use the American comparisons to build listening skills. Sound spellings mark the stressed syllable in **bold**; audio links are MP3 clips (Standard English and, where shown, American).
 
 Every page is available as markdown: add \`.md\` to its URL (\`/index.md\` for the home page), or request the page with \`Accept: text/markdown\`. The whole guide in one file: ${absoluteUrl("/llms-full.txt")}
 

@@ -4,7 +4,7 @@ export const figureText = {
   effectEffort: {
     title: "Our suggested practice priorities",
     caption:
-      "These priorities draw on our training experience. Start with the quick wins and return to r and l and the vowel in work each day. Your pace may vary.",
+      "These priorities come from our own experience. Start with the easy ones and return to r and l and the vowel in work each day. Your pace may vary.",
   },
   tRule: {
     title: "Practise a clear t",
@@ -33,7 +33,7 @@ export type Quadrant = { title: string; tone: "quick-win" | "default" | "skip"; 
 // Row by row: high effect (easier, harder), then low effect (easier, harder).
 export const quadrants: Quadrant[] = [
   {
-    title: "Quick wins: start here",
+    title: "Easy start: begin here",
     tone: "quick-win",
     items: [
       { label: "Rule 1: the full t (twenty, water)", href: "/rules/say-every-t" },

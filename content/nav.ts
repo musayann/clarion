@@ -64,6 +64,7 @@ export const nav: NavSection[] = [
       { title: "Overview", href: "/" },
       { title: "Get started", href: "/guide/get-started" },
       { title: "Clarity, not accent", href: "/guide/clarity-not-accent" },
+      { title: "Why Standard English", href: "/guide/standard-english" },
       { title: "Which style to use", href: "/guide/which-style" },
     ],
   },

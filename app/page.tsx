@@ -26,7 +26,7 @@ export default function Home() {
 
   const steps = [
     <>
-      <span className="font-medium">Start with the quick wins:</span> rules{" "}
+      <span className="font-medium">Start with the easy ones:</span> rules{" "}
       {quickWins.map((r, i) => (
         <span key={r.slug}>
           {i > 0 && (i === quickWins.length - 1 ? " and " : ", ")}
@@ -81,12 +81,12 @@ export default function Home() {
           <span className="block text-muted-foreground">For Kinyarwanda Speakers</span>
         </h1>
         <p className="mt-6 text-lg leading-8 text-pretty text-muted-foreground">
-          Speak English with clarity and confidence. Through our training with Kinyarwanda speakers, we have found
-          that building on familiar sounds helps learners become comfortable speaking English.
+          Helping Kinyarwanda speakers with English, we have found that building on familiar sounds makes it easier
+          to speak clearly.
         </p>
         <p className="mt-4 text-lg leading-8 text-pretty text-muted-foreground">
           This guide turns that experience into six practical rules, with audio examples and a clear{" "}
-          <Link href="/guide/clarity-not-accent#what-standard-english-means" className="font-medium text-foreground underline underline-offset-4">
+          <Link href="/guide/standard-english" className="font-medium text-foreground underline underline-offset-4">
             Standard English
           </Link>{" "}
           model to follow.
@@ -128,7 +128,7 @@ export default function Home() {
                   <div className="flex items-center gap-2">
                     <span className="grid size-7 place-items-center rounded-md bg-primary/10 text-sm font-bold text-primary">{r.number}</span>
                     {r.quickWin ? (
-                      <Badge className="bg-stress text-stress-foreground">Quick win</Badge>
+                      <Badge className="bg-stress text-stress-foreground">Easy start</Badge>
                     ) : (
                       <Badge variant="outline">Daily practice</Badge>
                     )}

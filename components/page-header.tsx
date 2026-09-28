@@ -14,7 +14,7 @@ export function PageHeader({ eyebrow, title, children, quickWin }: PageHeaderPro
         <div className="flex items-center gap-2">
           {eyebrow && <p className="text-sm font-semibold text-primary">{eyebrow}</p>}
           {quickWin && (
-            <Badge className="bg-stress text-stress-foreground">Quick win</Badge>
+            <Badge className="bg-stress text-stress-foreground">Easy start</Badge>
           )}
         </div>
       )}

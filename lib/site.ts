@@ -4,7 +4,7 @@ export const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:30
 export const siteName = "Clear English Rwanda";
 export const siteTitle = `${siteName}: English pronunciation for Kinyarwanda speakers`;
 export const siteDescription =
-  "Build clarity and confidence with Standard English pronunciation practice for Kinyarwanda speakers: six rules shaped by our training experience, with audio examples.";
+  "Standard English pronunciation for Kinyarwanda speakers: six rules drawn from our experience, with audio examples.";
 
 export const absoluteUrl = (path: string) => `${siteUrl}${path === "/" ? "" : path}`;
 

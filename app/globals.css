@@ -158,7 +158,7 @@
     scroll-padding-top: 5rem;
   }
   ::selection {
-    background: var(--stress);
-    color: var(--stress-foreground);
+    /* A soft tint of the site blue, so selected text keeps its own colour; yellow is reserved for stressed syllables. */
+    background: color-mix(in oklch, var(--primary) 25%, transparent);
   }
 }
