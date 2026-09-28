@@ -87,7 +87,7 @@ export default function Home() {
         </p>
         <p className="mt-4 text-lg leading-8 text-pretty text-muted-foreground">
           This guide teaches the{" "}
-          <Link href="/guide/get-started#what-standard-english-means" className="font-medium text-foreground underline underline-offset-4">
+          <Link href="/guide/clarity-not-accent#what-standard-english-means" className="font-medium text-foreground underline underline-offset-4">
             Standard English
           </Link>{" "}
           version of each sound, the one that is easiest for Kinyarwanda speakers to say clearly, in six short rules with audio for

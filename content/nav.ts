@@ -63,6 +63,7 @@ export const nav: NavSection[] = [
     items: [
       { title: "Overview", href: "/" },
       { title: "Get started", href: "/guide/get-started" },
+      { title: "Clarity, not accent", href: "/guide/clarity-not-accent" },
       { title: "Which style to use", href: "/guide/which-style" },
     ],
   },
