@@ -13,8 +13,8 @@ export const rules: Rule[] = [
   {
     slug: "say-every-t",
     number: 1,
-    title: "Say every t in full",
-    summary: "Stop the air completely with your tongue for every t you see in the spelling.",
+    title: "Use a clear t",
+    summary: "Practise a full t in words such as water, better and twenty.",
     quickWin: true,
   },
   {
@@ -42,14 +42,14 @@ export const rules: Rule[] = [
     slug: "short-o",
     number: 5,
     title: "Keep the o in hot, job and stop",
-    summary: "Say hot, job and stop with the Kinyarwanda o, short.",
+    summary: "Start from a short Kinyarwanda o, then match hot, job and stop to the recording.",
     quickWin: true,
   },
   {
     slug: "long-vowels",
     number: 6,
     title: "Use your long vowels",
-    summary: "Hold every long vowel about twice as long as the short one.",
+    summary: "Hold the vowel longer and match its sound to the recording.",
     quickWin: true,
   },
 ];
@@ -75,7 +75,7 @@ export const nav: NavSection[] = [
     title: "Reference",
     items: [
       { title: "Words that change meaning", href: "/everyday-words" },
-      { title: "Habits to avoid", href: "/recognise-american" },
+      { title: "Listen and compare", href: "/recognise-american" },
       { title: "Writing: one spelling system", href: "/writing" },
       { title: "Daily practice", href: "/daily-practice" },
       { title: "Word finder", href: "/words" },

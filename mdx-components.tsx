@@ -9,6 +9,7 @@ import { PageHeader } from "@/components/page-header";
 import { Sp } from "@/components/respell";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import {
+  AmericanDifferenceTable,
   AmericanHabitsTable,
   MeaningChangeTable,
   Hear,
@@ -78,6 +79,7 @@ const components: MDXComponents = {
   PracticeSentences,
   QuickAnswersTable,
   AmericanHabitsTable,
+  AmericanDifferenceTable,
   MeaningChangeTable,
   ...Figures,
 };

@@ -10,7 +10,7 @@ import { play, stop, useNowPlaying } from "@/lib/player";
 
 const accentLabel: Record<Accent, string> = {
   gb: "Standard English",
-  us: "American, recognise only",
+  us: "American, for comparison",
 };
 
 type ListenProps = {
@@ -19,7 +19,7 @@ type ListenProps = {
   /** What is spoken, for the accessible name: "water". */
   label: string;
   accent?: Accent;
-  /** The clip demonstrates a mistake: labelled and coloured as not to copy. */
+  /** The clip demonstrates the wrong sound, for comparison. */
   mistake?: boolean;
   /** Visible text next to the icon, e.g. "Play both". */
   children?: React.ReactNode;
@@ -34,7 +34,7 @@ export function Listen({ src, label, accent = "gb", mistake = false, children, c
 
   const playing = nowPlaying !== null && srcs.includes(nowPlaying);
   const Icon = playing ? VolumeX : Volume2;
-  const description = mistake ? "the mistake, don't copy" : accentLabel[accent];
+  const description = mistake ? "the wrong sound, for comparison" : accentLabel[accent];
   const name = `${playing ? "Stop" : "Play"} ${label} (${description})`;
 
   const button = (
@@ -47,7 +47,6 @@ export function Listen({ src, label, accent = "gb", mistake = false, children, c
       onClick={() => (playing ? stop() : play(...srcs))}
       className={cn(
         "text-muted-foreground hover:text-primary aria-pressed:bg-accent aria-pressed:text-primary",
-        (accent === "us" || mistake) && "hover:text-avoid aria-pressed:text-avoid",
         className,
       )}
     >

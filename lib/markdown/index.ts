@@ -116,15 +116,15 @@ function home(): Omit<PageMarkdown, "href"> {
   const quickWins = rules.filter((r) => r.quickWin).map((r) => r.number);
   const md = `# An English pronunciation guide for Kinyarwanda speakers
 
-Kinyarwanda treats _r_ and _l_ as one sound, so English words like right and light, or grass and glass, can sound the same. Copying an American accent makes it worse: the American _t_ sounds like the Kinyarwanda _r_, so writing is heard as riding.
+Speak English with clarity and confidence. Through our training with Kinyarwanda speakers, we have found that building on familiar sounds helps learners become comfortable speaking English.
 
-This guide teaches the ${mdLink("/guide/clarity-not-accent", "Standard English")} version of each sound, the one that is easiest for Kinyarwanda speakers to say clearly, in six short rules with audio for every example.
+This guide turns that experience into six practical rules, with audio examples and a clear ${mdLink("/guide/clarity-not-accent", "Standard English")} model to follow.
 
 ## How to use this guide
 
 1. **Start with the quick wins:** rules ${quickWins.slice(0, -1).join(", ")} and ${quickWins.at(-1)}. Each is one change you can make this week.
-2. **Practise rules 3 and 4 every day** for 3 minutes each, using the ${mdLink("/daily-practice", "daily routine")}.
-3. **Say the Standard English version, not the American one.** Some speakers lose clarity when they copy unfamiliar accent features, such as a tapped t. Standard English gives you a clear alternative. See ${mdLink("/guide/which-style", "Which style to use")}.
+2. **Practise a little every day** with the 15-minute ${mdLink("/daily-practice", "daily routine")}.
+3. **Practise the Standard English form shown here.** Listen to the American example so you can recognise another pronunciation of the same word. See ${mdLink("/guide/which-style", "Which style to use")}.
 
 ## The six rules
 
@@ -145,7 +145,7 @@ function words(): Omit<PageMarkdown, "href"> {
   const sections = [...bySection].map(
     ([title, entries]) =>
       `## ${title}\n\n${table(
-        ["Word", "Say this (Standard English)", "Recognise, don't copy (American)", "Where"],
+        ["Word", "Say this (Standard English)", "Also heard (American)", "Where"],
         entries.map((e) => [
           e.word,
           [e.british && e.british !== e.word ? e.british : "", audio("gb", e.id)].filter(Boolean).join(" "),
@@ -156,7 +156,7 @@ function words(): Omit<PageMarkdown, "href"> {
   );
   const md = `# Word finder
 
-Every word in the guide in one place. Copy the Standard English form; the American form is there so you recognise it, not to copy. Stressed syllables are in bold.
+Every word in the guide in one place. Say the Standard English form; the American form is there to listen and compare. Stressed syllables are in bold.
 
 ${sections.join("\n\n")}
 `;
@@ -216,7 +216,7 @@ export async function llmsTxt(): Promise<string> {
 
 > ${siteDescription}
 
-The goal is to be understood the first time, not a particular accent. A few sounds cause most misunderstandings, such as a tapped t that sounds like the Kinyarwanda r, so the guide teaches the Standard English version of each sound: the clearest for Kinyarwanda speakers. Sound spellings mark the stressed syllable in **bold**; audio links are MP3 clips (Standard English and, where shown, American).
+The guide builds clarity and confidence through familiar sounds and focused practice. Standard English names the pronunciation model taught here, shaped by our training with Kinyarwanda speakers. Practise those examples and use the American comparisons to build listening skills. Sound spellings mark the stressed syllable in **bold**; audio links are MP3 clips (Standard English and, where shown, American).
 
 Every page is available as markdown: add \`.md\` to its URL (\`/index.md\` for the home page), or request the page with \`Accept: text/markdown\`. The whole guide in one file: ${absoluteUrl("/llms-full.txt")}
 

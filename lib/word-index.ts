@@ -18,7 +18,7 @@ export type IndexEntry = {
 const sectionPages: Record<Exclude<Section, (typeof rules)[number]["slug"]>, { title: string; href: string }> = {
   "which-style": { title: "Which style to use", href: "/guide/which-style" },
   "everyday-words": { title: "Words that change meaning", href: "/everyday-words" },
-  "recognise-american": { title: "Habits to avoid", href: "/recognise-american" },
+  "recognise-american": { title: "Listen and compare", href: "/recognise-american" },
 };
 
 export const wordFinderDescription =

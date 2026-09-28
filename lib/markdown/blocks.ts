@@ -1,7 +1,7 @@
 import "server-only";
 
 import { figureText, quadrants, soundCounts, stressPairs, vowelLandings } from "@/components/figures/data";
-import { americanHabits, meaningChanges, quickAnswers } from "@/content/data/comparisons";
+import { americanDifferences, americanHabits, meaningChanges, quickAnswers } from "@/content/data/comparisons";
 import { pairGroups } from "@/content/data/pairs";
 import { sentenceGroups } from "@/content/data/sentences";
 import type { Accent, Word } from "@/content/data/types";
@@ -41,17 +41,17 @@ const ruleLink = (slug: (typeof rules)[number]["slug"]) => {
 };
 
 const say = (w: Word) => [w.british ?? "", audio("gb", w.id)].filter(Boolean).join(" ");
-const avoid = (w: Word) => [w.american ?? "", audio("us", w.id)].filter(Boolean).join(" ");
+const us = (w: Word) => [w.american ?? "", audio("us", w.id)].filter(Boolean).join(" ");
 
 function wordTable({ group: id }: Props) {
   const group = findById(wordGroups, String(id), "word group");
   const hasNotes = group.words.some((w) => w.note);
   const head = ["Word", "Say this (Standard English)"];
-  if (group.withAmerican) head.push("Recognise, don't copy (American)");
+  if (group.withAmerican) head.push("Also heard (American)");
   if (hasNotes) head.push("Note");
   const rows = group.words.map((w) => {
     const row = [w.word, say(w)];
-    if (group.withAmerican) row.push(avoid(w));
+    if (group.withAmerican) row.push(us(w));
     if (hasNotes) row.push(w.note ?? "");
     return row;
   });
@@ -84,7 +84,7 @@ function quickAnswersTable() {
     quickAnswers.map((q) => [
       q.sound,
       q.examples.word,
-      q.same ? "the same in both styles" : [avoid(q.examples), q.americanNote && `(${q.americanNote})`].filter(Boolean).join(" "),
+      q.same ? "the same in both styles" : [us(q.examples), q.americanNote && `(${q.americanNote})`].filter(Boolean).join(" "),
       [say(q.examples), q.britishNote && `(${q.britishNote})`, q.sayNote && `(${q.sayNote})`].filter(Boolean).join(" "),
       q.check,
       q.rule ? ruleLink(q.rule) : "",
@@ -98,17 +98,30 @@ function meaningChangeTable() {
     meaningChanges.map((m) => [
       m.say.word,
       say(m.say),
-      avoid(m.mistake),
+      say(m.mistake),
       m.heard ? `${m.heard.word} ${audio("gb", m.heard.id)}`.trimEnd() : "a word they don't recognise",
       ruleLink(m.rule),
     ]),
   );
 }
 
+function americanDifferenceTable() {
+  return table(
+    ["Word", "Say this (Standard English)", "Also heard (American)", "Some listeners may hear", "Rule"],
+    americanDifferences.map((d) => [
+      d.say.word,
+      say(d.say),
+      us(d.american),
+      d.heard ? `${d.heard.word} ${audio("gb", d.heard.id)}`.trimEnd() : "no other word",
+      ruleLink(d.rule),
+    ]),
+  );
+}
+
 function americanHabitsTable() {
   return table(
-    ["Habit", "Example", "Sounds like (American)", "Say instead (Standard English)"],
-    americanHabits.map((h) => [h.habit, h.example, avoid(h.words), say(h.words)]),
+    ["Habit", "Example", "Also heard (American)", "Say this (Standard English)"],
+    americanHabits.map((h) => [h.habit, h.example, us(h.words), say(h.words)]),
   );
 }
 
@@ -125,10 +138,9 @@ function effectEffortChart() {
 }
 
 function tRuleFlow() {
-  const silent = findById(wordGroups, "silent-t", "word group").words.map((w) => w.word);
   return figure(
     figureText.tRule,
-    `You see a t in the spelling. Is the word on the silent-t list (${silent.join(", ")})?\n\n- Yes: don't say it (listen is **li**-sən).\n- No (almost every word): say a full t. The tongue stops the air, then releases.`,
+    "1. Listen\n2. Stop the air with your tongue\n3. Release and repeat",
   );
 }
 
@@ -154,7 +166,7 @@ function soundCountChart() {
 function vowelMap() {
   return figure(
     figureText.vowelMap,
-    vowelLandings.map((l) => `- ${l.label} lands on the Kinyarwanda ${l.vowel}: ${l.note}`).join("\n"),
+    vowelLandings.map((l) => `- ${l.label}: rough starting point Kinyarwanda ${l.vowel} (${l.note})`).join("\n"),
   );
 }
 
@@ -166,6 +178,7 @@ export const blocks: Record<string, (props: Props) => string> = {
   PracticeSentences: practiceSentences,
   QuickAnswersTable: quickAnswersTable,
   MeaningChangeTable: meaningChangeTable,
+  AmericanDifferenceTable: americanDifferenceTable,
   AmericanHabitsTable: americanHabitsTable,
   EffectEffortChart: effectEffortChart,
   TRuleFlow: tRuleFlow,

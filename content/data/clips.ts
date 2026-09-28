@@ -1,4 +1,4 @@
-import { americanHabits, meaningChanges, quickAnswers } from "./comparisons";
+import { americanDifferences, americanHabits, meaningChanges, quickAnswers } from "./comparisons";
 import { pairGroups } from "./pairs";
 import { sentenceGroups } from "./sentences";
 import type { Accent, Word } from "./types";
@@ -32,6 +32,7 @@ export function allClips(): Clip[] {
     ...pairGroups.flatMap((g) => g.pairs.flatMap((p) => [p.a, p.b])),
     ...quickAnswers.map((q) => q.examples),
     ...meaningChanges.flatMap((m) => [m.say, m.mistake, ...(m.heard ? [m.heard] : [])]),
+    ...americanDifferences.flatMap((d) => [d.say, d.american, ...(d.heard ? [d.heard] : [])]),
     ...americanHabits.map((h) => h.words),
   ];
   const clips = [

@@ -2,13 +2,13 @@
 
 export const figureText = {
   effectEffort: {
-    title: "Where each rule sits: effect versus effort",
+    title: "Our suggested practice priorities",
     caption:
-      "Start with the quick wins. Practise rules 3 and 4 every day: they take longest but make the biggest difference.",
+      "These priorities draw on our training experience. Start with the quick wins and return to r and l and the vowel in work each day. Your pace may vary.",
   },
   tRule: {
-    title: "The t rule: one decision",
-    caption: "There is only one question to ask about a t in the spelling.",
+    title: "Practise a clear t",
+    caption: "Follow these steps with water, better and twenty.",
   },
   teenTy: {
     title: "Stress in -teen and -ty numbers",
@@ -21,9 +21,9 @@ export const figureText = {
       "Counted from the sound spellings in this guide; a long vowel counts as one sound. ● marks words that end in a vowel in Standard English, just like Kinyarwanda words.",
   },
   vowelMap: {
-    title: "Which Kinyarwanda vowel each style lands on",
+    title: "Kinyarwanda vowels as starting points",
     caption:
-      "The Standard English o in hot is a contrast you already make in Kinyarwanda. The American vowel sits on top of the a you use for hut.",
+      "These are rough learning approximations, not identical sounds. Two examples near a can still have different vowels. Listen to the recordings for the target sound and length.",
   },
 };
 
@@ -93,8 +93,8 @@ export const soundCounts: { word: string; gb: string; us: string; gbN: number; u
 ];
 
 export const kinyaVowels = ["i", "e", "a", "o", "u"];
-export const vowelLandings: { label: string; vowel: string; note: string; tone: "good" | "avoid" | "neutral" }[] = [
-  { label: "hot (Standard English)", vowel: "o", note: "short o, a different vowel from hut", tone: "good" },
-  { label: "hot (American)", vowel: "a", note: "a held longer: only length separates hot from hut", tone: "avoid" },
-  { label: "hut, nut, cup", vowel: "a", note: "how Kinyarwanda speakers usually say it", tone: "neutral" },
+export const vowelLandings: { label: string; vowel: string; note: string; tone: "good" | "compare" | "neutral" }[] = [
+  { label: "hot (Standard English)", vowel: "o", note: "start from a short o, then match the recording", tone: "good" },
+  { label: "hot (American)", vowel: "a", note: "an a-like starting point; its vowel differs from hut", tone: "compare" },
+  { label: "hut, nut, cup", vowel: "a", note: "a rough a-like starting point; match each recording", tone: "neutral" },
 ];

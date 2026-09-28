@@ -17,7 +17,7 @@ export const course = {
   "@id": `${absoluteUrl("/")}#course`,
   name: siteName,
   description:
-    "Clear English pronunciation for Kinyarwanda speakers: six rules, with audio for every example. The goal is to be understood the first time, not a particular accent.",
+    "Standard English pronunciation practice for Kinyarwanda speakers: six rules shaped by our training experience, with audio examples.",
   url: absoluteUrl("/"),
   inLanguage: "en-GB",
   isAccessibleForFree: true,

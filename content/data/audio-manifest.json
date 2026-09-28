@@ -99,6 +99,10 @@
     "src": "/audio/gb/mc-cant.mp3",
     "hash": "988af7744bdb"
   },
+  "gb/mc-cant-mistake": {
+    "src": "/audio/gb/mc-cant-mistake.mp3",
+    "hash": "0f9ab060905b"
+  },
   "gb/mc-collect": {
     "src": "/audio/gb/mc-collect.mp3",
     "hash": "a2e5fbfd8343"
@@ -107,6 +111,10 @@
     "src": "/audio/gb/mc-correct.mp3",
     "hash": "525b9c4813c0"
   },
+  "gb/mc-correct-mistake": {
+    "src": "/audio/gb/mc-correct-mistake.mp3",
+    "hash": "529e29f70277"
+  },
   "gb/mc-forty": {
     "src": "/audio/gb/mc-forty.mp3",
     "hash": "6c0571956c0f"
@@ -114,6 +122,10 @@
   "gb/mc-fourteen": {
     "src": "/audio/gb/mc-fourteen.mp3",
     "hash": "c34dc39c61d7"
+  },
+  "gb/mc-fourteen-mistake": {
+    "src": "/audio/gb/mc-fourteen-mistake.mp3",
+    "hash": "c9dfb9309421"
   },
   "gb/mc-heard-thirty": {
     "src": "/audio/gb/mc-heard-thirty.mp3",
@@ -134,6 +146,10 @@
   "gb/mc-leave": {
     "src": "/audio/gb/mc-leave.mp3",
     "hash": "d2cfdba8aeac"
+  },
+  "gb/mc-leave-mistake": {
+    "src": "/audio/gb/mc-leave-mistake.mp3",
+    "hash": "717e585d891a"
   },
   "gb/mc-light": {
     "src": "/audio/gb/mc-light.mp3",
@@ -183,9 +199,17 @@
     "src": "/audio/gb/mc-right.mp3",
     "hash": "a579ef9a439f"
   },
+  "gb/mc-right-mistake": {
+    "src": "/audio/gb/mc-right-mistake.mp3",
+    "hash": "0283eef76295"
+  },
   "gb/mc-sheep": {
     "src": "/audio/gb/mc-sheep.mp3",
     "hash": "62ba6183ef3f"
+  },
+  "gb/mc-sheep-mistake": {
+    "src": "/audio/gb/mc-sheep-mistake.mp3",
+    "hash": "39e4a927098c"
   },
   "gb/mc-ship": {
     "src": "/audio/gb/mc-ship.mp3",
@@ -194,6 +218,10 @@
   "gb/mc-thirteen": {
     "src": "/audio/gb/mc-thirteen.mp3",
     "hash": "9770b56059d2"
+  },
+  "gb/mc-thirteen-mistake": {
+    "src": "/audio/gb/mc-thirteen-mistake.mp3",
+    "hash": "905bc00bb7ea"
   },
   "gb/mc-thirty": {
     "src": "/audio/gb/mc-thirty.mp3",
@@ -206,6 +234,10 @@
   "gb/mc-work": {
     "src": "/audio/gb/mc-work.mp3",
     "hash": "d0d8654b5dcd"
+  },
+  "gb/mc-work-mistake": {
+    "src": "/audio/gb/mc-work-mistake.mp3",
+    "hash": "a8b990b3a0aa"
   },
   "gb/mc-writing": {
     "src": "/audio/gb/mc-writing.mp3",
@@ -735,68 +767,36 @@
     "src": "/audio/us/habit-ty-numbers.mp3",
     "hash": "f1828f9d3219"
   },
-  "us/mc-cant-mistake": {
-    "src": "/audio/us/mc-cant-mistake.mp3",
-    "hash": "fbe934307587"
-  },
-  "us/mc-correct-mistake": {
-    "src": "/audio/us/mc-correct-mistake.mp3",
-    "hash": "5b039a9ef6d9"
-  },
-  "us/mc-fourteen-mistake": {
-    "src": "/audio/us/mc-fourteen-mistake.mp3",
-    "hash": "446ec56f38df"
-  },
-  "us/mc-hot-mistake": {
-    "src": "/audio/us/mc-hot-mistake.mp3",
+  "us/mc-hot-us": {
+    "src": "/audio/us/mc-hot-us.mp3",
     "hash": "170db51f62dc"
   },
-  "us/mc-leave-mistake": {
-    "src": "/audio/us/mc-leave-mistake.mp3",
-    "hash": "601f2d955bfd"
-  },
-  "us/mc-litre-mistake": {
-    "src": "/audio/us/mc-litre-mistake.mp3",
+  "us/mc-litre-us": {
+    "src": "/audio/us/mc-litre-us.mp3",
     "hash": "7f8b6d0357cb"
   },
-  "us/mc-little-mistake": {
-    "src": "/audio/us/mc-little-mistake.mp3",
+  "us/mc-little-us": {
+    "src": "/audio/us/mc-little-us.mp3",
     "hash": "72cd44d633f3"
   },
-  "us/mc-metal-mistake": {
-    "src": "/audio/us/mc-metal-mistake.mp3",
+  "us/mc-metal-us": {
+    "src": "/audio/us/mc-metal-us.mp3",
     "hash": "6a7df56ba8ca"
   },
-  "us/mc-not-mistake": {
-    "src": "/audio/us/mc-not-mistake.mp3",
+  "us/mc-not-us": {
+    "src": "/audio/us/mc-not-us.mp3",
     "hash": "bb7e18e4806e"
   },
-  "us/mc-putting-mistake": {
-    "src": "/audio/us/mc-putting-mistake.mp3",
+  "us/mc-putting-us": {
+    "src": "/audio/us/mc-putting-us.mp3",
     "hash": "395f0e01f07b"
   },
-  "us/mc-right-mistake": {
-    "src": "/audio/us/mc-right-mistake.mp3",
-    "hash": "3f2b59281b4e"
-  },
-  "us/mc-sheep-mistake": {
-    "src": "/audio/us/mc-sheep-mistake.mp3",
-    "hash": "eb2b6654ffb4"
-  },
-  "us/mc-thirteen-mistake": {
-    "src": "/audio/us/mc-thirteen-mistake.mp3",
-    "hash": "e29bdad87c84"
-  },
-  "us/mc-thirty-mistake": {
-    "src": "/audio/us/mc-thirty-mistake.mp3",
+  "us/mc-thirty-us": {
+    "src": "/audio/us/mc-thirty-us.mp3",
     "hash": "00f2e02bde6f"
   },
-  "us/mc-work-mistake": {
-    "src": "/audio/us/mc-work-mistake.mp3",
-    "hash": "49829725747f"
-  },
-  "us/mc-writing-mistake": {
-    "src": "/audio/us/mc-writing-mistake.mp3",
+  "us/mc-writing-us": {
+    "src": "/audio/us/mc-writing-us.mp3",
     "hash": "6550b599d1e3"
   },
   "us/qa-cant": {

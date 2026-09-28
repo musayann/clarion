@@ -71,7 +71,7 @@ const simpleTable = (head: string[], rows: (string | number)[][]) => (
   </table>
 );
 
-/* 1. Where each rule sits: effect versus effort ------------------------------------------ */
+/* 1. Our suggested practice priorities --------------------------------------------------- */
 
 /** Arrowhead at the end of an axis line, pointing up unless rotated. */
 function AxisArrow({ className }: { className: string }) {
@@ -149,40 +149,22 @@ export function EffectEffortChart() {
   );
 }
 
-/* 2. The t rule: one decision ------------------------------------------------------------ */
+/* 2. Practise a clear t ---------------------------------------------------------------- */
 
 export function TRuleFlow() {
-  const box = "rounded-lg border px-4 py-3 text-center";
+  const steps = ["Listen", "Stop the air with your tongue", "Release and repeat"];
   return (
     <Figure title={figureText.tRule.title} caption={figureText.tRule.caption}>
-      <div className="flex flex-col items-center gap-2">
-        <div className={cn(box, "bg-muted/50 font-medium")}>You see a t in the spelling</div>
-        <ArrowDown className="size-4 text-muted-foreground" aria-hidden />
-        <div className={cn(box, "border-primary/40 bg-accent/50 font-medium")}>
-          Is the word on the silent-t list?
-          <div className="mt-1 text-xs font-normal text-muted-foreground">
-            listen, castle, whistle, fasten, Christmas, mortgage, (often)
-          </div>
-        </div>
-        <div className="grid w-full max-w-lg grid-cols-2 gap-3 pt-1">
-          <div className="flex flex-col items-center gap-2">
-            <span className="text-xs font-semibold text-muted-foreground">Yes</span>
-            <div className={cn(box, "w-full bg-muted/40")}>
-              <p className="font-medium">Don&apos;t say it</p>
-              <p className="text-xs text-muted-foreground">
-                <span className="font-semibold">li</span>-sən
-              </p>
+      <ol className="mx-auto flex max-w-lg flex-col items-center gap-2">
+        {steps.map((step, i) => (
+          <li key={step} className="flex w-full flex-col items-center gap-2">
+            {i > 0 && <ArrowDown className="size-4 text-muted-foreground" aria-hidden />}
+            <div className="w-full rounded-lg border border-primary/40 bg-accent/50 px-4 py-3 text-center font-medium">
+              {step}
             </div>
-          </div>
-          <div className="flex flex-col items-center gap-2">
-            <span className="text-xs font-semibold text-muted-foreground">No (almost every word)</span>
-            <div className={cn(box, "w-full border-good/40 bg-good-soft/60")}>
-              <p className="font-medium">Full t</p>
-              <p className="text-xs text-muted-foreground">tongue stops the air, then releases</p>
-            </div>
-          </div>
-        </div>
-      </div>
+          </li>
+        ))}
+      </ol>
     </Figure>
   );
 }
@@ -278,7 +260,7 @@ export function SoundCountChart() {
   );
 }
 
-/* 5. Which Kinyarwanda vowel each style lands on ----------------------------------------- */
+/* 5. Kinyarwanda vowels as starting points ----------------------------------------------- */
 
 export function VowelMap() {
   return (
@@ -309,14 +291,14 @@ export function VowelMap() {
                     v === l.vowel
                       ? l.tone === "good"
                         ? "bg-good text-background"
-                        : l.tone === "avoid"
+                        : l.tone === "compare"
                           ? "bg-chart-2"
                           : "bg-muted-foreground/40"
                       : "border border-dashed",
                   )}
                   aria-hidden={v !== l.vowel}
                 >
-                  {v === l.vowel && <span className="sr-only">lands on {v}</span>}
+                  {v === l.vowel && <span className="sr-only">rough starting point: {v}</span>}
                 </div>
               ))}
             </div>

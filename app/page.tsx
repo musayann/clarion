@@ -14,7 +14,7 @@ export const metadata: Metadata = pageMetadata({ description: siteDescription, h
 const reference = [
   { href: "/guide/which-style", title: "Which style to use", text: "Quick answers for every sound, and how to check.", icon: Ear },
   { href: "/everyday-words", title: "Words that change meaning", text: "writing or riding, right or light, sheep or ship.", icon: Mic },
-  { href: "/recognise-american", title: "Habits to avoid", text: "What you will hear, and what to say instead.", icon: BookOpen },
+  { href: "/recognise-american", title: "Listen and compare", text: "American sounds you will hear, next to what to say.", icon: BookOpen },
   { href: "/writing", title: "Writing: one spelling system", text: "Spelling, dates, false friends and idioms.", icon: PenLine },
   { href: "/daily-practice", title: "Daily practice", text: "15 minutes a day covers every rule.", icon: Timer },
   { href: "/words", title: "Word finder", text: "Look up any word in the guide, with audio.", icon: Search },
@@ -38,16 +38,15 @@ export default function Home() {
       . Each is one change you can make this week.
     </>,
     <>
-      <span className="font-medium">Practise rules 3 and 4 every day</span> for 3 minutes each, using the{" "}
+      <span className="font-medium">Practise a little every day</span> with the 15-minute{" "}
       <Link href="/daily-practice" className={link}>
         daily routine
       </Link>
       .
     </>,
     <>
-      <span className="font-medium">Say the Standard English version, not the American one.</span> Some speakers lose
-      clarity when they copy unfamiliar accent features, such as a tapped t. Standard English gives you a clear
-      alternative.{" "}
+      <span className="font-medium">Practise the Standard English form shown here.</span> Listen to the American
+      example so you can recognise another pronunciation of the same word.{" "}
       <Link href="/guide/which-style" className={link}>
         Which style to use
       </Link>
@@ -82,17 +81,15 @@ export default function Home() {
           <span className="block text-muted-foreground">For Kinyarwanda Speakers</span>
         </h1>
         <p className="mt-6 text-lg leading-8 text-pretty text-muted-foreground">
-          Kinyarwanda treats <em className="text-foreground">r</em> and <em className="text-foreground">l</em> as one sound, so English words like right and light, or grass
-          and glass, can sound the same. Copying an American accent makes it worse: the American <em className="text-foreground">t</em> sounds like
-          the Kinyarwanda <em className="text-foreground">r</em>, so writing is heard as riding.
+          Speak English with clarity and confidence. Through our training with Kinyarwanda speakers, we have found
+          that building on familiar sounds helps learners become comfortable speaking English.
         </p>
         <p className="mt-4 text-lg leading-8 text-pretty text-muted-foreground">
-          This guide teaches the{" "}
+          This guide turns that experience into six practical rules, with audio examples and a clear{" "}
           <Link href="/guide/clarity-not-accent#what-standard-english-means" className="font-medium text-foreground underline underline-offset-4">
             Standard English
           </Link>{" "}
-          version of each sound, the one that is easiest for Kinyarwanda speakers to say clearly, in six short rules with audio for
-          every example.
+          model to follow.
         </p>
         <div className="mt-8 flex flex-wrap gap-3">
           <Link

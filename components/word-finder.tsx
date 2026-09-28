@@ -3,7 +3,7 @@
 import { useMemo } from "react";
 import Link from "next/link";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import { CircleCheck, CircleX, Search } from "lucide-react";
+import { CircleCheck, Ear, Search } from "lucide-react";
 
 import { Listen } from "@/components/listen";
 import { Respell } from "@/components/respell";
@@ -77,8 +77,8 @@ export function WordFinderView({
           Say this (Standard English)
         </span>
         <span className="inline-flex items-center gap-1.5">
-          <CircleX className="size-3.5 text-avoid" aria-hidden />
-          Recognise, don&apos;t copy (American)
+          <Ear className="size-3.5" aria-hidden />
+          Also heard (American)
         </span>
       </div>
 
@@ -95,8 +95,8 @@ export function WordFinderView({
                   <Listen src={e.srcGB} label={e.word} />
                 </span>
                 {e.american && (
-                  <span className="inline-flex items-center gap-1.5 rounded-md bg-avoid-soft/40 py-0.5 pr-0.5 pl-2 text-sm text-muted-foreground">
-                    <CircleX className="size-3.5 shrink-0 text-avoid" aria-label="American: recognise, don't copy" />
+                  <span className="inline-flex items-center gap-1.5 rounded-md bg-muted/60 py-0.5 pr-0.5 pl-2 text-sm text-muted-foreground">
+                    <Ear className="size-3.5 shrink-0" aria-label="Also heard (American)" />
                     <Respell text={e.american} />
                     <Listen src={e.srcUS} label={e.word} accent="us" />
                   </span>
