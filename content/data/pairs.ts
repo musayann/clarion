@@ -84,6 +84,17 @@ export const pairGroups: PairGroup[] = [
     ],
   },
   {
+    id: "u-a",
+    section: "short-o",
+    title: "Two sounds for the letter u",
+    labels: ["u, as in put", "a, as in hut"],
+    pairs: [
+      { a: w("ua-look", "look", { british: "luk", ipaGB: "lʊk" }), b: w("ua-luck", "luck", { british: "lak", ipaGB: "lʌk" }) },
+      { a: w("ua-book", "book", { british: "buk", ipaGB: "bʊk" }), b: w("ua-buck", "buck", { british: "bak", ipaGB: "bʌk" }) },
+      { a: w("ua-took", "took", { british: "tuk", ipaGB: "tʊk" }), b: w("ua-tuck", "tuck", { british: "tak", ipaGB: "tʌk" }) },
+    ],
+  },
+  {
     id: "short-long",
     section: "long-vowels",
     title: "Short and long vowels",

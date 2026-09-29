@@ -791,6 +791,94 @@
     "src": "/audio/gb/th-tree.mp3",
     "hash": "ae31f0add1ec"
   },
+  "gb/u-ambush": {
+    "src": "/audio/gb/u-ambush.mp3",
+    "hash": "1a71e43d96cb"
+  },
+  "gb/u-bull": {
+    "src": "/audio/gb/u-bull.mp3",
+    "hash": "08004b99ec8b"
+  },
+  "gb/u-bulldozer": {
+    "src": "/audio/gb/u-bulldozer.mp3",
+    "hash": "cdffe4d33928"
+  },
+  "gb/u-bullet": {
+    "src": "/audio/gb/u-bullet.mp3",
+    "hash": "f95d6dc111c2"
+  },
+  "gb/u-bulletin": {
+    "src": "/audio/gb/u-bulletin.mp3",
+    "hash": "82e6e24a16b6"
+  },
+  "gb/u-bush": {
+    "src": "/audio/gb/u-bush.mp3",
+    "hash": "411dc8d8c263"
+  },
+  "gb/u-butcher": {
+    "src": "/audio/gb/u-butcher.mp3",
+    "hash": "757ab9ca162c"
+  },
+  "gb/u-cushion": {
+    "src": "/audio/gb/u-cushion.mp3",
+    "hash": "64440230a4c7"
+  },
+  "gb/u-full": {
+    "src": "/audio/gb/u-full.mp3",
+    "hash": "0c2f411588c6"
+  },
+  "gb/u-input": {
+    "src": "/audio/gb/u-input.mp3",
+    "hash": "514794866136"
+  },
+  "gb/u-output": {
+    "src": "/audio/gb/u-output.mp3",
+    "hash": "cf7f5b4789ce"
+  },
+  "gb/u-pudding": {
+    "src": "/audio/gb/u-pudding.mp3",
+    "hash": "7c04a6a3a95e"
+  },
+  "gb/u-pull": {
+    "src": "/audio/gb/u-pull.mp3",
+    "hash": "29e71d2f246b"
+  },
+  "gb/u-push": {
+    "src": "/audio/gb/u-push.mp3",
+    "hash": "bbe689373fce"
+  },
+  "gb/u-put": {
+    "src": "/audio/gb/u-put.mp3",
+    "hash": "7fe12d1ec698"
+  },
+  "gb/u-sugar": {
+    "src": "/audio/gb/u-sugar.mp3",
+    "hash": "65514cb697db"
+  },
+  "gb/ua-book": {
+    "src": "/audio/gb/ua-book.mp3",
+    "hash": "d149c031e151"
+  },
+  "gb/ua-buck": {
+    "src": "/audio/gb/ua-buck.mp3",
+    "hash": "d49b7d1decfb"
+  },
+  "gb/ua-look": {
+    "src": "/audio/gb/ua-look.mp3",
+    "hash": "a12b8d116011"
+  },
+  "gb/ua-luck": {
+    "src": "/audio/gb/ua-luck.mp3",
+    "hash": "b43e7955e29c"
+  },
+  "gb/ua-took": {
+    "src": "/audio/gb/ua-took.mp3",
+    "hash": "c527667aa887"
+  },
+  "gb/ua-tuck": {
+    "src": "/audio/gb/ua-tuck.mp3",
+    "hash": "03c66278d710"
+  },
   "us/mc-hot-us": {
     "src": "/audio/us/mc-hot-us.mp3",
     "hash": "c6606a11083f"
