@@ -7,7 +7,18 @@ import { Listen } from "@/components/listen";
 import { Letters, Respell } from "@/components/respell";
 import { clipSrc } from "@/lib/audio";
 
-import { figureText, kinyaConsonants, kinyaVowels, type Landing, quadrants, silentRWords, stressPairs, tLandings, vowelLandings } from "./data";
+import {
+  figureText,
+  kinyaConsonants,
+  kinyaVowels,
+  type Landing,
+  letterULandings,
+  quadrants,
+  silentRWords,
+  stressPairs,
+  tLandings,
+  vowelLandings,
+} from "./data";
 
 function Figure({
   title,
@@ -262,6 +273,10 @@ function StartingPoints({ text, sounds, landings }: { text: { title: string; cap
 
 export function VowelMap() {
   return <StartingPoints text={figureText.vowelMap} sounds={kinyaVowels} landings={vowelLandings} />;
+}
+
+export function LetterUMap() {
+  return <StartingPoints text={figureText.letterU} sounds={kinyaVowels} landings={letterULandings} />;
 }
 
 export function TStartMap() {

@@ -1,6 +1,6 @@
 import "server-only";
 
-import { figureText, type Landing, quadrants, silentRWords, stressPairs, tLandings, vowelLandings } from "@/components/figures/data";
+import { figureText, type Landing, letterULandings, quadrants, silentRWords, stressPairs, tLandings, vowelLandings } from "@/components/figures/data";
 import { americanDifferences, meaningChanges, quickAnswers } from "@/content/data/comparisons";
 import { pairGroups } from "@/content/data/pairs";
 import { sentenceGroups } from "@/content/data/sentences";
@@ -160,6 +160,10 @@ function vowelMap() {
   return figure(figureText.vowelMap, startingPoints(vowelLandings));
 }
 
+function letterUMap() {
+  return figure(figureText.letterU, startingPoints(letterULandings));
+}
+
 function tStartMap() {
   return figure(figureText.tStart, startingPoints(tLandings));
 }
@@ -178,6 +182,7 @@ export const blocks: Record<string, (props: Props) => string> = {
   TeenTyStress: teenTyStress,
   SilentR: silentR,
   VowelMap: vowelMap,
+  LetterUMap: letterUMap,
   TStartMap: tStartMap,
 };
 

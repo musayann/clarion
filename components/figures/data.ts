@@ -32,6 +32,10 @@ export const figureText = {
     caption:
       "These are rough learning approximations, not identical sounds. Listen to the recordings for the target sound and length.",
   },
+  letterU: {
+    title: "One letter u, two starting points",
+    caption: "Most words spelt with u start from *a*. A short list starts from *u*. Listen to the recordings for the target sound.",
+  },
 };
 
 export type QuadrantItem = { label: string; href?: string };
@@ -114,4 +118,9 @@ export const kinyaVowels = ["i", "e", "a", "o", "u"];
 export const vowelLandings: Landing[] = [
   { label: "hot, job, stop", sound: "o", note: "start from a short o, then match the recording", tone: "good", clip: "snd-o" },
   { label: "hut, nut, cup", sound: "a", note: "a rough a-like starting point; match each recording", tone: "neutral", clip: "snd-uh" },
+];
+
+export const letterULandings: Landing[] = [
+  { label: "but, bus, much", sound: "a", note: "a rough a-like starting point; match each recording", tone: "neutral", clip: "snd-uh" },
+  { label: "put, push, full", sound: "u", note: "start from a short u, a little towards o; match the recording", tone: "good", clip: "u-put" },
 ];
