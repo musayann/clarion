@@ -665,7 +665,7 @@
   },
   "gb/snd-o": {
     "src": "/audio/gb/snd-o.mp3",
-    "hash": "091b6bf456dc"
+    "hash": "26e58225bc58"
   },
   "gb/snd-oo": {
     "src": "/audio/gb/snd-oo.mp3",
@@ -678,6 +678,10 @@
   "gb/snd-t": {
     "src": "/audio/gb/snd-t.mp3",
     "hash": "6bf89a5949d1"
+  },
+  "gb/snd-u": {
+    "src": "/audio/gb/snd-u.mp3",
+    "hash": "e1cb9031870c"
   },
   "gb/snd-uh": {
     "src": "/audio/gb/snd-uh.mp3",

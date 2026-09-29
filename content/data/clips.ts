@@ -46,8 +46,11 @@ export const soundClips: Clip[] = [
   soundClip("snd-t", "ta", "tʰɑː", 0.6),
   soundClip("snd-l", "la", "lɑː", 0.6),
   soundClip("snd-r", "ra", "ɹɑː", 0.6),
-  soundClip("snd-o", "o", "ɒ", 0.5),
+  // The rounder vowel of walk, said at normal speed so it stays short: closer to Kinyarwanda o than ɒ said on its own.
+  soundClip("snd-o", "or", "ɔː", 1),
   soundClip("snd-uh", "u", "ʌ"),
+  // The long vowel of fool, said at normal speed so it stays short: text-to-speech can't say ʊ on its own.
+  soundClip("snd-u", "oo", "uː", 1),
   soundClip("snd-oo", "or", "ɔː", 0.6),
   soundClip("snd-aa", "ah", "ɑː", 0.6),
 ];

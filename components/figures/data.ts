@@ -122,5 +122,5 @@ export const vowelLandings: Landing[] = [
 
 export const letterULandings: Landing[] = [
   { label: "but, bus, much", sound: "a", note: "a rough a-like starting point; match each recording", tone: "neutral", clip: "snd-uh" },
-  { label: "put, push, full", sound: "u", note: "start from a short u, a little towards o; match the recording", tone: "good", clip: "u-put" },
+  { label: "put, push, full", sound: "u", note: "start from a short u, a little towards o; match the recording", tone: "good", clip: "snd-u" },
 ];
