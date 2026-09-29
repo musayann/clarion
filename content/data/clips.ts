@@ -44,6 +44,7 @@ function soundClip(id: string, text: string, ipa: string, speakingRate?: number)
 /** Single sounds heard on their own in prose. Consonants go in a syllable, as text-to-speech can't say them alone. */
 export const soundClips: Clip[] = [
   soundClip("snd-t", "ta", "tʰɑː", 0.6),
+  soundClip("snd-d", "da", "dɑː", 0.6),
   soundClip("snd-l", "la", "lɑː", 0.6),
   soundClip("snd-r", "ra", "ɹɑː", 0.6),
   // The rounder vowel of walk, said at normal speed so it stays short: closer to Kinyarwanda o than ɒ said on its own.

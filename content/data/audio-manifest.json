@@ -659,6 +659,10 @@
     "src": "/audio/gb/snd-aa.mp3",
     "hash": "ea9801b2b9d6"
   },
+  "gb/snd-d": {
+    "src": "/audio/gb/snd-d.mp3",
+    "hash": "98fe8fbce440"
+  },
   "gb/snd-l": {
     "src": "/audio/gb/snd-l.mp3",
     "hash": "5298ff50c693"

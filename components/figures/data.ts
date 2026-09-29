@@ -110,8 +110,8 @@ export type Landing = { label: string; sound: string; note: string; tone: "good"
 
 export const kinyaConsonants = ["t", "d", "r"];
 export const tLandings: Landing[] = [
-  { label: "writing, metal", sound: "t", note: "start from your Kinyarwanda *t*: the tongue stops the air completely", tone: "good" },
-  { label: "riding, medal", sound: "d", note: "start from your Kinyarwanda d: the same tongue position, with your voice on", tone: "neutral" },
+  { label: "writing, metal", sound: "t", note: "start from your Kinyarwanda *t*: the tongue stops the air completely", tone: "good", clip: "snd-t" },
+  { label: "riding, medal", sound: "d", note: "start from your Kinyarwanda d: the same tongue position, with your voice on", tone: "neutral", clip: "snd-d" },
 ];
 
 export const kinyaVowels = ["i", "e", "a", "o", "u"];

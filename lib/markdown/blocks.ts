@@ -154,7 +154,7 @@ function silentR() {
 }
 
 const startingPoints = (landings: Landing[]) =>
-  landings.map((l) => `- ${l.label}${l.clip ? ` ${audio("gb", l.clip, "vowel")}` : ""}: rough starting point Kinyarwanda ${l.sound} (${l.note})`).join("\n");
+  landings.map((l) => `- ${l.label}${l.clip ? ` ${audio("gb", l.clip, "sound")}` : ""}: rough starting point Kinyarwanda ${l.sound} (${l.note})`).join("\n");
 
 function vowelMap() {
   return figure(figureText.vowelMap, startingPoints(vowelLandings));
