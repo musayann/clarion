@@ -26,7 +26,7 @@ export const quickAnswers: QuickAnswer[] = [
   {
     sound: "*t* after n",
     examples: { id: "qa-t-after-n", word: "twenty, internet", british: "**twen**-ti, **in**-tə-net", american: "**twe**-ni, **i**-nər-net" },
-    americanNote: "no *t*",
+    americanNote: "*t* often dropped",
     britishNote: "full *t*",
     check: "You hear a *t* between the n and the vowel after it",
     rule: "say-every-t",
@@ -54,7 +54,7 @@ export const quickAnswers: QuickAnswer[] = [
   {
     sound: "can't",
     examples: { id: "qa-cant", word: "can't", british: "kaant", american: "kant", ipaGB: "kɑːnt", ipaUS: "kænt" },
-    americanNote: "*t* often silent",
+    americanNote: "*t* often hard to hear",
     sayNote: "or say 'cannot'",
     check: "Match the aa sound and length to the recording, then say a full *t*",
     rule: "long-vowels",
@@ -69,7 +69,7 @@ export const quickAnswers: QuickAnswer[] = [
   {
     sound: "-teen and -ty",
     examples: { id: "qa-teen-ty", word: "thirteen, thirty", british: "thəə-**tiin**, **thəə**-ti", american: "thər-**tiin**, **thər**-di" },
-    check: "-teen: last syllable stressed. -ty: first syllable stressed, full *t*",
+    check: "-teen: last syllable stressed, long ii. -ty: first syllable stressed, full *t*",
     rule: "thirteen-vs-thirty",
   },
 ];
@@ -110,11 +110,11 @@ export type AmericanDifference = {
 
 export const americanDifferences: AmericanDifference[] = [
   { say: { id: "mc-little", word: "little", british: "**li**-təl", ipaGB: "ˈlɪtl" }, american: { id: "mc-little-us", word: "little", american: "**li**-dəl", ipaUS: "ˈlɪɾl" }, rule: "say-every-t" },
-  { say: { id: "mc-litre", word: "litre", british: "**lii**-tə", ipaGB: "ˈliːtə" }, american: { id: "mc-litre-us", word: "litre", american: "**lii**-də", ipaUS: "ˈliɾɚ" }, heard: { id: "mc-leader", word: "leader", ipaGB: "ˈliːdə" }, rule: "say-every-t" },
+  { say: { id: "mc-litre", word: "litre", british: "**lii**-tə", ipaGB: "ˈliːtə" }, american: { id: "mc-litre-us", word: "litre", american: "**lii**-dər", ipaUS: "ˈliɾɚ" }, heard: { id: "mc-leader", word: "leader", ipaGB: "ˈliːdə" }, rule: "say-every-t" },
   { say: { id: "mc-writing", word: "writing", british: "**rai**-ting", ipaGB: "ˈraɪtɪŋ" }, american: { id: "mc-writing-us", word: "writing", american: "**rai**-ding", ipaUS: "ˈraɪɾɪŋ" }, heard: { id: "mc-riding", word: "riding", ipaGB: "ˈraɪdɪŋ" }, rule: "say-every-t" },
   { say: { id: "mc-putting", word: "putting", british: "**pu**-ting", ipaGB: "ˈpʊtɪŋ" }, american: { id: "mc-putting-us", word: "putting", american: "**pu**-ding", ipaUS: "ˈpʊɾɪŋ" }, heard: { id: "mc-pudding", word: "pudding", ipaGB: "ˈpʊdɪŋ" }, rule: "say-every-t" },
   { say: { id: "mc-metal", word: "metal", british: "**me**-təl", ipaGB: "ˈmetl" }, american: { id: "mc-metal-us", word: "metal", american: "**me**-dəl", ipaUS: "ˈmɛɾl" }, heard: { id: "mc-medal", word: "medal", ipaGB: "ˈmedl" }, rule: "say-every-t" },
   { say: { id: "mc-thirty", word: "thirty", british: "**thəə**-ti", ipaGB: "ˈθɜːti" }, american: { id: "mc-thirty-us", word: "thirty", american: "**thər**-di", ipaUS: "ˈθɝɾi" }, rule: "say-every-t" },
   { say: { id: "mc-hot", word: "hot", british: "hot", ipaGB: "hɒt" }, american: { id: "mc-hot-us", word: "hot", american: "haat", ipaUS: "hɑt" }, heard: { id: "mc-heart", word: "heart", ipaGB: "hɑːt" }, rule: "short-o" },
-  { say: { id: "mc-not", word: "not", british: "not", ipaGB: "nɒt" }, american: { id: "mc-not-us", word: "not", american: "nat", ipaUS: "nɑt" }, heard: { id: "mc-nut", word: "nut", ipaGB: "nʌt" }, rule: "short-o" },
+  { say: { id: "mc-not", word: "not", british: "not", ipaGB: "nɒt" }, american: { id: "mc-not-us", word: "not", american: "naat", ipaUS: "nɑt" }, heard: { id: "mc-nut", word: "nut", ipaGB: "nʌt" }, rule: "short-o" },
 ];
