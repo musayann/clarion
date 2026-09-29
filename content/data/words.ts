@@ -36,7 +36,7 @@ export const wordGroups: WordGroup[] = [
   {
     id: "rl-everyday-words",
     section: "r-and-l",
-    title: "Everyday words that mix both",
+    title: "Everyday words with r and l spellings",
     words: [
       { id: "rl-really", word: "really" },
       { id: "rl-already", word: "already" },

@@ -63,7 +63,7 @@ export const quickAnswers: QuickAnswer[] = [
     sound: "*r* and *l*",
     examples: { id: "qa-r-l", word: "right, light", british: "right, light", american: "right, light" },
     same: true,
-    check: "*l*: tongue touches the ridge and stays. *r*: tongue touches nothing",
+    check: "*l*: the tongue tip touches the ridge and stays. *r*: keep the tip clear of the ridge and roof of your mouth",
     rule: "r-and-l",
   },
   {
@@ -87,8 +87,8 @@ export type MeaningChange = {
 };
 
 export const meaningChanges: MeaningChange[] = [
-  { say: { id: "mc-thirteen", word: "thirteen", british: "thəə-**tiin**", ipaGB: "θɜːˈtiːn" }, mistake: { id: "mc-thirteen-mistake", word: "thirteen", british: "**thəə**-tin", ipaGB: "ˈθɝtɪn" }, heard: { id: "mc-heard-thirty", word: "thirty", ipaGB: "ˈθɜːti" }, rule: "thirteen-vs-thirty" },
-  { say: { id: "mc-fourteen", word: "fourteen", british: "foo-**tiin**", ipaGB: "fɔːˈtiːn" }, mistake: { id: "mc-fourteen-mistake", word: "fourteen", british: "**foo**-tin", ipaGB: "ˈfɔrtɪn" }, heard: { id: "mc-forty", word: "forty", ipaGB: "ˈfɔːti" }, rule: "thirteen-vs-thirty" },
+  { say: { id: "mc-thirteen", word: "thirteen", british: "thəə-**tiin**", ipaGB: "θɜːˈtiːn" }, mistake: { id: "mc-thirteen-mistake", word: "thirteen", british: "**thəə**-tin", ipaGB: "ˈθɜːtɪn" }, heard: { id: "mc-heard-thirty", word: "thirty", ipaGB: "ˈθɜːti" }, rule: "thirteen-vs-thirty" },
+  { say: { id: "mc-fourteen", word: "fourteen", british: "foo-**tiin**", ipaGB: "fɔːˈtiːn" }, mistake: { id: "mc-fourteen-mistake", word: "fourteen", british: "**foo**-tin", ipaGB: "ˈfɔːtɪn" }, heard: { id: "mc-forty", word: "forty", ipaGB: "ˈfɔːti" }, rule: "thirteen-vs-thirty" },
   { say: { id: "mc-right", word: "right", british: "rait", ipaGB: "raɪt" }, mistake: { id: "mc-right-mistake", word: "right", british: "lait", ipaGB: "laɪt" }, heard: { id: "mc-light", word: "light", ipaGB: "laɪt" }, rule: "r-and-l" },
   { say: { id: "mc-correct", word: "correct", british: "kə-**rekt**", ipaGB: "kəˈrekt" }, mistake: { id: "mc-correct-mistake", word: "correct", british: "kə-**lekt**", ipaGB: "kəˈlɛkt" }, heard: { id: "mc-collect", word: "collect", ipaGB: "kəˈlekt" }, rule: "r-and-l" },
   { say: { id: "mc-work", word: "work", british: "wəək", ipaGB: "wɜːk" }, mistake: { id: "mc-work-mistake", word: "work", british: "wook", ipaGB: "wɔk" }, heard: { id: "mc-walk", word: "walk", ipaGB: "wɔːk" }, rule: "drop-the-r" },

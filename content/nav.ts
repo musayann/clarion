@@ -28,7 +28,7 @@ export const rules: Rule[] = [
     slug: "r-and-l",
     number: 3,
     title: "Keep *r* and *l* apart",
-    summary: "*l*: the tongue touches the ridge and stays. *r*: the tongue touches nothing.",
+    summary: "*l*: the tongue tip touches the ridge and stays. *r*: keep the tip clear of the ridge and roof of your mouth.",
     quickWin: false,
   },
   {
