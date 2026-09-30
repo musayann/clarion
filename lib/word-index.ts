@@ -6,8 +6,8 @@ import { rules } from "@/content/nav";
 export type IndexEntry = {
   id: string;
   word: string;
-  british?: string;
-  american?: string;
+  respell: string;
+  respellUS?: string;
   note?: string;
   section: Section;
   sectionTitle: string;
@@ -42,12 +42,14 @@ export function sectionInfo(section: Section): { title: string; href: string } {
 /** Every word in the guide, once per place it appears, for the word finder and search. */
 export function buildWordIndex(): IndexEntry[] {
   const entry = (w: Word, section: Section, group: string, groupId: string): IndexEntry => {
+    // Throws so a word added without a sound spelling fails the build.
+    if (!w.respell) throw new Error(`Word "${w.word}" (${w.id}) has no sound spelling`);
     const info = sectionInfo(section);
     return {
       id: w.id,
       word: w.word,
-      british: w.british,
-      american: w.american,
+      respell: w.respell,
+      respellUS: w.respellUS,
       note: w.note,
       section,
       sectionTitle: info.title,

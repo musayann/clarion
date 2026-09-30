@@ -116,7 +116,7 @@ function writeReport(clips: Clip[]) {
   const html = `<!doctype html><meta charset="utf-8"><title>Audio review</title>
 <style>body{font:14px system-ui;margin:2rem}td{padding:4px 8px;border-bottom:1px solid #ddd}</style>
 <h1>Audio review (${clips.length} clips)</h1>
-<p>Listen through each clip. If one doesn't match the guide's sound spelling, add or fix its ipaGB / ipaUS in content/data and run <code>pnpm audio --only &lt;id&gt;</code>.</p>
+<p>Listen through each clip. If one doesn't match the guide's sound spelling, add or fix its ipa / ipaUS in content/data and run <code>pnpm audio --only &lt;id&gt;</code>.</p>
 <table>${rows}</table>`;
   const out = path.join(ROOT, "audio-review.html");
   writeFileSync(out, html);

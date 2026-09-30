@@ -206,7 +206,7 @@ export function SilentR() {
             </span>
             <ArrowRight className="size-4 text-muted-foreground" aria-hidden />
             <span className="flex items-center text-lg">
-              <Respell text={w.british} />
+              <Respell text={w.respell} />
               {w.endsInVowel && (
                 <span className="ml-2 text-chart-1" aria-label="ends in a vowel">
                   ●

@@ -37,7 +37,7 @@ pnpm audio --force                          # regenerate everything
 pnpm audio:check                            # verify every item has an up-to-date clip
 ```
 
-- When a clip doesn't match the guide's sound spelling, add or fix `ipaGB` (or `ipaUS`) on that item in `content/data` and regenerate it. The IPA is sent to the voice as an SSML `<phoneme>`.
+- When a clip doesn't match the guide's sound spelling, add or fix `ipa` (or `ipaUS`) on that item in `content/data` and regenerate it. The IPA is sent to the voice as an SSML `<phoneme>`.
 - Configuration is read from the environment, or from `.env.local` / `.env` in the project root (see `.env.sample`). Auth is `GOOGLE_TTS_API_KEY`, `GOOGLE_APPLICATION_CREDENTIALS`, or gcloud application-default credentials.
 - The voices are `en-GB-Neural2-B` and `en-US-Neural2-D` at speaking rate 0.8. Override them with `TTS_VOICE_GB`, `TTS_VOICE_US` or `TTS_SPEAKING_RATE`. Changing any of these marks the affected clips stale.
 - `pnpm build` runs the audio check first and fails if a clip is missing or stale. `SKIP_AUDIO_CHECK=1` bypasses the check.

@@ -10,7 +10,7 @@ import { Letters, Respell } from "@/components/respell";
 import { Input } from "@/components/ui/input";
 import type { IndexEntry } from "@/lib/word-index";
 
-type Entry = IndexEntry & { srcGB?: string; srcUS?: string };
+type Entry = IndexEntry & { src?: string; srcUS?: string };
 
 /** Keeps the filter in ?q= so a search can be shared and linked to. */
 export function WordFinder({ entries }: { entries: Entry[] }) {
@@ -91,13 +91,13 @@ export function WordFinderView({
                 <span className="min-w-28 text-base font-medium">{e.word}</span>
                 <span className="inline-flex items-center gap-1.5 rounded-md bg-good-soft/40 py-0.5 pr-0.5 pl-2">
                   <CircleCheck className="size-3.5 shrink-0 text-good" aria-label="Say this" />
-                  {e.british && e.british !== e.word && <Respell text={e.british} />}
-                  <Listen src={e.srcGB} label={e.word} />
+                  <Respell text={e.respell} />
+                  <Listen src={e.src} label={e.word} />
                 </span>
-                {e.american && (
+                {e.respellUS && (
                   <span className="inline-flex items-center gap-1.5 rounded-md bg-muted/60 py-0.5 pr-0.5 pl-2 text-sm text-muted-foreground">
                     <Ear className="size-3.5 shrink-0" aria-label="Also heard (American)" />
-                    <Respell text={e.american} />
+                    <Respell text={e.respellUS} />
                     <Listen src={e.srcUS} label={e.word} accent="us" />
                   </span>
                 )}

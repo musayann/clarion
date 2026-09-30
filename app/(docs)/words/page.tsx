@@ -16,8 +16,8 @@ export const metadata: Metadata = pageMetadata({
 export default function WordsPage() {
   const entries = buildWordIndex().map((e) => ({
     ...e,
-    srcGB: clipSrc("gb", e.id),
-    srcUS: e.american ? clipSrc("us", e.id) : undefined,
+    src: clipSrc("gb", e.id),
+    srcUS: e.respellUS ? clipSrc("us", e.id) : undefined,
   }));
 
   return (

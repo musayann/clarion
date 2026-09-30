@@ -95,14 +95,14 @@ export const stressPairs: { n: string; word: string; syllables: [string, string]
  * Every r in these words is silent in Standard English. Ids starting with sr- have their own
  * clips; the others reuse the clips of the same word in the pair and word tables.
  */
-export const silentRWords: (Word & { british: string; endsInVowel: boolean })[] = [
-  { id: "sr-car", word: "car", british: "kaa", ipaGB: "kɑː", endsInVowel: true },
-  { id: "sr-more", word: "more", british: "moo", ipaGB: "mɔː", endsInVowel: true },
-  { id: "er-hard", word: "hard", british: "haad", endsInVowel: false },
-  { id: "er-work", word: "work", british: "wəək", endsInVowel: false },
-  { id: "er-first", word: "first", british: "fəəst", endsInVowel: false },
-  { id: "t-water", word: "water", british: "**woo**-tə", endsInVowel: true },
-  { id: "t-computer", word: "computer", british: "kəm-**pyuu**-tə", endsInVowel: true },
+export const silentRWords: (Word & { respell: string; endsInVowel: boolean })[] = [
+  { id: "sr-car", word: "car", respell: "kaa", ipa: "kɑː", endsInVowel: true },
+  { id: "sr-more", word: "more", respell: "moo", ipa: "mɔː", endsInVowel: true },
+  { id: "er-hard", word: "hard", respell: "haad", endsInVowel: false },
+  { id: "er-work", word: "work", respell: "wəək", endsInVowel: false },
+  { id: "er-first", word: "first", respell: "fəəst", endsInVowel: false },
+  { id: "t-water", word: "water", respell: "**woo**-tə", endsInVowel: true },
+  { id: "t-computer", word: "computer", respell: "kəm-**pyuu**-tə", endsInVowel: true },
 ];
 
 /** An English sound and the Kinyarwanda sound closest to it. */

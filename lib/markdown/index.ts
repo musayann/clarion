@@ -150,8 +150,8 @@ function words(): Omit<PageMarkdown, "href"> {
         ["Word", "Say this (Standard English)", "Also heard (American)", "Where"],
         entries.map((e) => [
           e.word,
-          [e.british && e.british !== e.word ? e.british : "", audio("gb", e.id)].filter(Boolean).join(" "),
-          e.american ? [e.american, audio("us", e.id)].filter(Boolean).join(" ") : "",
+          [e.respell, audio("gb", e.id)].filter(Boolean).join(" "),
+          e.respellUS ? [e.respellUS, audio("us", e.id)].filter(Boolean).join(" ") : "",
           `[${e.group}](${absoluteUrl(e.href)})`,
         ]),
       )}`,

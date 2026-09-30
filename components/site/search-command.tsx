@@ -71,9 +71,9 @@ export function SearchCommand({ words }: { words: IndexEntry[] }) {
               >
                 <Type aria-hidden />
                 <span className="font-medium">{w.word}</span>
-                {w.british && w.british !== w.word && (
+                {w.respell && w.respell !== w.word && (
                   <span className="text-muted-foreground">
-                    <Respell text={w.british} />
+                    <Respell text={w.respell} />
                   </span>
                 )}
                 <span className="ml-auto truncate text-xs text-muted-foreground"><Letters text={w.sectionTitle} /></span>

@@ -40,8 +40,8 @@ const ruleLink = (slug: (typeof rules)[number]["slug"]) => {
   return mdLink(ruleHref(slug), `Rule ${rule.number}`);
 };
 
-const say = (w: Word) => [w.british ?? "", audio("gb", w.id)].filter(Boolean).join(" ");
-const us = (w: Word) => [w.american ?? "", audio("us", w.id)].filter(Boolean).join(" ");
+const say = (w: Word) => [w.respell ?? "", audio("gb", w.id)].filter(Boolean).join(" ");
+const us = (w: Word) => [w.respellUS ?? "", audio("us", w.id)].filter(Boolean).join(" ");
 
 function wordTable({ group: id }: Props) {
   const group = findById(wordGroups, String(id), "word group");
@@ -64,7 +64,7 @@ function wordList({ group: id }: Props) {
 function pairTable({ group: id }: Props) {
   const group = findById(pairGroups, String(id), "pair group");
   const pairCell = (w: Word) =>
-    [w.note, w.word, w.british && w.british !== w.word ? `(${w.british})` : "", audio("gb", w.id)].filter(Boolean).join(" ");
+    [w.note, w.word, w.respell && w.respell !== w.word ? `(${w.respell})` : "", audio("gb", w.id)].filter(Boolean).join(" ");
   return table(
     group.labels,
     group.pairs.map(({ a, b }) => [pairCell(a), pairCell(b)]),
@@ -82,9 +82,9 @@ function quickAnswersTable() {
     quickAnswers.map((q) => [
       q.sound,
       q.examples.word,
-      [say(q.examples), q.britishNote && `(${q.britishNote})`, q.sayNote && `(${q.sayNote})`].filter(Boolean).join(" "),
+      [say(q.examples), q.respellNote && `(${q.respellNote})`, q.sayNote && `(${q.sayNote})`].filter(Boolean).join(" "),
       q.check,
-      q.same ? "Same in both" : [us(q.examples), q.americanNote && `(${q.americanNote})`].filter(Boolean).join(" "),
+      q.same ? "Same in both" : [us(q.examples), q.respellUSNote && `(${q.respellUSNote})`].filter(Boolean).join(" "),
       q.rule ? ruleLink(q.rule) : "",
     ]),
   );
@@ -147,7 +147,7 @@ function teenTyStress() {
 function silentR() {
   return figure(
     figureText.silentR,
-    silentRWords.map((w) => `- ${w.word.replaceAll("r", "~~r~~")} → ${w.british}${w.endsInVowel ? " ●" : ""}`).join("\n"),
+    silentRWords.map((w) => `- ${w.word.replaceAll("r", "~~r~~")} → ${w.respell}${w.endsInVowel ? " ●" : ""}`).join("\n"),
   );
 }
 

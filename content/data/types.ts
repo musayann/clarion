@@ -15,16 +15,16 @@ export type Section =
   | "everyday-words";
 
 /**
- * A spoken item. `british` and `american` are the guide's sound spellings,
+ * A spoken item. `respell` and `respellUS` are the guide's sound spellings,
  * with the stressed syllable wrapped in **double asterisks**.
- * `ipaGB` / `ipaUS` are only used to force the TTS voice when generating audio.
+ * `ipa` / `ipaUS` are only used to force the TTS voice when generating audio.
  */
 export type Word = {
   id: string;
   word: string;
-  british?: string;
-  american?: string;
-  ipaGB?: string;
+  respell?: string;
+  respellUS?: string;
+  ipa?: string;
   ipaUS?: string;
   note?: string;
 };
@@ -54,8 +54,8 @@ export type PairGroup = {
 export type Sentence = {
   id: string;
   text: string;
-  british?: string;
-  ipaGB?: string;
+  respell?: string;
+  ipa?: string;
 };
 
 export type SentenceGroup = {

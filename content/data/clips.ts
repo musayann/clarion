@@ -20,13 +20,13 @@ export type Clip = {
 
 export const clipKey = (accent: Accent, id: string) => `${accent}/${id}`;
 
-/** A word gets a British clip unless it only has an American form, and an American clip when it has one. */
+/** A word gets a Standard English clip unless it only has an American form, and an American clip when it has one. */
 export function clipsForWord(w: Word): Clip[] {
   const clips: Clip[] = [];
-  if (w.british !== undefined || w.american === undefined) {
-    clips.push({ id: w.id, accent: "gb", text: w.word, ipa: w.ipaGB });
+  if (w.respell !== undefined || w.respellUS === undefined) {
+    clips.push({ id: w.id, accent: "gb", text: w.word, ipa: w.ipa });
   }
-  if (w.american !== undefined) {
+  if (w.respellUS !== undefined) {
     clips.push({ id: w.id, accent: "us", text: w.word, ipa: w.ipaUS });
   }
   return clips;
@@ -68,7 +68,7 @@ export function allClips(): Clip[] {
   const clips = [
     ...words.flatMap(clipsForWord),
     ...sentenceGroups.flatMap((g) =>
-      g.sentences.map<Clip>((s) => ({ id: s.id, accent: "gb", text: s.text, ipa: s.ipaGB })),
+      g.sentences.map<Clip>((s) => ({ id: s.id, accent: "gb", text: s.text, ipa: s.ipa })),
     ),
     ...soundClips,
   ];

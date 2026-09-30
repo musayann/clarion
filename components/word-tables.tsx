@@ -124,7 +124,7 @@ export function WordTable({ group: groupId, dictionary = true }: { group: string
               </TableCell>
               <TableCell className={cellClass}>
                 <span className="inline-flex items-center gap-1">
-                  {w.british && <Respell text={w.british} className="text-base" />}
+                  {w.respell && <Respell text={w.respell} className="text-base" />}
                   <Listen src={clipSrc("gb", w.id)} label={w.word} />
                 </span>
               </TableCell>
@@ -164,9 +164,9 @@ function PairCell({ w }: { w: Word }) {
     <span className="inline-flex flex-wrap items-center gap-x-2 gap-y-0.5">
       {w.note && <span className="w-6 text-sm tabular-nums text-muted-foreground">{w.note}</span>}
       <span className="text-base font-medium">{w.word}</span>
-      {w.british && w.british !== w.word && (
+      {w.respell && w.respell !== w.word && (
         <span className="text-muted-foreground">
-          <Respell text={w.british} />
+          <Respell text={w.respell} />
         </span>
       )}
       <Listen src={clipSrc("gb", w.id)} label={w.word} />
@@ -181,7 +181,7 @@ function PairSayCells({ w, className }: { w: Word; className?: string }) {
       <TableCell className={cn(cellClass, "text-base font-medium", className)}>{w.word}</TableCell>
       <TableCell className={cellClass}>
         <span className="inline-flex items-center gap-1">
-          {w.british && <Respell text={w.british} className="text-base" />}
+          {w.respell && <Respell text={w.respell} className="text-base" />}
           <Listen src={clipSrc("gb", w.id)} label={w.word} />
         </span>
       </TableCell>
@@ -310,10 +310,10 @@ export function QuickAnswersTable() {
               </TableCell>
               <TableCell className={cn(cellClass, sayCellClass)}>
                 <span className="inline-flex items-center gap-1">
-                  <Respell text={q.examples.british!} className="text-base font-medium" />
+                  <Respell text={q.examples.respell!} className="text-base font-medium" />
                   <Listen src={clipSrc("gb", q.examples.id)} label={q.examples.word} />
                 </span>
-                {q.britishNote && <div className="text-xs text-muted-foreground">(<Letters text={q.britishNote} />)</div>}
+                {q.respellNote && <div className="text-xs text-muted-foreground">(<Letters text={q.respellNote} />)</div>}
                 {q.sayNote && <div className="text-xs font-medium text-good">{q.sayNote}</div>}
               </TableCell>
               <TableCell className={cn(cellClass, "min-w-48 whitespace-normal text-sm")}><Letters text={q.check} /></TableCell>
@@ -323,10 +323,10 @@ export function QuickAnswersTable() {
                 ) : (
                   <>
                     <span className="inline-flex items-center gap-1">
-                      <Respell text={q.examples.american!} />
+                      <Respell text={q.examples.respellUS!} />
                       <Listen src={clipSrc("us", q.examples.id)} label={q.examples.word} accent="us" />
                     </span>
-                    {q.americanNote && <div className="text-xs">(<Letters text={q.americanNote} />)</div>}
+                    {q.respellUSNote && <div className="text-xs">(<Letters text={q.respellUSNote} />)</div>}
                   </>
                 )}
               </TableCell>
@@ -360,13 +360,13 @@ export function MeaningChangeTable() {
                 <TableCell className={cn(cellClass, "text-base font-medium")}>{m.say.word}</TableCell>
                 <TableCell className={cn(cellClass, sayCellClass)}>
                   <span className="inline-flex items-center gap-1">
-                    <Respell text={m.say.british!} className="text-base" />
+                    <Respell text={m.say.respell!} className="text-base" />
                     <Listen src={clipSrc("gb", m.say.id)} label={m.say.word} />
                   </span>
                 </TableCell>
                 <TableCell className={cn(cellClass, compareCellClass)}>
                   <span className="inline-flex items-center gap-1">
-                    <Respell text={m.mistake.british!} />
+                    <Respell text={m.mistake.respell!} />
                     <Listen src={clipSrc("gb", m.mistake.id)} label={m.mistake.word} mistake />
                   </span>
                 </TableCell>
@@ -423,13 +423,13 @@ export function TAndOTable() {
                 </TableCell>
                 <TableCell className={cn(cellClass, sayCellClass)}>
                   <span className="inline-flex items-center gap-1">
-                    <Respell text={d.say.british!} className="text-base" />
+                    <Respell text={d.say.respell!} className="text-base" />
                     <Listen src={clipSrc("gb", d.say.id)} label={d.say.word} />
                   </span>
                 </TableCell>
                 <TableCell className={cn(cellClass, compareCellClass)}>
                   <span className="inline-flex items-center gap-1">
-                    <Respell text={d.american.american!} />
+                    <Respell text={d.american.respellUS!} />
                     <Listen src={clipSrc("us", d.american.id)} label={d.american.word} accent="us" />
                   </span>
                 </TableCell>
