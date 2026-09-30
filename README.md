@@ -52,4 +52,8 @@ pnpm audio:check                            # verify every item has an up-to-dat
 
 ## Deploy
 
-This is a standard Next.js app on Vercel. Set `NEXT_PUBLIC_SITE_URL` so canonical, sitemap, Open Graph, JSON-LD and llms.txt URLs are absolute.
+This is a standard Next.js app on Vercel. Set `NEXT_PUBLIC_SITE_URL` so canonical, sitemap, Open Graph, JSON-LD and llms.txt URLs are absolute. Vercel production builds fail without it.
+
+## License
+
+[MIT](LICENSE)

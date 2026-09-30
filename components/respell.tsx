@@ -24,15 +24,6 @@ export function Respell({ text, className }: { text: string; className?: string 
   );
 }
 
-/** Stressed syllable inline in prose, e.g. <Stress>twen</Stress>-ti. */
-export function Stress({ children }: { children: React.ReactNode }) {
-  return (
-    <strong className="rounded-[3px] bg-stress px-0.5 font-semibold text-stress-foreground">
-      {children}
-    </strong>
-  );
-}
-
 /**
  * Wraps a sound spelling written in MDX, e.g. <Sp>**twen**-ti</Sp>, so its
  * bold syllable gets the same stress highlight as the tables.
