@@ -5,11 +5,13 @@ export const wordGroups: WordGroup[] = [
     id: "t-words",
     section: "say-every-t",
     title: "Words with a full *t*",
-    withAmerican: true,
+    // The American forms show only in the word finder, not on the rule page.
     words: [
       { id: "t-water", word: "water", british: "**woo**-tə", american: "**waa**-dər", ipaGB: "ˈwɔːtə", ipaUS: "ˈwɑɾɚ" },
       { id: "t-better", word: "better", british: "**be**-tə", american: "**be**-dər", ipaGB: "ˈbetə", ipaUS: "ˈbɛɾɚ" },
       { id: "t-city", word: "city", british: "**si**-ti", american: "**si**-di", ipaGB: "ˈsɪti", ipaUS: "ˈsɪɾi" },
+      { id: "t-little", word: "little", british: "**li**-təl", american: "**li**-dəl", ipaGB: "ˈlɪtl", ipaUS: "ˈlɪɾl" },
+      { id: "t-literally", word: "literally", british: "**li**-tə-rə-li", american: "**li**-dər-ə-li", ipaGB: "ˈlɪtərəli", ipaUS: "ˈlɪɾɚəli" },
       { id: "t-twenty", word: "twenty", british: "**twen**-ti", american: "**twe**-ni", ipaGB: "ˈtwenti", ipaUS: "ˈtwɛni" },
       { id: "t-internet", word: "internet", british: "**in**-tə-net", american: "**i**-nər-net", ipaGB: "ˈɪntənet", ipaUS: "ˈɪnɚnɛt" },
       { id: "t-computer", word: "computer", british: "kəm-**pyuu**-tə", american: "kəm-**pyuu**-dər", ipaGB: "kəmˈpjuːtə", ipaUS: "kəmˈpjuɾɚ" },
@@ -30,7 +32,7 @@ export const wordGroups: WordGroup[] = [
       { id: "st-fasten", word: "fasten", british: "**faa**-sən", ipaGB: "ˈfɑːsən" },
       { id: "st-christmas", word: "Christmas", british: "**kris**-məs", ipaGB: "ˈkrɪsməs" },
       { id: "st-mortgage", word: "mortgage", british: "**moo**-gij", ipaGB: "ˈmɔːɡɪdʒ" },
-      { id: "st-often", word: "often", british: "**o**-fən", ipaGB: "ˈɒfən", note: "**of**-tən is also correct" },
+      { id: "st-ballet", word: "ballet", british: "**ba**-lei", ipaGB: "ˈbæleɪ" },
     ],
   },
   {

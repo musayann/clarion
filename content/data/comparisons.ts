@@ -100,17 +100,20 @@ export const meaningChanges: MeaningChange[] = [
 /**
  * Words with a Standard English form to practise and an American form to recognise.
  * `say` gets a Standard English clip, `american` an American one; `heard` as above.
+ * `alsoSpelt` is another spelling of the word, shown in brackets after it.
  */
 export type AmericanDifference = {
   say: Word;
   american: Word;
   heard?: Word;
+  alsoSpelt?: string;
   rule: RuleSlug;
 };
 
 export const americanDifferences: AmericanDifference[] = [
   { say: { id: "mc-little", word: "little", british: "**li**-təl", ipaGB: "ˈlɪtl" }, american: { id: "mc-little-us", word: "little", american: "**li**-dəl", ipaUS: "ˈlɪɾl" }, rule: "say-every-t" },
-  { say: { id: "mc-litre", word: "litre", british: "**lii**-tə", ipaGB: "ˈliːtə" }, american: { id: "mc-litre-us", word: "litre", american: "**lii**-dər", ipaUS: "ˈliɾɚ" }, heard: { id: "mc-leader", word: "leader", ipaGB: "ˈliːdə" }, rule: "say-every-t" },
+  { say: { id: "mc-litre", word: "litre", british: "**lii**-tə", ipaGB: "ˈliːtə" }, american: { id: "mc-litre-us", word: "litre", american: "**lii**-dər", ipaUS: "ˈliɾɚ" }, heard: { id: "mc-leader", word: "leader", ipaGB: "ˈliːdə" }, alsoSpelt: "liter", rule: "say-every-t" },
+  { say: { id: "mc-literally", word: "literally", british: "**li**-tə-rə-li", ipaGB: "ˈlɪtərəli" }, american: { id: "mc-literally-us", word: "literally", american: "**li**-dər-ə-li", ipaUS: "ˈlɪɾɚəli" }, rule: "say-every-t" },
   { say: { id: "mc-writing", word: "writing", british: "**rai**-ting", ipaGB: "ˈraɪtɪŋ" }, american: { id: "mc-writing-us", word: "writing", american: "**rai**-ding", ipaUS: "ˈraɪɾɪŋ" }, heard: { id: "mc-riding", word: "riding", ipaGB: "ˈraɪdɪŋ" }, rule: "say-every-t" },
   { say: { id: "mc-putting", word: "putting", british: "**pu**-ting", ipaGB: "ˈpʊtɪŋ" }, american: { id: "mc-putting-us", word: "putting", american: "**pu**-ding", ipaUS: "ˈpʊɾɪŋ" }, heard: { id: "mc-pudding", word: "pudding", ipaGB: "ˈpʊdɪŋ" }, rule: "say-every-t" },
   { say: { id: "mc-metal", word: "metal", british: "**me**-təl", ipaGB: "ˈmetl" }, american: { id: "mc-metal-us", word: "metal", american: "**me**-dəl", ipaUS: "ˈmɛɾl" }, heard: { id: "mc-medal", word: "medal", ipaGB: "ˈmedl" }, rule: "say-every-t" },

@@ -36,8 +36,6 @@ export type WordGroup = {
   id: string;
   section: Section;
   title: string;
-  /** true when the group has American clips as well as British ones. */
-  withAmerican?: boolean;
   words: Word[];
 };
 

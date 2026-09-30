@@ -8,6 +8,21 @@ const w = (id: string, word: string, extra: Partial<Word> = {}): Word => ({
 
 export const pairGroups: PairGroup[] = [
   {
+    id: "t-d",
+    section: "say-every-t",
+    title: "Keep *t*, not d",
+    labels: ["Keep *t*", "Different from d"],
+    contrast: true,
+    pairs: [
+      { a: w("td-writing", "writing"), b: w("td-riding", "riding") },
+      { a: w("td-latter", "latter"), b: w("td-ladder", "ladder") },
+      { a: w("td-metal", "metal"), b: w("td-medal", "medal") },
+      { a: w("td-betting", "betting"), b: w("td-bedding", "bedding") },
+      { a: w("td-coating", "coating"), b: w("td-coding", "coding") },
+      { a: w("td-heating", "heating"), b: w("td-heeding", "heeding") },
+    ],
+  },
+  {
     id: "teen-ty",
     section: "thirteen-vs-thirty",
     title: "-teen and -ty numbers",

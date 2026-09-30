@@ -47,11 +47,9 @@ function wordTable({ group: id }: Props) {
   const group = findById(wordGroups, String(id), "word group");
   const hasNotes = group.words.some((w) => w.note);
   const head = ["Word", "Say this (Standard English)"];
-  if (group.withAmerican) head.push("Also heard (American)");
   if (hasNotes) head.push("Note");
   const rows = group.words.map((w) => {
     const row = [w.word, say(w)];
-    if (group.withAmerican) row.push(us(w));
     if (hasNotes) row.push(w.note ?? "");
     return row;
   });
@@ -105,14 +103,14 @@ function meaningChangeTable() {
   );
 }
 
-function americanDifferenceTable() {
+function tAndOTable() {
   return table(
-    ["Word", "Say this (Standard English)", "Also heard (American)", "Some listeners may hear", "Rule"],
+    ["Word", "Say it like this", "If you say", "Listeners may hear", "Rule"],
     americanDifferences.map((d) => [
-      d.say.word,
+      d.alsoSpelt ? `${d.say.word} (${d.alsoSpelt})` : d.say.word,
       say(d.say),
       us(d.american),
-      d.heard ? `${d.heard.word} ${audio("gb", d.heard.id)}`.trimEnd() : "no other word",
+      d.heard ? `${d.heard.word} ${audio("gb", d.heard.id)}`.trimEnd() : "—",
       ruleLink(d.rule),
     ]),
   );
@@ -176,7 +174,7 @@ export const blocks: Record<string, (props: Props) => string> = {
   PracticeSentences: practiceSentences,
   QuickAnswersTable: quickAnswersTable,
   MeaningChangeTable: meaningChangeTable,
-  AmericanDifferenceTable: americanDifferenceTable,
+  TAndOTable: tAndOTable,
   EffectEffortChart: effectEffortChart,
   TRuleFlow: tRuleFlow,
   TeenTyStress: teenTyStress,

@@ -9,7 +9,7 @@ import { PageHeader } from "@/components/page-header";
 import { Sound, Sp } from "@/components/respell";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import {
-  AmericanDifferenceTable,
+  TAndOTable,
   MeaningChangeTable,
   Hear,
   PairTable,
@@ -81,7 +81,7 @@ const components: MDXComponents = {
   PairTable,
   PracticeSentences,
   QuickAnswersTable,
-  AmericanDifferenceTable,
+  TAndOTable,
   MeaningChangeTable,
   ...Figures,
 };

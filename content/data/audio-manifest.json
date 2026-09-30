@@ -123,6 +123,10 @@
     "src": "/audio/gb/mc-light.mp3",
     "hash": "3324da7d1e62"
   },
+  "gb/mc-literally": {
+    "src": "/audio/gb/mc-literally.mp3",
+    "hash": "f22c4291837f"
+  },
   "gb/mc-litre": {
     "src": "/audio/gb/mc-litre.mp3",
     "hash": "38a3dda915fb"
@@ -711,6 +715,10 @@
     "src": "/audio/gb/sr-more.mp3",
     "hash": "3488886669e2"
   },
+  "gb/st-ballet": {
+    "src": "/audio/gb/st-ballet.mp3",
+    "hash": "701b20c20e1a"
+  },
   "gb/st-castle": {
     "src": "/audio/gb/st-castle.mp3",
     "hash": "492a891a6cfe"
@@ -730,10 +738,6 @@
   "gb/st-mortgage": {
     "src": "/audio/gb/st-mortgage.mp3",
     "hash": "25eb1cfa2117"
-  },
-  "gb/st-often": {
-    "src": "/audio/gb/st-often.mp3",
-    "hash": "82fbb58b06da"
   },
   "gb/st-whistle": {
     "src": "/audio/gb/st-whistle.mp3",
@@ -767,6 +771,14 @@
     "src": "/audio/gb/t-internet.mp3",
     "hash": "a169b5398fa8"
   },
+  "gb/t-literally": {
+    "src": "/audio/gb/t-literally.mp3",
+    "hash": "f22c4291837f"
+  },
+  "gb/t-little": {
+    "src": "/audio/gb/t-little.mp3",
+    "hash": "c9a3c2453759"
+  },
   "gb/t-meeting": {
     "src": "/audio/gb/t-meeting.mp3",
     "hash": "32cc7a75685a"
@@ -778,6 +790,54 @@
   "gb/t-water": {
     "src": "/audio/gb/t-water.mp3",
     "hash": "5288107140a4"
+  },
+  "gb/td-bedding": {
+    "src": "/audio/gb/td-bedding.mp3",
+    "hash": "71dc9fe891db"
+  },
+  "gb/td-betting": {
+    "src": "/audio/gb/td-betting.mp3",
+    "hash": "12d073771d5b"
+  },
+  "gb/td-coating": {
+    "src": "/audio/gb/td-coating.mp3",
+    "hash": "2635fb8d658a"
+  },
+  "gb/td-coding": {
+    "src": "/audio/gb/td-coding.mp3",
+    "hash": "42a0c652357b"
+  },
+  "gb/td-heating": {
+    "src": "/audio/gb/td-heating.mp3",
+    "hash": "1c866d0f9c32"
+  },
+  "gb/td-heeding": {
+    "src": "/audio/gb/td-heeding.mp3",
+    "hash": "7016483b3246"
+  },
+  "gb/td-ladder": {
+    "src": "/audio/gb/td-ladder.mp3",
+    "hash": "4440703969d0"
+  },
+  "gb/td-latter": {
+    "src": "/audio/gb/td-latter.mp3",
+    "hash": "5b76272cd7e3"
+  },
+  "gb/td-medal": {
+    "src": "/audio/gb/td-medal.mp3",
+    "hash": "54e9f93eaf82"
+  },
+  "gb/td-metal": {
+    "src": "/audio/gb/td-metal.mp3",
+    "hash": "aa40f7629618"
+  },
+  "gb/td-riding": {
+    "src": "/audio/gb/td-riding.mp3",
+    "hash": "27f7417d5eca"
+  },
+  "gb/td-writing": {
+    "src": "/audio/gb/td-writing.mp3",
+    "hash": "235d7f9291ee"
   },
   "gb/th-fifth": {
     "src": "/audio/gb/th-fifth.mp3",
@@ -903,6 +963,10 @@
     "src": "/audio/us/mc-hot-us.mp3",
     "hash": "c6606a11083f"
   },
+  "us/mc-literally-us": {
+    "src": "/audio/us/mc-literally-us.mp3",
+    "hash": "09ee0bb4c5e8"
+  },
   "us/mc-litre-us": {
     "src": "/audio/us/mc-litre-us.mp3",
     "hash": "a76da3c0a8b1"
@@ -990,6 +1054,14 @@
   "us/t-internet": {
     "src": "/audio/us/t-internet.mp3",
     "hash": "5b108f2d4d1f"
+  },
+  "us/t-literally": {
+    "src": "/audio/us/t-literally.mp3",
+    "hash": "09ee0bb4c5e8"
+  },
+  "us/t-little": {
+    "src": "/audio/us/t-little.mp3",
+    "hash": "2e8b753170e1"
   },
   "us/t-meeting": {
     "src": "/audio/us/t-meeting.mp3",

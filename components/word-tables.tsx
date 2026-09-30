@@ -96,10 +96,9 @@ function VerdictHead({
   );
 }
 
-/** Word | Say this | Also heard — with Standard English and American clips. */
+/** Word | Say this, with a Standard English clip. */
 export function WordTable({ group: groupId, dictionary = true }: { group: string; dictionary?: boolean }) {
   const group = find(wordGroups, groupId, "word group");
-  const withUS = group.withAmerican;
   const hasNotes = group.words.some((w) => w.note);
 
   return (
@@ -108,14 +107,9 @@ export function WordTable({ group: groupId, dictionary = true }: { group: string
         <TableHeader>
           <TableRow className="hover:bg-transparent">
             <TableHead className={headClass}>Word</TableHead>
-            {withUS ? (
-              <VerdictHead verdict="say" label="Say this" detail="Standard English" />
-            ) : (
-              <TableHead className={headClass}>
-                Say this <span className="font-normal normal-case tracking-normal">(Standard English)</span>
-              </TableHead>
-            )}
-            {withUS && <VerdictHead verdict="compare" label="Also heard" detail="American" />}
+            <TableHead className={headClass}>
+              Say this <span className="font-normal normal-case tracking-normal">(Standard English)</span>
+            </TableHead>
             {hasNotes && <TableHead className={headClass}>Note</TableHead>}
           </TableRow>
         </TableHeader>
@@ -128,20 +122,12 @@ export function WordTable({ group: groupId, dictionary = true }: { group: string
                   {dictionary && <DictionaryLink word={w.word} />}
                 </div>
               </TableCell>
-              <TableCell className={cn(cellClass, withUS && sayCellClass)}>
+              <TableCell className={cellClass}>
                 <span className="inline-flex items-center gap-1">
                   {w.british && <Respell text={w.british} className="text-base" />}
                   <Listen src={clipSrc("gb", w.id)} label={w.word} />
                 </span>
               </TableCell>
-              {withUS && (
-                <TableCell className={cn(cellClass, compareCellClass)}>
-                  <span className="inline-flex items-center gap-1">
-                    {w.american && <Respell text={w.american} />}
-                    <Listen src={clipSrc("us", w.id)} label={w.word} accent="us" />
-                  </span>
-                </TableCell>
-              )}
               {hasNotes && (
                 <TableCell className={cn(cellClass, "text-sm text-muted-foreground")}>
                   {w.note && <Respell text={w.note} className="whitespace-normal" />}
@@ -412,17 +398,17 @@ export function MeaningChangeTable() {
   );
 }
 
-/** Word | Say this (Standard English clip) | Also heard (American clip) | Some listeners may hear | Rule */
-export function AmericanDifferenceTable() {
+/** Word | Say it like this | If you say (American clip) | Listeners may hear | Rule */
+export function TAndOTable() {
   return (
-    <TableFrame id="american-differences">
+    <TableFrame id="t-and-o">
       <Table>
         <TableHeader>
           <TableRow className="hover:bg-transparent">
             <TableHead className={headClass}>Word</TableHead>
-            <VerdictHead verdict="say" label="Say this" detail="Standard English" wrap />
-            <VerdictHead verdict="compare" label="Also heard" detail="American" wrap />
-            <TableHead className={cn(headClass, "h-auto min-w-28 py-2 whitespace-normal")}>Some listeners may hear</TableHead>
+            <VerdictHead verdict="say" label="Say it like this" />
+            <VerdictHead verdict="compare" label="If you say" />
+            <TableHead className={headClass}>Listeners may hear</TableHead>
             <TableHead className={headClass}>Rule</TableHead>
           </TableRow>
         </TableHeader>
@@ -431,7 +417,10 @@ export function AmericanDifferenceTable() {
             const rule = rules.find((r) => r.slug === d.rule)!;
             return (
               <TableRow key={d.say.id}>
-                <TableCell className={cn(cellClass, "text-base font-medium")}>{d.say.word}</TableCell>
+                <TableCell className={cn(cellClass, "text-base font-medium")}>
+                  {d.say.word}
+                  {d.alsoSpelt && <span className="font-normal text-muted-foreground"> ({d.alsoSpelt})</span>}
+                </TableCell>
                 <TableCell className={cn(cellClass, sayCellClass)}>
                   <span className="inline-flex items-center gap-1">
                     <Respell text={d.say.british!} className="text-base" />
@@ -451,7 +440,10 @@ export function AmericanDifferenceTable() {
                       <Listen src={clipSrc("gb", d.heard.id)} label={d.heard.word} />
                     </span>
                   ) : (
-                    <span className="text-sm text-muted-foreground italic">no other word</span>
+                    <span className="text-muted-foreground">
+                      <span aria-hidden>—</span>
+                      <span className="sr-only">no other word</span>
+                    </span>
                   )}
                 </TableCell>
                 <TableCell className={cellClass}>
