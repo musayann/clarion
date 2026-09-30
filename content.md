@@ -56,24 +56,39 @@ So for twenty: say **twen**-ti, with a full *t* (your tongue stops the air compl
 
 Say every *t* you see in the spelling as a full *t*, as in Standard English. The only exceptions are the silent-*t* words listed below.
 
-A full *t*: press the tip of your tongue on the ridge behind your top teeth so the air stops completely, feel the pressure build, then release it. If your tongue only flicks the ridge and the air never stops, you have made the American tapped *t*.
+A full *t*: press the tip of your tongue on the ridge behind your top teeth so the air stops completely, feel the pressure build, then release it. If your tongue only taps the ridge, the *t* can sound like d.
 
 &#91;embedded content: the *t* rule · 1 decision\]
 
 Why: the American tapped *t* in water and better is almost exactly the Kinyarwanda *r*. If you copy it, better sounds like 'berrer' to most listeners outside North America, or 'beller' if your *r* slides towards *l*.
 
-| Word | Say it like this | You will hear Americans say |
-| --- | --- | --- |
-| water | **woo**-tə | **waa**-dər |
-| better | **be**-tə | **be**-dər |
-| city | **si**-ti | **si**-di |
-| twenty | **twen**-ti | **twe**-ni |
-| internet | **in**-tə-net | **i**-nər-net |
-| computer | kəm-**pyuu**-tə | kəm-**pyuu**-dər |
-| meeting | **mii**-ting | **mii**-ding |
-| a lot of | ə **lo**-təv | ə **laa**-dəv |
+| Word | Say this |
+| --- | --- |
+| water | **woo**-tə |
+| better | **be**-tə |
+| city | **si**-ti |
+| little | **li**-təl |
+| literally | **li**-tə-rə-li |
+| twenty | **twen**-ti |
+| internet | **in**-tə-net |
+| computer | kəm-**pyuu**-tə |
+| meeting | **mii**-ting |
+| button | **ba**-tən |
+| important | im-**poo**-tənt |
+| a lot of | ə **lo**-təv |
 
-**Silent *t* (don't say it):** listen (**li**-sən), castle (**kaa**-səl), whistle (**wi**-səl), fasten (**faa**-sən), Christmas (**kris**-məs), mortgage (**moo**-gij). Say often as **o**-fən (**of**-tən is also correct).
+**Keep *t*, not d:**
+
+| Keep *t* | Different from d |
+| --- | --- |
+| writing | riding |
+| latter | ladder |
+| metal | medal |
+| betting | bedding |
+| coating | coding |
+| heating | heeding |
+
+**Silent *t* (don't say it):** listen (**li**-sən), castle (**kaa**-səl), whistle (**wi**-səl), fasten (**faa**-sən), Christmas (**kris**-məs), mortgage (**moo**-gij), ballet (**ba**-lei). Said with a *t*, ballet can sound like ballot.
 
 **Practise these sentences:**
 
@@ -236,7 +251,7 @@ In these words, one wrong sound makes listeners hear a different word or a diffe
 | sheep | shiip | ship | ship | 6 |
 | leave | liiv | liv | live | 6 |
 
-Words such as tomato, schedule or the letter Z are said differently in American and Standard English, but listeners understand either version, so this guide leaves them out.
+Other words, such as tomato, schedule or the letter Z, are said in more than one way, but listeners understand every version, so this guide leaves them out.
 
 ## Habits to avoid, and what to say instead
 
@@ -315,6 +330,6 @@ Fifteen minutes a day on these five steps covers every rule in this guide.
 
 **Weekly test.** Set your phone's dictation to English (UK) and read the pair lists aloud. When it types light for right, or walk for work, that pair needs more practice.
 
-**Hear the difference.** The [Cambridge Dictionary](https://dictionary.cambridge.org) and [Oxford Learner's Dictionaries](https://www.oxfordlearnersdictionaries.com) play 'UK' audio (Standard English) and 'US' audio for each word, so you can compare the two.
+**Listening.** Practise with the Standard English recordings. For more listening, use the 'UK' audio (Standard English) in the [Cambridge Dictionary](https://dictionary.cambridge.org) and [Oxford Learner's Dictionaries](https://www.oxfordlearnersdictionaries.com).
 
 **For teachers and further reading.** Jennifer Jenkins, *The Phonology of English as an International Language* (Oxford University Press, 2000), is the research behind the Lingua Franca Core: the sounds that matter most when non-native speakers talk to each other. Robin Walker, *Teaching the Pronunciation of English as a Lingua Franca* (Oxford University Press, 2010), turns it into practical exercises.

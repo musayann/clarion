@@ -1,7 +1,7 @@
 import "server-only";
 
 import { figureText, type Landing, letterULandings, quadrants, silentRWords, stressPairs, tLandings, vowelLandings } from "@/components/figures/data";
-import { americanDifferences, meaningChanges, quickAnswers } from "@/content/data/comparisons";
+import { tAndOWords, meaningChanges, quickAnswers } from "@/content/data/comparisons";
 import { pairGroups } from "@/content/data/pairs";
 import { sentenceGroups } from "@/content/data/sentences";
 import type { Accent, Word } from "@/content/data/types";
@@ -78,13 +78,13 @@ function practiceSentences({ group: id }: Props) {
 
 function quickAnswersTable() {
   return table(
-    ["Sound", "Example", "American", "Standard English (say this)", "How to check", "Rule"],
+    ["Sound", "Example", "Say this (Standard English)", "How to check", "Also heard (American)", "Rule"],
     quickAnswers.map((q) => [
       q.sound,
       q.examples.word,
-      q.same ? "the same in both styles" : [us(q.examples), q.americanNote && `(${q.americanNote})`].filter(Boolean).join(" "),
       [say(q.examples), q.britishNote && `(${q.britishNote})`, q.sayNote && `(${q.sayNote})`].filter(Boolean).join(" "),
       q.check,
+      q.same ? "Same in both" : [us(q.examples), q.americanNote && `(${q.americanNote})`].filter(Boolean).join(" "),
       q.rule ? ruleLink(q.rule) : "",
     ]),
   );
@@ -106,7 +106,7 @@ function meaningChangeTable() {
 function tAndOTable() {
   return table(
     ["Word", "Say it like this", "If you say", "Listeners may hear", "Rule"],
-    americanDifferences.map((d) => [
+    tAndOWords.map((d) => [
       d.alsoSpelt ? `${d.say.word} (${d.alsoSpelt})` : d.say.word,
       say(d.say),
       us(d.american),

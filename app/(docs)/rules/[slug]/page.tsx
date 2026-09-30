@@ -43,7 +43,7 @@ export default async function RulePage({ params }: PageProps<"/rules/[slug]">) {
           isPartOf: { "@id": course["@id"] },
         }}
       />
-      <PageHeader eyebrow={`Rule ${rule.number} of 6`} title={rule.title} quickWin={rule.quickWin} />
+      <PageHeader eyebrow={`Rule ${rule.number} of 6`} title={rule.title} easyStart={rule.easyStart} />
       <Callout variant="rule">
         <Letters text={rule.summary} />
       </Callout>

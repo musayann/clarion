@@ -5,16 +5,16 @@ type PageHeaderProps = {
   eyebrow?: string;
   title: string;
   children?: React.ReactNode;
-  quickWin?: boolean;
+  easyStart?: boolean;
 };
 
-export function PageHeader({ eyebrow, title, children, quickWin }: PageHeaderProps) {
+export function PageHeader({ eyebrow, title, children, easyStart }: PageHeaderProps) {
   return (
     <header className="mb-8 space-y-3">
-      {(eyebrow || quickWin) && (
+      {(eyebrow || easyStart) && (
         <div className="flex items-center gap-2">
           {eyebrow && <p className="text-sm font-semibold text-primary">{eyebrow}</p>}
-          {quickWin && (
+          {easyStart && (
             <Badge className="bg-stress text-stress-foreground">Easy start</Badge>
           )}
         </div>

@@ -63,7 +63,7 @@ function jsx(node: JsxElement): RootContent[] {
     case "Sp":
       return [{ type: "emphasis", children: children as PhrasingContent[] }];
     case "Hear":
-      return parseMarkdown(audio(p.accent === "us" ? "us" : "gb", String(p.id), String(p.label))).flatMap((n) =>
+      return parseMarkdown(audio("gb", String(p.id), String(p.label))).flatMap((n) =>
         "children" in n ? (n.children as RootContent[]) : [n],
       );
   }
@@ -115,7 +115,7 @@ function metadataField(esm: string, key: string): string | undefined {
 export type PageMarkdown = { href: string; title: string; description: string; markdown: string };
 
 function home(): Omit<PageMarkdown, "href"> {
-  const quickWins = rules.filter((r) => r.quickWin).map((r) => r.number);
+  const easyRules = rules.filter((r) => r.easyStart).map((r) => r.number);
   const md = `# An English pronunciation guide for Kinyarwanda speakers
 
 This guide focuses on the features of Kinyarwanda pronunciation that, in our experience, most often cause misunderstandings when carried into English. The aim is to be easily understood, not to change your accent.
@@ -124,13 +124,13 @@ Each of the six rules explains one feature, with example words and audio in ${md
 
 ## How to use this guide
 
-1. **Start with the easy ones:** rules ${quickWins.slice(0, -1).join(", ")} and ${quickWins.at(-1)}. Each is one change you can make this week.
+1. **Start with the easy ones:** rules ${easyRules.slice(0, -1).join(", ")} and ${easyRules.at(-1)}. Each is one change you can make this week.
 2. **Practise a little every day** with the 15-minute ${mdLink("/daily-practice", "daily routine")}.
-3. **Practise the Standard English form shown here.** Listen to the American example so you can recognise another pronunciation of the same word. See ${mdLink("/guide/which-style", "Which pronunciation to practise")}.
+3. **Practise the Standard English form shown here.** ${mdLink("/guide/which-style", "Which pronunciation to practise")} has a quick answer for each sound.
 
 ## The six rules
 
-${rules.map((r) => `- ${mdLink(ruleHref(r.slug), `Rule ${r.number}: ${r.title}`)} (${r.quickWin ? "easy start" : "daily practice"}): ${r.summary}`).join("\n")}
+${rules.map((r) => `- ${mdLink(ruleHref(r.slug), `Rule ${r.number}: ${r.title}`)} (${r.easyStart ? "easy start" : "daily practice"}): ${r.summary}`).join("\n")}
 
 ${blocks.EffectEffortChart({})}
 
@@ -170,7 +170,7 @@ async function mdxPage(href: string): Promise<Omit<PageMarkdown, "href">> {
   if (rule) {
     const { root } = await mdxToMarkdown(`content/rules/${rule.slug}.mdx`);
     const title = `Rule ${rule.number}: ${rule.title}`;
-    const intro = `# ${title}\n\n${rule.quickWin ? "Easy start. " : ""}Rule ${rule.number} of 6.\n\n> **The rule:** ${rule.summary}\n\n`;
+    const intro = `# ${title}\n\n${rule.easyStart ? "Easy start. " : ""}Rule ${rule.number} of 6.\n\n> **The rule:** ${rule.summary}\n\n`;
     return { title, description: rule.summary, markdown: intro + stringify(root) };
   }
   const { root, esm } = await mdxToMarkdown(`app/(docs)${href}/page.mdx`);
@@ -218,7 +218,7 @@ export async function llmsTxt(): Promise<string> {
 
 > ${siteDescription}
 
-The guide focuses on the features of Kinyarwanda pronunciation that, in our experience, most often cause misunderstandings when carried into English. The aim is to be easily understood, not to change your accent. Standard English here means British Received Pronunciation (RP), the model the guide follows. Practise the Standard English examples and use the American comparisons to build listening skills. Sound spellings mark the stressed syllable in **bold**; audio links are MP3 clips (Standard English and, where shown, American).
+The guide focuses on the features of Kinyarwanda pronunciation that, in our experience, most often cause misunderstandings when carried into English. The aim is to be easily understood, not to change your accent. Standard English here means British Received Pronunciation (RP), the model the guide follows. Practise the Standard English examples. Sound spellings mark the stressed syllable in **bold**; audio links are MP3 clips (Standard English and, where shown, American).
 
 Every page is available as markdown: add \`.md\` to its URL (\`/index.md\` for the home page), or request the page with \`Accept: text/markdown\`. The whole guide in one file: ${absoluteUrl("/llms-full.txt")}
 

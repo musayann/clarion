@@ -21,15 +21,15 @@ const reference = [
 ];
 
 export default function Home() {
-  const quickWins = rules.filter((r) => r.quickWin);
+  const easyRules = rules.filter((r) => r.easyStart);
   const link = "font-medium text-primary underline underline-offset-4";
 
   const steps = [
     <>
       <span className="font-medium">Start with the easy ones:</span> rules{" "}
-      {quickWins.map((r, i) => (
+      {easyRules.map((r, i) => (
         <span key={r.slug}>
-          {i > 0 && (i === quickWins.length - 1 ? " and " : ", ")}
+          {i > 0 && (i === easyRules.length - 1 ? " and " : ", ")}
           <Link href={`/rules/${r.slug}`} className={link}>
             {r.number}
           </Link>
@@ -45,11 +45,11 @@ export default function Home() {
       .
     </>,
     <>
-      <span className="font-medium">Practise the Standard English form shown here.</span> Listen to the American
-      example so you can recognise another pronunciation of the same word.{" "}
+      <span className="font-medium">Practise the Standard English form shown here.</span>{" "}
       <Link href="/guide/which-style" className={link}>
         Which pronunciation to practise
-      </Link>
+      </Link>{" "}
+      has a quick answer for each sound.
     </>,
   ];
 
@@ -127,7 +127,7 @@ export default function Home() {
                 <CardHeader>
                   <div className="flex items-center gap-2">
                     <span className="grid size-7 place-items-center rounded-md bg-primary/10 text-sm font-bold text-primary">{r.number}</span>
-                    {r.quickWin ? (
+                    {r.easyStart ? (
                       <Badge className="bg-stress text-stress-foreground">Easy start</Badge>
                     ) : (
                       <Badge variant="outline">Daily practice</Badge>

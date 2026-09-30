@@ -1,6 +1,6 @@
 import { silentRWords } from "../../components/figures/data";
 
-import { americanDifferences, meaningChanges, quickAnswers } from "./comparisons";
+import { tAndOWords, meaningChanges, quickAnswers } from "./comparisons";
 import { pairGroups } from "./pairs";
 import { sentenceGroups } from "./sentences";
 import type { Accent, Word } from "./types";
@@ -24,10 +24,10 @@ export const clipKey = (accent: Accent, id: string) => `${accent}/${id}`;
 export function clipsForWord(w: Word): Clip[] {
   const clips: Clip[] = [];
   if (w.british !== undefined || w.american === undefined) {
-    clips.push({ id: w.id, accent: "gb", text: w.sayGB ?? w.word, ipa: w.ipaGB });
+    clips.push({ id: w.id, accent: "gb", text: w.word, ipa: w.ipaGB });
   }
   if (w.american !== undefined) {
-    clips.push({ id: w.id, accent: "us", text: w.sayUS ?? w.word, ipa: w.ipaUS });
+    clips.push({ id: w.id, accent: "us", text: w.word, ipa: w.ipaUS });
   }
   return clips;
 }
@@ -62,7 +62,7 @@ export function allClips(): Clip[] {
     ...pairGroups.flatMap((g) => g.pairs.flatMap((p) => [p.a, p.b])),
     ...quickAnswers.map((q) => q.examples),
     ...meaningChanges.flatMap((m) => [m.say, m.mistake, ...(m.heard ? [m.heard] : [])]),
-    ...americanDifferences.flatMap((d) => [d.say, d.american, ...(d.heard ? [d.heard] : [])]),
+    ...tAndOWords.flatMap((d) => [d.say, d.american, ...(d.heard ? [d.heard] : [])]),
     ...silentRWords.filter((w) => w.id.startsWith("sr-")),
   ];
   const clips = [

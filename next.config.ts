@@ -11,7 +11,7 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       { source: "/guide/sound-names", destination: "/guide/get-started", permanent: true },
-      { source: "/recognise-american", destination: "/everyday-words#where-american-english-differs", permanent: true },
+      { source: "/recognise-american", destination: "/everyday-words#the-t-and-the-o", permanent: true },
     ];
   },
 

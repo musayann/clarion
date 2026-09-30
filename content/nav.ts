@@ -6,7 +6,7 @@ export type Rule = {
   title: string;
   /** The rule in one sentence, shown on cards and at the top of the rule page. */
   summary: string;
-  quickWin: boolean;
+  easyStart: boolean;
 };
 
 export const rules: Rule[] = [
@@ -14,43 +14,43 @@ export const rules: Rule[] = [
     slug: "say-every-t",
     number: 1,
     title: "Use a clear *t*",
-    summary: "Practise a full *t* in words such as water, better and twenty.",
-    quickWin: true,
+    summary: "Practise a full *t* in words such as water, better and twenty, so it doesn't sound like d.",
+    easyStart: true,
   },
   {
     slug: "thirteen-vs-thirty",
     number: 2,
     title: "Thirteen versus thirty",
     summary: "Stress the end of -teen numbers and the start of -ty numbers.",
-    quickWin: true,
+    easyStart: true,
   },
   {
     slug: "r-and-l",
     number: 3,
     title: "Keep *r* and *l* apart",
     summary: "*l*: the tongue tip touches the ridge and stays. *r*: keep the tip clear of the ridge and roof of your mouth.",
-    quickWin: false,
+    easyStart: false,
   },
   {
     slug: "drop-the-r",
     number: 4,
     title: "After a vowel, drop the *r*",
     summary: "Say *r* only when a vowel sound comes straight after it.",
-    quickWin: false,
+    easyStart: false,
   },
   {
     slug: "short-o",
     number: 5,
     title: "Keep the o in hot, job and stop",
     summary: "Start from a short Kinyarwanda o, then match hot, job and stop to the recording.",
-    quickWin: true,
+    easyStart: true,
   },
   {
     slug: "long-vowels",
     number: 6,
     title: "Use your long vowels",
     summary: "Hold the vowel longer and match its sound to the recording.",
-    quickWin: true,
+    easyStart: true,
   },
 ];
 

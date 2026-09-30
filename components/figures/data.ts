@@ -39,13 +39,13 @@ export const figureText = {
 };
 
 export type QuadrantItem = { label: string; href?: string };
-export type Quadrant = { title: string; tone: "quick-win" | "default" | "skip"; items: QuadrantItem[] };
+export type Quadrant = { title: string; tone: "easy-start" | "default" | "skip"; items: QuadrantItem[] };
 
 // Row by row: high effect (easier, harder), then low effect (easier, harder).
 export const quadrants: Quadrant[] = [
   {
     title: "Easy start: begin here",
-    tone: "quick-win",
+    tone: "easy-start",
     items: [
       { label: "Rule 1: the full *t* (twenty, water)", href: "/rules/say-every-t" },
       { label: "Rule 2: thirteen versus thirty", href: "/rules/thirteen-vs-thirty" },

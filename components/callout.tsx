@@ -1,4 +1,4 @@
-import { CircleCheck, Info, Lightbulb, Target, Zap } from "lucide-react";
+import { CircleCheck, Info, Lightbulb, Target } from "lucide-react";
 import { cn } from "cn";
 
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
@@ -7,7 +7,6 @@ const variants = {
   rule: { icon: Target, title: "The rule", className: "border-primary/30 bg-accent/60 text-foreground *:[svg]:text-primary" },
   check: { icon: CircleCheck, title: "How to check", className: "border-good/30 bg-good-soft/60 *:[svg]:text-good" },
   why: { icon: Lightbulb, title: "Why", className: "bg-muted/40 *:[svg]:text-muted-foreground" },
-  "quick-win": { icon: Zap, title: "Easy start", className: "border-stress bg-stress/25 *:[svg]:text-stress-foreground" },
   note: { icon: Info, title: "Note", className: "bg-muted/40 *:[svg]:text-muted-foreground" },
 } as const;
 

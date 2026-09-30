@@ -26,9 +26,6 @@ export type Word = {
   american?: string;
   ipaGB?: string;
   ipaUS?: string;
-  /** Text to speak when it differs from `word` (e.g. "zed" for Z). */
-  sayGB?: string;
-  sayUS?: string;
   note?: string;
 };
 

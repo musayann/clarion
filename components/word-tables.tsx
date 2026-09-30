@@ -12,7 +12,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { americanDifferences, meaningChanges, quickAnswers } from "@/content/data/comparisons";
+import { tAndOWords, meaningChanges, quickAnswers } from "@/content/data/comparisons";
 import { pairGroups } from "@/content/data/pairs";
 import { sentenceGroups } from "@/content/data/sentences";
 import type { Word } from "@/content/data/types";
@@ -279,8 +279,8 @@ export function PracticeSentences({ group: groupId }: { group: string }) {
 }
 
 /** Inline listen button for a single clip id, for use in prose. */
-export function Hear({ id, label, accent = "gb" }: { id: string; label: string; accent?: "gb" | "us" }) {
-  return <Listen src={clipSrc(accent, id)} label={label} accent={accent} className="-my-1 align-middle" />;
+export function Hear({ id, label }: { id: string; label: string }) {
+  return <Listen src={clipSrc("gb", id)} label={label} className="-my-1 align-middle" />;
 }
 
 /** Sound | Say this (Standard English clip) | How to check | Also heard (American clip) */
@@ -413,7 +413,7 @@ export function TAndOTable() {
           </TableRow>
         </TableHeader>
         <TableBody>
-          {americanDifferences.map((d) => {
+          {tAndOWords.map((d) => {
             const rule = rules.find((r) => r.slug === d.rule)!;
             return (
               <TableRow key={d.say.id}>

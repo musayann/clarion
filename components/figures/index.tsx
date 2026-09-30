@@ -78,7 +78,7 @@ export function EffectEffortChart() {
                 aria-label={q.title}
                 className={cn(
                   "rounded-lg border bg-card p-3 sm:p-4",
-                  q.tone === "quick-win" && "border-2 border-chart-1 bg-chart-1/10",
+                  q.tone === "easy-start" && "border-2 border-chart-1 bg-chart-1/10",
                 )}
               >
                 <h3 className="text-sm font-semibold sm:text-base">{q.title}</h3>
@@ -89,7 +89,7 @@ export function EffectEffortChart() {
                         aria-hidden
                         className={cn(
                           "mt-1.5 size-2.5 shrink-0 rounded-full sm:mt-2",
-                          q.tone === "quick-win" ? "bg-chart-1" : "bg-muted-foreground/40",
+                          q.tone === "easy-start" ? "bg-chart-1" : "bg-muted-foreground/40",
                         )}
                       />
                       {item.href ? (

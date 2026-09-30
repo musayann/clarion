@@ -21,7 +21,7 @@ const sectionPages: Record<Exclude<Section, (typeof rules)[number]["slug"]>, { t
 };
 
 export const wordFinderDescription =
-  "Search every word in the guide: its Standard English sound spelling, the American form, audio and the rule it belongs to.";
+  "Search every word in the guide: its Standard English sound spelling, audio and the rule it belongs to.";
 
 /** Looks up a word, pair or sentence group by id; throws so a typo in MDX fails the build. */
 export function findById<T extends { id: string }>(list: T[], id: string, kind: string): T {
