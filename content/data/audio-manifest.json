@@ -429,7 +429,7 @@
   },
   "gb/rl-already": {
     "src": "/audio/gb/rl-already.mp3",
-    "hash": "38c47155a940"
+    "hash": "2e7c4a5dbfa6"
   },
   "gb/rl-arrive": {
     "src": "/audio/gb/rl-arrive.mp3",
@@ -442,6 +442,14 @@
   "gb/rl-collect": {
     "src": "/audio/gb/rl-collect.mp3",
     "hash": "2dda4230c293"
+  },
+  "gb/rl-colorado": {
+    "src": "/audio/gb/rl-colorado.mp3",
+    "hash": "7f45a0b08cc9"
+  },
+  "gb/rl-control": {
+    "src": "/audio/gb/rl-control.mp3",
+    "hash": "a5623f0bead7"
   },
   "gb/rl-correct": {
     "src": "/audio/gb/rl-correct.mp3",
@@ -470,6 +478,10 @@
   "gb/rl-glass": {
     "src": "/audio/gb/rl-glass.mp3",
     "hash": "ca962375175f"
+  },
+  "gb/rl-gorilla": {
+    "src": "/audio/gb/rl-gorilla.mp3",
+    "hash": "feac23ea8a9e"
   },
   "gb/rl-grass": {
     "src": "/audio/gb/rl-grass.mp3",
@@ -509,15 +521,7 @@
   },
   "gb/rl-really": {
     "src": "/audio/gb/rl-really.mp3",
-    "hash": "97bac36128f2"
-  },
-  "gb/rl-regularly": {
-    "src": "/audio/gb/rl-regularly.mp3",
-    "hash": "30052e331a69"
-  },
-  "gb/rl-relative": {
-    "src": "/audio/gb/rl-relative.mp3",
-    "hash": "22914f97b16c"
+    "hash": "c0c02797ec08"
   },
   "gb/rl-right": {
     "src": "/audio/gb/rl-right.mp3",
@@ -533,11 +537,19 @@
   },
   "gb/rl-rule": {
     "src": "/audio/gb/rl-rule.mp3",
-    "hash": "c77817a4171a"
+    "hash": "0376306eadb9"
+  },
+  "gb/rl-salary": {
+    "src": "/audio/gb/rl-salary.mp3",
+    "hash": "2080ebef7c5b"
   },
   "gb/rl-travel": {
     "src": "/audio/gb/rl-travel.mp3",
-    "hash": "ef4b12ef889b"
+    "hash": "59a10ef31bea"
+  },
+  "gb/rl-umbrella": {
+    "src": "/audio/gb/rl-umbrella.mp3",
+    "hash": "472e32c00a12"
   },
   "gb/rl-world": {
     "src": "/audio/gb/rl-world.mp3",

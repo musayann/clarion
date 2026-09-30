@@ -102,7 +102,7 @@ export function WordFinderView({
                   </span>
                 )}
                 <Link href={e.href} className="ml-auto text-xs text-primary underline-offset-4 hover:underline">
-                  {e.group}
+                  <Letters text={e.group} />
                 </Link>
               </li>
             ))}

@@ -188,9 +188,28 @@ function PairCell({ w }: { w: Word }) {
   );
 }
 
-/** Minimal pairs, two columns, with a "play both" button per row. */
-export function PairTable({ group: groupId }: { group: string }) {
+/** Word | Say this for one side of a pair, styled like the WordTable. */
+function PairSayCells({ w, className }: { w: Word; className?: string }) {
+  return (
+    <>
+      <TableCell className={cn(cellClass, "text-base font-medium", className)}>{w.word}</TableCell>
+      <TableCell className={cellClass}>
+        <span className="inline-flex items-center gap-1">
+          {w.british && <Respell text={w.british} className="text-base" />}
+          <Listen src={clipSrc("gb", w.id)} label={w.word} />
+        </span>
+      </TableCell>
+    </>
+  );
+}
+
+/**
+ * Minimal pairs, two columns, with a "play both" button per row.
+ * `sayThis` gives each side a Say this column with its sound spelling (not for contrast groups).
+ */
+export function PairTable({ group: groupId, sayThis = false }: { group: string; sayThis?: boolean }) {
   const group = find(pairGroups, groupId, "pair group");
+  if (sayThis && group.contrast) throw new Error(`Pair group "${group.id}" can't use sayThis: it is a contrast group`);
   return (
     <TableFrame id={groupAnchor(group.id)}>
       <Table>
@@ -214,7 +233,9 @@ export function PairTable({ group: groupId }: { group: string }) {
             ) : (
               <>
                 <TableHead className={headClass}><Letters text={group.labels[0]} /></TableHead>
-                <TableHead className={headClass}><Letters text={group.labels[1]} /></TableHead>
+                {sayThis && <TableHead className={headClass}>Say this</TableHead>}
+                <TableHead className={cn(headClass, sayThis && "border-l")}><Letters text={group.labels[1]} /></TableHead>
+                {sayThis && <TableHead className={headClass}>Say this</TableHead>}
               </>
             )}
             <TableHead className={cn(headClass, "w-0 text-right")}>
@@ -225,12 +246,21 @@ export function PairTable({ group: groupId }: { group: string }) {
         <TableBody>
           {group.pairs.map(({ a, b }) => (
             <TableRow key={a.id}>
-              <TableCell className={cn(cellClass, group.contrast && "bg-good-soft/40")}>
-                <PairCell w={a} />
-              </TableCell>
-              <TableCell className={cn(cellClass, group.contrast && "bg-caution-soft/40")}>
-                <PairCell w={b} />
-              </TableCell>
+              {sayThis ? (
+                <>
+                  <PairSayCells w={a} />
+                  <PairSayCells w={b} className="border-l" />
+                </>
+              ) : (
+                <>
+                  <TableCell className={cn(cellClass, group.contrast && "bg-good-soft/40")}>
+                    <PairCell w={a} />
+                  </TableCell>
+                  <TableCell className={cn(cellClass, group.contrast && "bg-caution-soft/40")}>
+                    <PairCell w={b} />
+                  </TableCell>
+                </>
+              )}
               <TableCell className={cn(cellClass, "text-right")}>
                 <Listen
                   src={[clipSrc("gb", a.id), clipSrc("gb", b.id)]}

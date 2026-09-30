@@ -127,7 +127,23 @@ Warm up: say la la la, then ra ra ra, then la ra la ra, 10 times each. On every 
 | correct | collect |
 | arrive | alive |
 
-**Everyday words that mix both:** really, already, early, library, world, girl, rule, travel, relative, regularly.
+**Everyday words that mix both** (in early, world and girl the *r* is silent):
+
+| Word | Say this |
+| --- | --- |
+| really | **riə**-li |
+| already | ool-**re**-di |
+| early | **əə**-li |
+| library | **lai**-brə-ri |
+| world | wəəld |
+| girl | gəəl |
+| rule | ruul |
+| travel | **tra**-vəl |
+| Colorado | ko-lə-**raa**-dəu |
+| gorilla | gə-**ri**-lə |
+| umbrella | am-**bre**-lə |
+| control | kən-**trəul** |
+| salary | **sa**-lə-ri |
 
 **Practise these sentences:**
 
