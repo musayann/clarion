@@ -7,7 +7,7 @@ import { SiteHeader } from "@/components/site/site-header";
 import { ThemeProvider } from "@/components/site/theme";
 import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import { siteDescription, siteName, siteTitle, siteUrl } from "@/lib/site";
+import { siteDescription, siteKeywords, siteName, siteTitle, siteUrl } from "@/lib/site";
 
 // latin-ext carries ə, which every sound spelling in the guide uses.
 const sans = Inter({ variable: "--font-sans", subsets: ["latin", "latin-ext"] });
@@ -20,6 +20,8 @@ export const metadata: Metadata = {
   title: { default: siteTitle, template: `%s · ${siteName}` },
   description: siteDescription,
   applicationName: siteName,
+  keywords: siteKeywords,
+  category: "education",
   openGraph: { siteName, type: "website", locale: "en_GB" },
 };
 

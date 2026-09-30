@@ -4,7 +4,18 @@ export const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:30
 export const siteName = "Clear English Rwanda";
 export const siteTitle = `${siteName}: English pronunciation for Kinyarwanda speakers`;
 export const siteDescription =
-  "Standard English pronunciation for Kinyarwanda speakers: six rules drawn from our experience, with audio examples.";
+  "Clear English pronunciation for Kinyarwanda speakers in Rwanda and beyond: a free guide with six rules and audio examples in Standard English.";
+/** The searches the guide answers, for the keywords meta tag and the Course JSON-LD. */
+export const siteKeywords = [
+  "learn English in Rwanda",
+  "English in Rwanda",
+  "clear English pronunciation",
+  "English pronunciation for Kinyarwanda speakers",
+  "Kinyarwanda English pronunciation",
+  "Rwandan English accent",
+  "Standard English pronunciation",
+  "British English pronunciation (RP)",
+];
 
 export const absoluteUrl = (path: string) => `${siteUrl}${path === "/" ? "" : path}`;
 

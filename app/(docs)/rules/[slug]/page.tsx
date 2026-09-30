@@ -18,7 +18,12 @@ export async function generateMetadata({ params }: PageProps<"/rules/[slug]">): 
   const { slug } = await params;
   const rule = rules.find((r) => r.slug === slug);
   if (!rule) return {};
-  return pageMetadata({ title: plainText(`Rule ${rule.number}: ${rule.title}`), description: plainText(rule.summary), href: ruleHref(rule.slug), ownImage: true });
+  return pageMetadata({
+    title: plainText(`Rule ${rule.number}: ${rule.title}`),
+    description: `${plainText(rule.summary)} English pronunciation for Kinyarwanda speakers, with audio.`,
+    href: ruleHref(rule.slug),
+    ownImage: true,
+  });
 }
 
 export default async function RulePage({ params }: PageProps<"/rules/[slug]">) {

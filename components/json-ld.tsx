@@ -1,4 +1,4 @@
-import { absoluteUrl, siteDescription, siteName } from "@/lib/site";
+import { absoluteUrl, siteDescription, siteKeywords, siteName } from "@/lib/site";
 import { plainText } from "@/components/respell";
 import { rules } from "@/content/nav";
 
@@ -23,7 +23,12 @@ export const course = {
   isAccessibleForFree: true,
   educationalLevel: "Intermediate",
   teaches: "Clear Standard English pronunciation",
-  audience: { "@type": "EducationalAudience", audienceType: "Kinyarwanda speakers learning English" },
+  keywords: siteKeywords.join(", "),
+  audience: {
+    "@type": "EducationalAudience",
+    audienceType: "Kinyarwanda speakers learning English",
+    geographicArea: { "@type": "Country", name: "Rwanda" },
+  },
   hasCourseInstance: {
     "@type": "CourseInstance",
     courseMode: "online",

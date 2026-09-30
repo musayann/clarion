@@ -45,6 +45,7 @@ pnpm audio:check                            # verify every item has an up-to-dat
 ## SEO and AI agents
 
 - Every page gets a canonical URL, Open Graph and Twitter tags through `pageMetadata()` in `lib/site.ts`. Use it for any new page. Share images come from `app/opengraph-image.tsx`, plus one per rule.
+- Search keywords live in `siteKeywords` in `lib/site.ts`, used by the keywords meta tag and the `Course` JSON-LD.
 - JSON-LD: `WebSite` and `Course` on the home page, `LearningResource` on rule pages, and `BreadcrumbList` on every docs page (`components/json-ld.tsx`).
 - `/llms.txt` indexes the guide and `/llms-full.txt` holds all of it in one file. Every page is also served as markdown at `/<page>.md` (`/index.md` for home), or at its normal URL when requested with `Accept: text/markdown`. The rewrites are in `next.config.ts`.
 - The markdown comes from the same sources as the HTML: `lib/markdown` parses each MDX page and replaces every component with markdown built from `content/data`. When you add an MDX component, add its markdown version to `lib/markdown/blocks.ts`. The build fails until you do.

@@ -62,6 +62,7 @@ export default function Home() {
             {
               "@type": "WebSite",
               name: siteName,
+              description: siteDescription,
               url: absoluteUrl("/"),
               inLanguage: "en-GB",
               potentialAction: {
